@@ -1,10 +1,11 @@
 'use strict';
 
 const data;
-async function get_music_list(url="https://github.com/Tastuaki/OPED",data = {}){
+async function get_music_list(url="https://github.com/Tastuaki/OPED"){
     const res = await fetch(url).then((data) => consol.log(data))
+    return res.json();
 }
-console.log(data.text())
+console.log(get_music_list().text())
 // 要素
 // console.log(music_list)
 // console.log(music_list.text())
