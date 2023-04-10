@@ -1,6 +1,6 @@
 'use strict';
 
-const result = await fetch("https://github.com/Tastuaki/OPED", {
+const result = fetch("https://github.com/Tastuaki/OPED", {
   method: "GET"
 }).then(function(response) {
   return response.text();
