@@ -27,24 +27,23 @@ play.addEventListener('click', function(){
 });
 
 // 音量ボタン
-volumeUp.addEventListener('click', function(){
-  const volume = music.volume;
-  if(volume < 1){
-    music.volume = (volume * 10 + 1) / 10;
-    volume_text.innerText = music.volume;
-  }
-});
-volumeDown.addEventListener('click', function(){
-  const volume = music.volume;
-  if(volume > 0){
-    music.volume = (volume * 10 - 1) / 10;
-    volume_text.innerText = music.volume;
-  }
-});
+// volumeUp.addEventListener('click', function(){
+//   const volume = music.volume;
+//   if(volume < 1){
+//     music.volume = (volume * 10 + 1) / 10;
+//     volume_text.innerText = music.volume;
+//   }
+// });
+// volumeDown.addEventListener('click', function(){
+//   const volume = music.volume;
+//   if(volume > 0){
+//     music.volume = (volume * 10 - 1) / 10;
+//     volume_text.innerText = music.volume;
+//   }
+// });
 
 volume_index.addEventListener('change',function(){
-    music.volume = volume_index.value;
-    volume_text.innerText = music.volume;
+    music.volume = volume_index.value / 100.00;
 })
 
 volume_index.addEventListener('input',function(){
