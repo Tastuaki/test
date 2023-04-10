@@ -9,7 +9,7 @@ async function get_music_list(url="https://github.com/Tastuaki/OPED"){
 // 要素
 // console.log(music_list)
 // console.log(music_list.text())
-const music = new Audio('https://github.com/Tastuaki/OPED/blob/main/Charlotte%20OP.mp3');
+const music = new Audio('https://github.com/Tastuaki/OPED/blob/main/C%C2%B3%20-%E3%82%B7%E3%83%BC%E3%82%AD%E3%83%A5%E3%83%BC%E3%83%96-%20OP1(Endless%20Story).mp3?raw=true');
 const play = document.getElementById('play');
 const volumeUp = document.getElementById('volume-up');
 const volumeDown = document.getElementById('volume-down');
