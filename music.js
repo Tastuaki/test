@@ -1,9 +1,12 @@
 'use strict';
 
+async function get_music_list(url="https://github.com/Tastuaki/OPED",data = {}){
+    const res = await fetch(url).then((data) => consol.log(data))
+}
+console.log(data.text())
 // 要素
-const music_list = fetch("https://github.com/Tastuaki/OPED")
-console.log(music_list)
-console.log(music_list.text())
+// console.log(music_list)
+// console.log(music_list.text())
 const music = new Audio('musics/music.mp3');
 const play = document.getElementById('play');
 const volumeUp = document.getElementById('volume-up');
