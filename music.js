@@ -10,8 +10,8 @@ async function get_music_list(url="https://github.com/Tastuaki/OPED"){
 // console.log(music_list.text())
 const music = new Audio('https://github.com/Tastuaki/OPED/blob/main/C%C2%B3%20-%E3%82%B7%E3%83%BC%E3%82%AD%E3%83%A5%E3%83%BC%E3%83%96-%20OP1(Endless%20Story).mp3?raw=true');
 const play = document.getElementById('play');
-const volumeUp = document.getElementById('volume-up');
-const volumeDown = document.getElementById('volume-down');
+// const volumeUp = document.getElementById('volume-up');
+// const volumeDown = document.getElementById('volume-down');
 const mute = document.getElementById('mute');
 const volume_index = document.getElementById('volume');
 const volume_text = document.getElementById('volume-text');
