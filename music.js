@@ -1,7 +1,7 @@
 'use strict';
 
 // 要素
-const music_list = new fetch("https://github.com/Tastuaki/OPED")
+const music_list = fetch("https://github.com/Tastuaki/OPED")
 console.log(music_list)
 const music = new Audio('musics/music.mp3');
 const play = document.getElementById('play');
