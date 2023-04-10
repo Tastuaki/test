@@ -1,7 +1,7 @@
 'use strict';
 
 const result = fetch("https://github.com/Tastuaki/OPED", {
-  method: "GET"
+  // method: "GET"
 }).then(function(response) {
   return response.text();
 }).then(function(data) {
