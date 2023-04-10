@@ -4,7 +4,7 @@ async function get_music_list(url="https://github.com/Tastuaki/OPED"){
     const res = await fetch(url,{
       credentials: 'same-origin'
     }).then((data) => consol.log(data))
-    return res.json();
+    return res.json(); 
 }
 // 要素
 // console.log(music_list)
