@@ -1,5 +1,6 @@
 'use strict';
 
+const data;
 async function get_music_list(url="https://github.com/Tastuaki/OPED",data = {}){
     const res = await fetch(url).then((data) => consol.log(data))
 }
