@@ -1,14 +1,15 @@
 'use strict';
 
 async function get_music_list(url="https://github.com/Tastuaki/OPED"){
-    const res = await fetch(url).then((data) => consol.log(data))
+    const res = await fetch(url,{
+      credentials: 'same-origin'
+    }).then((data) => consol.log(data))
     return res.json();
 }
-console.log(get_music_list().text()) 
 // 要素
 // console.log(music_list)
 // console.log(music_list.text())
-const music = new Audio('musics/music.mp3');
+const music = new Audio('https://github.com/Tastuaki/OPED/blob/main/Charlotte%20OP.mp3');
 const play = document.getElementById('play');
 const volumeUp = document.getElementById('volume-up');
 const volumeDown = document.getElementById('volume-down');
