@@ -46,6 +46,7 @@ function check_sound(){
   if(music.ended){
     play.innerHTML ="再生";
     music.src = 'https://raw.githubusercontent.com/Tastuaki/OPED/main/CHAOS%3BHEAD%20ED.mp3';
+    music.play();
   }
 }
 
@@ -64,9 +65,9 @@ mute.addEventListener('click', function(){
 loop.addEventListener('click', function(){
   if(music.loop){
     music.loop = false;
-    mute.innerHTML = '<i class="fa-solid fa-rotate-right"></i>';
+    mute.innerHTML = '<i class="fas fa-repeat"></i>';
   }else{
     music.loop = true;
-    mute.innerHTML = '<i class="fa-solid fa-repeat"></i>';
+    mute.innerHTML = '<i class="fas fa-repeat-alt"></i>';
   }
 });
