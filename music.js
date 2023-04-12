@@ -38,6 +38,7 @@ volume_index.addEventListener('input',function(){
     volume_text.innerText = volume_index.value;
 })
 
+console.log(music.ended)
 if(music.ended){
   play.innerHTML ="再生";
 }
