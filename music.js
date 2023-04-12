@@ -16,6 +16,7 @@ const result = fetch("https://github.com/Tastuaki/OPED", {
 const music = new Audio('https://github.com/Tastuaki/OPED/blob/main/C%C2%B3%20-%E3%82%B7%E3%83%BC%E3%82%AD%E3%83%A5%E3%83%BC%E3%83%96-%20OP1(Endless%20Story).mp3?raw=true');
 const play = document.getElementById('play');
 const mute = document.getElementById('mute');
+const loop = document.getElementById('loop');
 const volume_index = document.getElementById('volume');
 const volume_text = document.getElementById('volume-text');
 // 再生ボタン
@@ -56,5 +57,16 @@ mute.addEventListener('click', function(){
   }else{
     music.muted = true;
     mute.innerHTML = '<i class="fas fa-volume-up"></i>';
+  }
+});
+
+//ループ再生
+loop.addEventListener('click', function(){
+  if(music.loop){
+    music.loop = false;
+    mute.innerHTML = '<i class="fa-solid fa-rotate-right"></i>';
+  }else{
+    music.loop = true;
+    mute.innerHTML = '<i class="fa-solid fa-repeat"></i>';
   }
 });
