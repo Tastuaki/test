@@ -67,9 +67,9 @@ mute.addEventListener('click', function(){
 loop.addEventListener('click', function(){
   if(music.loop){
     music.loop = false;
-    mute.innerHTML = '<i class="fas fa-repeat"></i>';
+    loop.innerHTML = '<i class="fas fa-repeat"></i>';
   }else{
     music.loop = true;
-    mute.innerHTML = '<i class="fas fa-repeat-alt"></i>';
+    loop.innerHTML = '<i class="fas fa-repeat-alt"></i>';
   }
 });
