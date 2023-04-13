@@ -22,10 +22,10 @@ const volume_text = document.getElementById('volume-text');
 // 再生ボタン
 play.addEventListener('click', function(){
   if(!music.paused){
-    play.innerHTML ="再生";
+    play.innerHTML ='<i class="fa-solid fa-play"></i>';
     music.pause();
   }else{
-    play.innerHTML = "停止";
+    play.innerHTML = '<i class="fa-solid fa-pause"></i>';
     music.play();
   }
 });
@@ -45,10 +45,10 @@ var intervalId = setInterval(check_sound, 1000);
 function check_sound(){
   console.log(music.ended)
   if(music.ended){
-    play.innerHTML ="再生";
+    play.innerHTML ='<i class="fa-solid fa-play"></i>';
     music.src = 'https://raw.githubusercontent.com/Tastuaki/OPED/main/CHAOS%3BHEAD%20ED.mp3';
     music.play();
-    play.innerHTML ="停止";
+    play.innerHTML = '<i class="fa-solid fa-pause"></i>';
   }
 }
 
@@ -56,10 +56,10 @@ function check_sound(){
 mute.addEventListener('click', function(){
   if(music.muted){
     music.muted = false;
-    mute.innerHTML = '<i class="fas fa-volume-mute">';
+    mute.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>';
   }else{
     music.muted = true;
-    mute.innerHTML = '<i class="fas fa-volume-up"></i>';
+    mute.innerHTML = '<i class="fa-solid fa-volume"></i>';
   }
 });
 
@@ -67,9 +67,9 @@ mute.addEventListener('click', function(){
 loop.addEventListener('click', function(){
   if(music.loop){
     music.loop = false;
-    loop.innerHTML = '<i class="fas fa-repeat"></i>';
+    loop.innerHTML = '<i class="fa-solid fa-repeat"></i>';
   }else{
     music.loop = true;
-    loop.innerHTML = '<i class="fas fa-repeat-alt"></i>';
+    loop.innerHTML = '<i class="fa-solid fa-rotate"></i>';
   }
 });
