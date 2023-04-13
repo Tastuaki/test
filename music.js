@@ -39,6 +39,7 @@ volume_index.addEventListener('input',function(){
     volume_text.innerText = volume_index.value;
 })
 
+// 継続再生
 var intervalId = setInterval(check_sound, 1000);
 
 function check_sound(){
@@ -47,6 +48,7 @@ function check_sound(){
     play.innerHTML ="再生";
     music.src = 'https://raw.githubusercontent.com/Tastuaki/OPED/main/CHAOS%3BHEAD%20ED.mp3';
     music.play();
+    play.innerHTML ="停止";
   }
 }
 
