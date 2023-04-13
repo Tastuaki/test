@@ -37,9 +37,11 @@ play.addEventListener('click', function(){
 volume_index.addEventListener('change',function(){
     music.volume = volume_index.value / 100.00;
 })
-
 volume_index.addEventListener('input',function(){
     volume_text.innerText = volume_index.value;
+})
+window.addEventListener("beforeunload",function(){
+    volume_index.value = 20;
 })
 
 // 継続再生
