@@ -1,15 +1,15 @@
 'use strict';
 
-const result = fetch("https://github.com/Tastuaki/OPED", {
-  // method: "GET"
-}).then(function(response) {
-  return response.text();
-}).then(function(data) {
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(data, "text/html");
-  const message = doc.getElementById("message").innerHTML
-  return message;
-});
+// const result = fetch("https://github.com/Tastuaki/OPED", {
+//   // method: "GET"
+// }).then(function(response) {
+//   return response.text();
+// }).then(function(data) {
+//   const parser = new DOMParser();
+//   const doc = parser.parseFromString(data, "text/html");
+//   const message = doc.getElementById("message").innerHTML
+//   return message;
+// });
 
 // console.log(music_list)
 // console.log(music_list.text())
@@ -33,16 +33,6 @@ play.addEventListener('click', function(){
   }
 });
 
-//音量
-volume_index.addEventListener('change',function(){
-    music.volume = volume_index.value / 100.00;
-})
-volume_index.addEventListener('input',function(){
-    volume_text.innerText = volume_index.value;
-})
-window.addEventListener("beforeunload",function(){
-    volume_index.value = 20;
-})
 
 // 継続再生
 var intervalId = setInterval(check_sound, 1000);
@@ -57,6 +47,17 @@ function check_sound(){
     title.innerHTML = '<i class="fas fa-music"></i>'+" 次の曲"
   }
 }
+
+//音量
+volume_index.addEventListener('change',function(){
+    music.volume = volume_index.value / 100.00;
+})
+volume_index.addEventListener('input',function(){
+    volume_text.innerText = volume_index.value;
+})
+window.addEventListener("beforeunload",function(){
+    volume_index.value = 20;
+})
 
 // ミュートボタン
 mute.addEventListener('click', function(){
