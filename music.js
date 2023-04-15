@@ -2,13 +2,15 @@
 
 var fname = [""];
 var file_property = {type: "text/plain"}
-const file = new File(fname,"https://raw.githubusercontent.com/Tastuaki/OPED/main/%2Btitle.txt",file_property);
-const reader = new FileReader();
-reader.onload = function () {
-	console.log(reader.result);
+const xhr = new XMLHttpRequest();
+xhr.open('get', 'https://raw.githubusercontent.com/Tastuaki/OPED/main/%2Btitle.txt');
+xhr.send();
+xhr.onreadystatechange = function() {
+  if( xhr.readyState === 4 && xhr.status === 200) {
+    fname = this.responseText
+    console.log(fname)
+  }
 }
-reader.readAsText(file);
-fname = reader.result;
 console.log(fname[0]);
 
 const music = new Audio('https://github.com/Tastuaki/OPED/blob/main/\344\270\255\344\272\214\347\227\205\343\201\247\343\202\202\346\201\213\343\201\214\343\201\227\343\201\237\343\201\204\357\274\201 -Take On Me- OP(JOURNEY).mp3?raw=true');
