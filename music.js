@@ -1,18 +1,13 @@
 'use strict';
 
-// const result = fetch("https://github.com/Tastuaki/OPED", {
-//   // method: "GET"
-// }).then(function(response) {
-//   return response.text();
-// }).then(function(data) {
-//   const parser = new DOMParser();
-//   const doc = parser.parseFromString(data, "text/html");
-//   const message = doc.getElementById("message").innerHTML
-//   return message;
-// });
 
-// console.log(music_list)
-// console.log(music_list.text())
+const reader = new FileReader();
+const file = new File("https://github.com/Tastuaki/OPED/blob/main/%2Btitle.txt");
+fileReader.onload = function () {
+	console.log( fileReader.result );
+}
+reader.readAsText(file);
+
 const music = new Audio('https://github.com/Tastuaki/OPED/blob/main/C%C2%B3%20-%E3%82%B7%E3%83%BC%E3%82%AD%E3%83%A5%E3%83%BC%E3%83%96-%20OP1(Endless%20Story).mp3?raw=true');
 
 const title = document.getElementById('title');
