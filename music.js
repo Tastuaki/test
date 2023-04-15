@@ -1,17 +1,34 @@
 'use strict';
 
 var fname = [""];
+var data = [""]
 var cnt = 0;
 const xhr = new XMLHttpRequest();
 xhr.open('get', 'https://raw.githubusercontent.com/Tastuaki/OPED/main/%2Btitle.txt');
 xhr.send();
 xhr.onreadystatechange = function() {
   if( xhr.readyState === 4 && xhr.status === 200) {
-    fname = this.responseText
+    data = this.responseText
     console.log(fname)
   }
 }
-console.log(fname[0]);
+let i = 0;
+let n = 0;
+var l = fname.length;
+while(1){
+  fname[n] += data[i];
+  console.log(data[i]);
+  if(fname.includes("\n")){
+    fname.replace("\n","");
+    console.log(fname[n]);
+    n += 1;
+  }
+  i += 1;
+  if(i == l){
+    break;
+  }
+}
+
 
 const music = new Audio('https://github.com/Tastuaki/OPED/blob/main/'+fname[cnt]+'?raw=true');
 
