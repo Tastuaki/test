@@ -17,9 +17,10 @@ xhr.onreadystatechange = function() {
     while(true){
       fname[n] += data[i];
       if(fname[n].includes("\n")){
+        fname[n] = fname[n].replace("undefined","");
+        fname[n] = fname[n].slice(0,-1);
         console.log(fname[n]);
-        fname[n] = fname[n].replace("undefined","")
-        fname[n] = fname[n].slice(0,-1)
+        fname[n] = encodeURI(fname[n]);
         console.log(fname[n]);
         n += 1;
       }
