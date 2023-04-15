@@ -18,7 +18,7 @@ xhr.onreadystatechange = function() {
       fname[n] += data[i];
       if(fname[n].includes("\n")){
         console.log(fname[n]);
-        fname[n] = fname[n].slice(0,-1)
+        fname[n] = fname[n].slice(1)
         console.log(fname[n]);
         n += 1;
       }
