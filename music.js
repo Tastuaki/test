@@ -15,11 +15,9 @@ xhr.onreadystatechange = function() {
     let n = 0;
     var l = data.length;
     while(true){
-      if(data[i] != undefined){
-        fname[n] += data[i];
-      }
+      fname[n] += data[i];
       if(fname[n].includes("\n")){
-        fname[n].replace("\n","");
+        fname[n].slice(0,-1)
         console.log(fname[n]);
         n += 1;
       }
