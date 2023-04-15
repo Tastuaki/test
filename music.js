@@ -58,7 +58,7 @@ play.addEventListener('click', function(){
   }else{
     play.innerHTML = '<i class="fas fa-pause"></i>';
     music.play();
-    title.innerHTML = '<i class="fas fa-music"></i>'+ fname[cnt]
+    title.innerHTML = '<i class="fas fa-music"></i>'+ fname[cnt];
   }
 });
 
@@ -73,7 +73,7 @@ function check_sound(){
     music.src = 'https://github.com/Tastuaki/OPED/blob/main/'+fname[cnt]+'?raw=true';
     music.play();
     play.innerHTML = '<i class="fas fa-pause"></i>';
-    title.innerHTML = '<i class="fas fa-music"></i>'+ fname[cnt]
+    title.innerHTML = '<i class="fas fa-music"></i>'+ fname[cnt];
   }
 }
 
