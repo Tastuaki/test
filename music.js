@@ -17,8 +17,8 @@ xhr.onreadystatechange = function() {
     while(true){
       fname[n] += data[i];
       console.log(data[i]);
-      if(fname.includes("\n")){
-        fname.replace("\n","");
+      if(fname[n].includes("\n")){
+        fname[n].replace("\n","");
         console.log(fname[n]);
         n += 1;
       }
