@@ -13,7 +13,7 @@ xhr.onreadystatechange = function() {
 }
 console.log(fname[0]);
 
-const music = new Audio('https://github.com/Tastuaki/OPED/blob/main/\344\270\255\344\272\214\347\227\205\343\201\247\343\202\202\346\201\213\343\201\214\343\201\227\343\201\237\343\201\204\357\274\201 -Take On Me- OP(JOURNEY).mp3?raw=true');
+const music = new Audio('https://github.com/Tastuaki/OPED/blob/main/%E4%B8%AD%E4%BA%8C%E7%97%85%E3%81%A7%E3%82%82%E6%81%8B%E3%81%8C%E3%81%97%E3%81%9F%E3%81%84%EF%BC%81%20-Take%20On%20Me-%20%E6%8C%BF%E5%85%A5%E6%AD%8C.mp3?raw=true');
 
 const title = document.getElementById('title');
 const play = document.getElementById('play');
