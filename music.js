@@ -45,7 +45,7 @@ xhr.onreadystatechange = function() {
 //   }
 // }
 
-const music = new Audio('https://github.com/Tastuaki/OPED/blob/main/'+fname[cnt]+'?raw=true');
+const music = new Audio('https://github.com/Tastuaki/OPED/blob/main/'+'11eyes OP.mp3'+'?raw=true');
 const title = document.getElementById('title');
 const play = document.getElementById('play');
 const mute = document.getElementById('mute');
