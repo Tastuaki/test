@@ -125,6 +125,7 @@ loop.addEventListener('click', function(){
 before.addEventListener('click',function(){
   cnt -= 1;
   console.log(cnt);
+  console.log(mcnt);
   if(cnt < 0){
     mcnt = cnt;
     cnt = fname.length + cnt;
@@ -140,6 +141,7 @@ before.addEventListener('click',function(){
 after.addEventListener('click',function(){
   cnt += 1;
   console.log(cnt);
+  console.log(mcnt);
   if(cnt > fname.length){
     cnt = 0;
   }else if(cnt < 0){
