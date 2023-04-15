@@ -121,12 +121,12 @@ loop.addEventListener('click', function(){
 });
 
 // 曲選択
-volume_index.addEventListener('before',function(){
+before.addEventListener('click',function(){
   cnt -= 1;
   music.pause();
   play_music();
 })
-volume_index.addEventListener('after',function(){
+after.addEventListener('click',function(){
   cnt += 1;
   music.pause();
   play_music();
