@@ -2,7 +2,7 @@
 
 var fname = [""];
 var file_property = {type: "text/plain"}
-const file = new File(fname,"https://github.com/Tastuaki/OPED/blob/main/%2Btitle.txt",file_property);
+const file = new File(fname,"https://raw.githubusercontent.com/Tastuaki/OPED/main/%2Btitle.txt",file_property);
 const reader = new FileReader();
 reader.onload = function () {
 	console.log(reader.result);
