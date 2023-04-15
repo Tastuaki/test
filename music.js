@@ -1,6 +1,6 @@
 'use strict';
 
-var buf = [""]
+var buf = [""];
 const file = new File(buf,"https://github.com/Tastuaki/OPED/blob/main/%2Btitle.txt");
 const reader = new FileReader();
 reader.onload = function () {
