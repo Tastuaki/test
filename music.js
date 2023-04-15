@@ -138,7 +138,7 @@ before.addEventListener('click',function(){
 })
 after.addEventListener('click',function(){
   cnt += 1;
-  if(cnt < fname.length){
+  if(cnt > fname.length){
     cnt = 0;
   }
   music.pause();
