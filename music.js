@@ -140,7 +140,13 @@ after.addEventListener('click',function(){
   cnt += 1;
   if(cnt > fname.length){
     cnt = 0;
+  }else if(cnt < 0){
+    mcnt = cnt;
+    cnt = fname.length + cnt;
   }
   music.pause();
   play_music();
+  if(mcnt != 0){
+    cnt = mcnt;
+  }
 })
