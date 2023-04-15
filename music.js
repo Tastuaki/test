@@ -5,6 +5,7 @@ var fname = [""];
 var data = [""];
 var titletext = [""];
 var cnt = 0;
+var mcnt = 0;
 const xhr = new XMLHttpRequest();
 xhr.open('get', 'https://raw.githubusercontent.com/Tastuaki/OPED/main/%2Btitle.txt');
 xhr.send();
@@ -123,11 +124,23 @@ loop.addEventListener('click', function(){
 // 曲選択
 before.addEventListener('click',function(){
   cnt -= 1;
+  if(cnt < 0){
+    mcnt = cnt;
+    cnt = fname.length + cnt;
+  }else{
+    mcnt = 0;
+  }
   music.pause();
   play_music();
+  if(mcnt != 0){
+    cnt = mcnt;
+  }
 })
 after.addEventListener('click',function(){
   cnt += 1;
+  if(cnt < fname.length){
+    cnt = 0;
+  }
   music.pause();
   play_music();
 })
