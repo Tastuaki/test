@@ -33,7 +33,6 @@ play.addEventListener('click', function(){
   }
 });
 
-
 // 継続再生
 var intervalId = setInterval(check_sound, 1000);
 
