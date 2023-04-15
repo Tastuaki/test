@@ -3,10 +3,12 @@
 var buf = [""]
 const file = new File(buf,"https://github.com/Tastuaki/OPED/blob/main/%2Btitle.txt");
 const reader = new FileReader();
-fileReader.onload = function () {
-	console.log( fileReader.result );
+reader.onload = function () {
+	console.log(reader.result);
 }
 reader.readAsText(file);
+fname = reader.result
+console.log(fname[0])
 
 const music = new Audio('https://github.com/Tastuaki/OPED/blob/main/C%C2%B3%20-%E3%82%B7%E3%83%BC%E3%82%AD%E3%83%A5%E3%83%BC%E3%83%96-%20OP1(Endless%20Story).mp3?raw=true');
 
