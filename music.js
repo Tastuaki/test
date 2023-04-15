@@ -51,6 +51,8 @@ const title = document.getElementById('title');
 const play = document.getElementById('play');
 const mute = document.getElementById('mute');
 const loop = document.getElementById('loop');
+const before = document.getElementById('before');
+const after = document.getElementById('after');
 const volume_index = document.getElementById('volume');
 const volume_text = document.getElementById('volume-text');
 
@@ -67,19 +69,23 @@ play.addEventListener('click', function(){
   }
 });
 
+function change_music(){
+  // play.innerHTML ='<i class="fas fa-play"></i>';
+  music.src = 'https://github.com/Tastuaki/OPED/blob/main/'+fname[cnt]+'?raw=true';
+  consoley.log(music.src+"\n"+titletext[cnt]);
+  music.play();
+  play.innerHTML = '<i class="fas fa-pause"></i>';
+  title.innerHTML = '<i class="fas fa-music"></i>　'+ titletext[cnt];
+}
+
 // 継続再生
 var intervalId = setInterval(check_sound, 1000);
 
 function check_sound(){
   console.log(music.ended)
   if(music.ended){
-    play.innerHTML ='<i class="fas fa-play"></i>';
-    cnt = cnt + 1;
-    music.src = 'https://github.com/Tastuaki/OPED/blob/main/'+fname[cnt]+'?raw=true';
-    consoley.log(music.src+"\n"+titletext[cnt]);
-    music.play();
-    play.innerHTML = '<i class="fas fa-pause"></i>';
-    title.innerHTML = '<i class="fas fa-music"></i>　'+ titletext[cnt];
+    cnt += 1;
+    change_music();
   }
 }
 
@@ -115,3 +121,15 @@ loop.addEventListener('click', function(){
     loop.innerHTML = '<i class="fas fa-stop"></i>';
   }
 });
+
+// 曲選択
+volume_index.addEventListener('before',function(){
+  cnt -= 1;
+  music.pause();
+  change_music();
+})
+volume_index.addEventListener('after',function(){
+  cnt += 1;
+  music.pause();
+  change_music();
+})
