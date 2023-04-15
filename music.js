@@ -13,7 +13,7 @@ xhr.onreadystatechange = function() {
 
     let i = 0;
     let n = 0;
-    var l = fname.length;
+    var l = fname[0].length;
     while(true){
       fname[n] += data[i];
       console.log(data[i]);
