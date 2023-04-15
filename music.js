@@ -11,7 +11,7 @@ reader.readAsText(file);
 fname = reader.result;
 console.log(fname[0]);
 
-const music = new Audio('https://github.com/Tastuaki/OPED/blob/main/C%C2%B3%20-%E3%82%B7%E3%83%BC%E3%82%AD%E3%83%A5%E3%83%BC%E3%83%96-%20OP1(Endless%20Story).mp3?raw=true');
+const music = new Audio('https://github.com/Tastuaki/OPED/blob/main/\344\270\255\344\272\214\347\227\205\343\201\247\343\202\202\346\201\213\343\201\214\343\201\227\343\201\237\343\201\204\357\274\201 -Take On Me- OP(JOURNEY).mp3?raw=true');
 
 const title = document.getElementById('title');
 const play = document.getElementById('play');
