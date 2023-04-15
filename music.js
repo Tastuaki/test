@@ -13,7 +13,7 @@ xhr.onreadystatechange = function() {
 
     let i = 0;
     let n = 0;
-    var l = fname[0].length;
+    var l = data.length;
     while(true){
       fname[n] += data[i];
       console.log(data[i]);
@@ -29,6 +29,20 @@ xhr.onreadystatechange = function() {
     }
   }
 }
+
+// function fname(){
+//   let i = 0;
+//   var l = fname[0].length;
+//   while(true){
+//     fname += data[i];
+//     if(fname.includes("\n")){
+//       fname.replace("\n","");
+//       console.log(fname);
+//       return fname;
+//     }
+//     i += 1;
+//   }
+// }
 
 const music = new Audio('https://github.com/Tastuaki/OPED/blob/main/'+fname[cnt]+'?raw=true');
 const title = document.getElementById('title');
