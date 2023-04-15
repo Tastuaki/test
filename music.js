@@ -1,7 +1,7 @@
 'use strict';
 
-var buf = [""];
-const file = new File(buf,"https://github.com/Tastuaki/OPED/blob/main/%2Btitle.txt");
+var fname = [""];
+const file = new File(fname,"https://github.com/Tastuaki/OPED/blob/main/%2Btitle.txt");
 const reader = new FileReader();
 reader.onload = function () {
 	console.log(reader.result);
