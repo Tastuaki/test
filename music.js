@@ -9,23 +9,24 @@ xhr.send();
 xhr.onreadystatechange = function() {
   if( xhr.readyState === 4 && xhr.status === 200) {
     data = this.responseText
-    console.log(fname)
-  }
-}
-let i = 0;
-let n = 0;
-var l = fname.length;
-while(1){
-  fname[n] += data[i];
-  console.log(data[i]);
-  if(fname.includes("\n")){
-    fname.replace("\n","");
-    console.log(fname[n]);
-    n += 1;
-  }
-  i += 1;
-  if(i == l){
-    break;
+    console.log(data)
+
+    let i = 0;
+    let n = 0;
+    var l = fname.length;
+    while(1){
+      fname[n] += data[i];
+      console.log(data[i]);
+      if(fname.includes("\n")){
+        fname.replace("\n","");
+        console.log(fname[n]);
+        n += 1;
+      }
+      i += 1;
+      if(i == l){
+        break;
+      }
+    }
   }
 }
 
