@@ -63,7 +63,7 @@ play.addEventListener('click', function(){
     music.pause();
   }else{
     play.innerHTML = '<i class="fas fa-pause"></i>';
-    consoley.log(music.src+"\n"+titletext[cnt]);
+    console.log(music.src+"\n"+titletext[cnt]);
     music.play();
     title.innerHTML = '<i class="fas fa-music"></i>　'+ titletext[cnt];
   }
