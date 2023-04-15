@@ -46,7 +46,7 @@ xhr.onreadystatechange = function() {
 //   }
 // }
 
-const music = new Audio('https://github.com/Tastuaki/OPED/blob/main/'+'11eyes OP.mp3'+'?raw=true');
+const music = new Audio('https://github.com/Tastuaki/OPED/blob/main/'+fname[cnt]+'?raw=true');
 const title = document.getElementById('title');
 const play = document.getElementById('play');
 const mute = document.getElementById('mute');
@@ -61,6 +61,7 @@ play.addEventListener('click', function(){
     music.pause();
   }else{
     play.innerHTML = '<i class="fas fa-pause"></i>';
+    consoley.log(music.src+"\n"+titletext[cnt]);
     music.play();
     title.innerHTML = '<i class="fas fa-music"></i>　'+ titletext[cnt];
   }
@@ -75,6 +76,7 @@ function check_sound(){
     play.innerHTML ='<i class="fas fa-play"></i>';
     cnt = cnt + 1;
     music.src = 'https://github.com/Tastuaki/OPED/blob/main/'+fname[cnt]+'?raw=true';
+    consoley.log(music.src+"\n"+titletext[cnt]);
     music.play();
     play.innerHTML = '<i class="fas fa-pause"></i>';
     title.innerHTML = '<i class="fas fa-music"></i>　'+ titletext[cnt];
