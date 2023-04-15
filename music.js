@@ -1,15 +1,16 @@
 'use strict';
 
+//リスト取得
 var fname = [""];
-var data = [""]
+var data = [""];
+var titletext = [""];
 var cnt = 0;
 const xhr = new XMLHttpRequest();
 xhr.open('get', 'https://raw.githubusercontent.com/Tastuaki/OPED/main/%2Btitle.txt');
 xhr.send();
 xhr.onreadystatechange = function() {
   if( xhr.readyState === 4 && xhr.status === 200) {
-    data = this.responseText
-    console.log(data)
+    data = this.responseText;
 
     let i = 0;
     let n = 0;
@@ -19,9 +20,8 @@ xhr.onreadystatechange = function() {
       if(fname[n].includes("\n")){
         fname[n] = fname[n].replace("undefined","");
         fname[n] = fname[n].slice(0,-1);
-        console.log(fname[n]);
+        titletext[n] = fname[n];
         fname[n] = encodeURI(fname[n]);
-        console.log(fname[n]);
         n += 1;
       }
       i += 1;
@@ -53,6 +53,7 @@ const mute = document.getElementById('mute');
 const loop = document.getElementById('loop');
 const volume_index = document.getElementById('volume');
 const volume_text = document.getElementById('volume-text');
+
 // 再生ボタン
 play.addEventListener('click', function(){
   if(!music.paused){
@@ -61,7 +62,7 @@ play.addEventListener('click', function(){
   }else{
     play.innerHTML = '<i class="fas fa-pause"></i>';
     music.play();
-    title.innerHTML = '<i class="fas fa-music"></i>'+ fname[cnt];
+    title.innerHTML = '<i class="fas fa-music"></i>　'+ titletext[cnt];
   }
 });
 
@@ -76,7 +77,7 @@ function check_sound(){
     music.src = 'https://github.com/Tastuaki/OPED/blob/main/'+fname[cnt]+'?raw=true';
     music.play();
     play.innerHTML = '<i class="fas fa-pause"></i>';
-    title.innerHTML = '<i class="fas fa-music"></i>'+ fname[cnt];
+    title.innerHTML = '<i class="fas fa-music"></i>　'+ titletext[cnt];
   }
 }
 
