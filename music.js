@@ -72,7 +72,7 @@ play.addEventListener('click', function(){
 function change_music(){
   // play.innerHTML ='<i class="fas fa-play"></i>';
   music.src = 'https://github.com/Tastuaki/OPED/blob/main/'+fname[cnt]+'?raw=true';
-  consoley.log(music.src+"\n"+titletext[cnt]);
+  console.log(music.src+"\n"+titletext[cnt]);
   music.play();
   play.innerHTML = '<i class="fas fa-pause"></i>';
   title.innerHTML = '<i class="fas fa-music"></i>　'+ titletext[cnt];
