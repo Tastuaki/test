@@ -58,8 +58,11 @@ const volume_index = document.getElementById('volume');
 const volume_text = document.getElementById('volume-text');
 
 function play_music(){
+  var src ='https://github.com/Tastuaki/OPED/blob/main/'+fname[cnt]+'?raw=true';
   // play.innerHTML ='<i class="fas fa-play"></i>';
-  music.src = 'https://github.com/Tastuaki/OPED/blob/main/'+fname[cnt]+'?raw=true';
+  if(music.src != src){
+    music.src = src;
+  }
   console.log(music.src+"\n"+titletext[cnt]);
   music.play();
   play.innerHTML = '<i class="fas fa-pause"></i>';
@@ -67,15 +70,17 @@ function play_music(){
 }
 
 // 再生ボタン
-play.addEventListener('click', function(){
+function ply(){
   if(!music.paused){
     play.innerHTML ='<i class="fas fa-play"></i>';
     music.pause();
   }else{
     play_music();
   }
+}
+play.addEventListener('click', function(){
+  ply();
 });
-
 
 // 継続再生
 var intervalId = setInterval(check_sound, 1000);
@@ -174,6 +179,10 @@ document.addEventListener('keydown', keydown_ivent);
 
 function keydown_ivent(e) {
   switch (e.key) {
+    case 'Enter':
+      ply();
+      break;
+    //曲選択
     case 'ArrowLeft':
       prev();
       setTimeout(function(){},100);
