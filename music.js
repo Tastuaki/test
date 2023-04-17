@@ -169,15 +169,33 @@ after.addEventListener('touchstart',function(){
 
 //キーボード入力
 document.addEventListener('keydown', keydown_ivent);
+document.addEventListener('keyup', keyup_ivent);
 
+let flag;
 function keydown_ivent(e) {
   switch (e.key) {
     case 'ArrowLeft':
       prev();
+      flag = setTimeout(function () {
+        console.log('キーが長押しされました。');
+      }, 1000);
       break;
     case 'ArrowRight':
       next();
+      flag = setTimeout(function () {
+        console.log('キーが長押しされました。');
+      }, 1000);
       break;
   }
-  return false;
+}
+
+function keyup_ivent(e){
+  switch (e.key) {
+    case 'ArrowLeft':
+      clearTimeout(flag);
+      break;
+    case 'ArrowRight':
+      clearTimeout(flag);
+      break;
+  }
 }
