@@ -185,11 +185,11 @@ function keydown_ivent(e) {
     //曲選択
     case 'ArrowLeft':
       prev();
-      setTimeout(500);
+      setTimeout(800);
       break;
     case 'ArrowRight':
       next();
-      setTimeout(500);
+      setTimeout(800);
       break;
   }
 }
