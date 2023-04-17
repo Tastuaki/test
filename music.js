@@ -155,16 +155,16 @@ function next(){
   }
 }
 before.addEventListener('mousedown',function(){
-  next();
+  prev();
 })
 after.addEventListener('mousedown',function(){
-  prev();
-})
-before.addEventListener('touchstart',function(){
   next();
 })
-after.addEventListener('touchstart',function(){
+before.addEventListener('touchstart',function(){
   prev();
+})
+after.addEventListener('touchstart',function(){
+  next();
 })
 
 //キーボード入力
@@ -175,13 +175,13 @@ let flag;
 function keydown_ivent(e) {
   switch (e.key) {
     case 'ArrowLeft':
-      next();
+      prev();
       flag = setTimeout(function () {
         console.log('キーが長押しされました。');
       }, 1000);
       break;
     case 'ArrowRight':
-      prev();
+      next();
       flag = setTimeout(function () {
         console.log('キーが長押しされました。');
       }, 1000);
