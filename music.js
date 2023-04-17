@@ -175,13 +175,13 @@ let flag;
 function keydown_ivent(e) {
   switch (e.key) {
     case 'ArrowLeft':
-      prev();
+      next();
       flag = setTimeout(function () {
         console.log('キーが長押しされました。');
       }, 1000);
       break;
     case 'ArrowRight':
-      next();
+      prev();
       flag = setTimeout(function () {
         console.log('キーが長押しされました。');
       }, 1000);
