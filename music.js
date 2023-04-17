@@ -147,6 +147,8 @@ function next(){
   }else if(cnt < 0){
     mcnt = cnt;
     cnt = fname.length + cnt;
+  }else{
+    mcnt = 0;
   }
   music.pause();
   play_music();
