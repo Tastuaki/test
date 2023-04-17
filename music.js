@@ -134,7 +134,7 @@ function next(){
   }
   music.pause();
   play_music();
-  if(mcnt != 0){
+  if(mcnt < 0){
     cnt = mcnt;
   }
 }
@@ -150,7 +150,7 @@ function prev(){
   }
   music.pause();
   play_music();
-  if(mcnt != 0){
+  if(mcnt < 0){
     cnt = mcnt;
   }
 }
