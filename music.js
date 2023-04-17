@@ -122,10 +122,7 @@ loop.addEventListener('click', function(){
 });
 
 // 曲選択
-// function next(){
-
-// }
-before.addEventListener('mousedown',function(){
+function next(){
   cnt -= 1;
   console.log(cnt);
   console.log(mcnt);
@@ -140,8 +137,8 @@ before.addEventListener('mousedown',function(){
   if(mcnt != 0){
     cnt = mcnt;
   }
-})
-after.addEventListener('mousedown',function(){
+}
+function prev(){
   cnt += 1;
   console.log(cnt);
   console.log(mcnt);
@@ -156,4 +153,16 @@ after.addEventListener('mousedown',function(){
   if(mcnt != 0){
     cnt = mcnt;
   }
+}
+before.addEventListener('mousedown',function(){
+  next();
+})
+after.addEventListener('mousedown',function(){
+  prev();
+})
+before.addEventListener('touchstart',function(){
+  next();
+})
+after.addEventListener('touchstart',function(){
+  prev();
 })
