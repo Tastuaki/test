@@ -166,3 +166,18 @@ before.addEventListener('touchstart',function(){
 after.addEventListener('touchstart',function(){
   prev();
 })
+
+//キーボード入力
+document.addEventListener('keydown', keydown_ivent);
+
+function keydown_ivent(e) {
+  switch (e.key) {
+    case 'ArrowLeft':
+      prev();
+      break;
+    case 'ArrowRight':
+      next();
+      break;
+  }
+  return false;
+}
