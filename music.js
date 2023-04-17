@@ -122,7 +122,7 @@ loop.addEventListener('click', function(){
 });
 
 // 曲選択
-function next(){
+function prev(){
   cnt -= 1;
   console.log(cnt);
   console.log(mcnt);
@@ -138,7 +138,7 @@ function next(){
     cnt = mcnt;
   }
 }
-function prev(){
+function next(){
   cnt += 1;
   console.log(cnt);
   console.log(mcnt);
