@@ -122,7 +122,10 @@ loop.addEventListener('click', function(){
 });
 
 // 曲選択
-before.addEventListener('click',function(){
+// function next(){
+
+// }
+before.addEventListener('mousedown',function(){
   cnt -= 1;
   console.log(cnt);
   console.log(mcnt);
@@ -138,7 +141,7 @@ before.addEventListener('click',function(){
     cnt = mcnt;
   }
 })
-after.addEventListener('click',function(){
+after.addEventListener('mousedown',function(){
   cnt += 1;
   console.log(cnt);
   console.log(mcnt);
