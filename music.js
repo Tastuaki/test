@@ -21,7 +21,7 @@ xhr.onreadystatechange = function() {
       if(fname[n].includes("\n")){
         fname[n] = fname[n].replace("undefined","");
         fname[n] = fname[n].slice(0,-1);
-        titletext[n] = fname[n];
+        titletext[n] = fname[n].replace(".mp3","");
         fname[n] = encodeURI(fname[n]);
         n += 1;
       }
