@@ -30,7 +30,7 @@ xhr.onreadystatechange = function() {
         const mlist =  document.getElementById('mlist');
         for(i=0;i < titletext.length;i++){
           var li = document.createElement('li');
-          li.innerHTML = '<button id="smusic" value='+ i + '>' + titletext[i] + '</button>';
+          li.innerHTML = '<button id="smusic" value='+ i + 'onclick="list_select()">' + titletext[i] + '</button>';
           mlist.appendChild(li);
         }
         break;
