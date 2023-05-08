@@ -64,7 +64,6 @@ const before = document.getElementById('before');
 const after = document.getElementById('after');
 const volume_index = document.getElementById('volume');
 const volume_text = document.getElementById('volume-text');
-const smusic = document.getElementById('smusic');
 
 function play_music(){
   var src ='https://github.com/Tastuaki/OPED/blob/main/'+fname[cnt]+'?raw=true';
@@ -211,6 +210,8 @@ after.addEventListener('touchstart',function(){
 })
 
 // リスト選択
+const smusic = document.getElementById('smusic');
+
 smusic.addEventListener('click',function(){
   console.log(smusic.value);
 })
