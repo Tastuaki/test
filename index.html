@@ -31,13 +31,17 @@
     }
     header{
       position: sticky;
+      top: 0;
+    }
+    #main{
+      text-align: center;
     }
   </style>
 </head>
 <body>
   <header>
-    <h3 id="title" class = "white_text"><i class="fas fa-music"></i></h3><br>
-      <div class = "main">
+    <div id = "main">
+        <h3 id="title" class = "white_text"><i class="fas fa-music"></i></h3><br>
         <!-- 前の曲 -->
         <button id="before" class="btn btn-secondary"><i class="fas fa-chevron-left"></i></button>
         <!-- 再生ボタン -->
@@ -49,7 +53,7 @@
         <!-- 逆順再生 -->
         <button id="rec" class="btn btn-warning"><i class="fas fa-long-arrow-alt-left"></i></button><br>
         <label  class = "white_text">ボリューム</label>
-        <input id="volume" class = "white_text" type="range" min="0" max="100" step="1" value="20"><label id="volume-text">20</label>
+        <input id="volume" type="range" min="0" max="100" step="1" value="20"><label id="volume-text" class = "white_text">20</label>
         <!-- ミュートボタン -->
         <button id="mute" class="btn btn-warning"><i class="fas fa-volume-mute"></i></button><br><br>
       </div>
