@@ -30,7 +30,7 @@ xhr.onreadystatechange = function() {
         const mlist =  document.getElementById('mlist');
         for(i=0;i < titletext.length;i++){
           var li = document.createElement('li');
-          li.innerHTML = '<button id="smusic" value="'+ i + '" onclick="list_select()">' + titletext[i] + '</button>';
+          li.innerHTML = '<button id="smusic" value="'+ i + '" onclick="list_select('+ i +')">' + titletext[i] + '</button>';
           mlist.appendChild(li);
         }
         break;
@@ -210,10 +210,9 @@ after.addEventListener('touchstart',function(){
 })
 
 // リスト選択
-function list_select() {
-  const smusic = document.getElementById('smusic');
-  console.log(smusic.value);
-  title.innerHTML = '<i class="fas fa-music"></i>　'+ titletext[smusic.value];
+function list_select(num) {
+  console.log(num);
+  title.innerHTML = '<i class="fas fa-music"></i>　'+ titletext[num];
 }
 
 //キーボード入力
