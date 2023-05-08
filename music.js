@@ -46,12 +46,14 @@ xhr.onreadystatechange = function() {
 //     i += 1;
 //   }
 // }
+var ls = 0;
 
 const music = new Audio('https://github.com/Tastuaki/OPED/blob/main/'+fname[cnt]+'?raw=true');
 const title = document.getElementById('title');
 const play = document.getElementById('play');
 const mute = document.getElementById('mute');
 const loop = document.getElementById('loop');
+const rec = document.getElementById('rec');
 const before = document.getElementById('before');
 const after = document.getElementById('after');
 const volume_index = document.getElementById('volume');
@@ -88,8 +90,24 @@ var intervalId = setInterval(check_sound, 1000);
 function check_sound(){
   console.log(music.ended)
   if(music.ended){
-    cnt += 1;
+    if(ls == 0){
+      cnt += 1;
+      if(cnt > fname.length){
+        cnt = 0;
+      }
+    }else{
+      cnt -= 1;
+      if(cnt < 0){
+        mcnt = cnt;
+        cnt = fname.length + cnt;
+      }else{
+        mcnt = 0;
+      }
+    }
     play_music();
+    if(mcnt < 0){
+      cnt = mcnt;
+    }
   }
 }
 
@@ -123,6 +141,17 @@ loop.addEventListener('click', function(){
   }else{
     music.loop = true;
     loop.innerHTML = '<i class="fas fa-stop"></i>';
+  }
+});
+
+// 逆順再生
+rec.addEventListener('click', function(){
+  if(ls == 0){
+    ls = 1;
+    rec.innerHTML = '<i class="fas fa-long-arrow-alt-right"></i>';
+  }else{
+    ls = 0;
+    rec.innerHTML = '<i class="fas fa-long-arrow-alt-left"></i>';
   }
 });
 
