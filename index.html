@@ -22,7 +22,6 @@
     li {
       list-style-type: none;
       background-color: darkblue;
-      padding: 2px;
     }
     #smusic{
       width: 100%;
@@ -30,14 +29,14 @@
       border: 2px groove black;
       color: silver;
     }
-    .main{
+    header{
       position: sticky;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-      <h3 id="title" class = "white_text"><i class="fas fa-music"></i></h3><br>
+  <header>
+    <h3 id="title" class = "white_text"><i class="fas fa-music"></i></h3><br>
       <div class = "main">
         <!-- 前の曲 -->
         <button id="before" class="btn btn-secondary"><i class="fas fa-chevron-left"></i></button>
@@ -54,8 +53,10 @@
         <!-- ミュートボタン -->
         <button id="mute" class="btn btn-warning"><i class="fas fa-volume-mute"></i></button><br><br>
       </div>
-      <ul id="mlist"></ul>
-    </div>
+  </header>
+  <div class="container">
+    <ul id="mlist"></ul>
+  </div>
   <script src="music.js"></script>
 </body>
 </html>
