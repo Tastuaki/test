@@ -30,7 +30,7 @@ xhr.onreadystatechange = function() {
         const mlist =  document.getElementById('mlist');
         for(i=0;i < titletext.length;i++){
           var li = document.createElement('li');
-          li.innerHTML = '<button id="smusic">' + titletext[i] + '</button>';
+          li.innerHTML = '<button id="smusic" value='+ i + '>' + titletext[i] + '</button>';
           mlist.appendChild(li);
         }
         break;
@@ -64,6 +64,7 @@ const before = document.getElementById('before');
 const after = document.getElementById('after');
 const volume_index = document.getElementById('volume');
 const volume_text = document.getElementById('volume-text');
+const smusic = document.getElementById('smusic');
 
 function play_music(){
   var src ='https://github.com/Tastuaki/OPED/blob/main/'+fname[cnt]+'?raw=true';
@@ -207,6 +208,11 @@ before.addEventListener('touchstart',function(){
 })
 after.addEventListener('touchstart',function(){
   next();
+})
+
+// リスト選択
+smusic.addEventListener('click',function(){
+  console.log(smusic.value);
 })
 
 //キーボード入力
