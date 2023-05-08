@@ -22,20 +22,23 @@
     li {
       list-style-type: none;
       background-color: darkblue;
-      color: silver;
-      padding: 5px;
+      padding: 2px;
     }
     #smusic{
       width: 100%;
       background:transparent;
       border: 2px groove black;
+      color: silver;
+    }
+    .main{
+      position: sticky;
     }
   </style>
 </head>
 <body>
   <div class="container">
       <h3 id="title" class = "white_text"><i class="fas fa-music"></i></h3><br>
-      <div class = "noselect">
+      <div class = "main">
         <!-- 前の曲 -->
         <button id="before" class="btn btn-secondary"><i class="fas fa-chevron-left"></i></button>
         <!-- 再生ボタン -->
@@ -50,8 +53,8 @@
         <input id="volume" class = "white_text" type="range" min="0" max="100" step="1" value="20"><label id="volume-text">20</label>
         <!-- ミュートボタン -->
         <button id="mute" class="btn btn-warning"><i class="fas fa-volume-mute"></i></button><br><br>
-        <ul id="mlist"></ul>
       </div>
+      <ul id="mlist"></ul>
     </div>
   <script src="music.js"></script>
 </body>
