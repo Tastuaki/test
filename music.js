@@ -213,6 +213,8 @@ after.addEventListener('touchstart',function(){
 function list_select(num) {
   console.log(num);
   title.innerHTML = '<i class="fas fa-music"></i>　'+ titletext[num];
+  cnt = num;
+  play_music();
 }
 
 //キーボード入力
