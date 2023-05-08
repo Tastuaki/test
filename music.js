@@ -210,13 +210,11 @@ after.addEventListener('touchstart',function(){
 })
 
 // リスト選択
-window.setTimeout( function() {
+function list_select() {
   const smusic = document.getElementById('smusic');
-
-  smusic.addEventListener('click',function(){
-    console.log(smusic.value);
-  })
-},100)
+  console.log(smusic.value);
+  title.innerHTML = '<i class="fas fa-music"></i>　'+ titletext[smusic.value];
+}
 
 //キーボード入力
 document.addEventListener('keydown', keydown_ivent);
