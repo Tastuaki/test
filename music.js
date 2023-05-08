@@ -27,18 +27,18 @@ xhr.onreadystatechange = function() {
       }
       i += 1;
       if(i == l){
+        const mlist =  document.getElementById('mlist');
+        for(var i=0;i < titletext.length;i++){
+          var li = document.createElement('li');
+          li.textContent = titletext[i];
+          mlist.appendChild(li);
+        }
         break;
       }
     }
   }
 }
 
-const mlist =  document.getElementById('mlist');
-for(var i=0;i < titletext.length;i++){
-  var li = document.createElement('li');
-  li.textContent = titletext[i];
-  mlist.appendChild(li);
-}
 // function fname(){
 //   let i = 0;
 //   var l = fname[0].length;
