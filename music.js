@@ -28,7 +28,7 @@ xhr.onreadystatechange = function() {
       i += 1;
       if(i == l){
         const mlist =  document.getElementById('mlist');
-        for(var i=0;i < titletext.length;i++){
+        for(i=0;i < titletext.length;i++){
           var li = document.createElement('li');
           li.textContent = titletext[i];
           mlist.appendChild(li);
