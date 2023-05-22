@@ -4,6 +4,8 @@
 var fname = [""];
 var data = [""];
 var titletext = [""];
+var btext = [".mp3","：","／"];
+var ctext = ["",":","/"];
 var cnt = 0;
 var mcnt = 0;
 const xhr = new XMLHttpRequest();
@@ -21,7 +23,9 @@ xhr.onreadystatechange = function() {
       if(fname[n].includes("\n")){
         fname[n] = fname[n].replace("undefined","");
         fname[n] = fname[n].slice(0,-1);
-        titletext[n] = fname[n].replace(".mp3","");
+        for(let j=0; j < btext.length; j++){
+          titletext[n] = fname[n].replace(btext[j],ctext[i]);
+        }
         fname[n] = encodeURI(fname[n]);
         n += 1;
       }
