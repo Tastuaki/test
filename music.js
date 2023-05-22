@@ -24,6 +24,9 @@ xhr.onreadystatechange = function() {
       if(fname[n].includes("\n")){
         fname[n] = fname[n].replace("undefined","");
         fname[n] = fname[n].slice(0,-1);
+        if(fname[n].includes("\n")){
+          console.log(fname[n]);
+        }
         for(j=0; j < btext.length; j++){
           titletext[n] = fname[n].replace(btext[j],ctext[j]);
         }
