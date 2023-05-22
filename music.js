@@ -4,6 +4,8 @@
 var fname = [""];
 var data = [""];
 var titletext = [""];
+var animetitle = [""];
+var title = [""];
 var btext = [".mp3","：","／"];
 var ctext = ["",":","/"];
 var cnt = 0;
@@ -64,6 +66,7 @@ var ls = 0;
 
 const music = new Audio('https://github.com/Tastuaki/OPED/blob/main/'+fname[cnt]+'?raw=true');
 const title = document.getElementById('title');
+const anime = document.getElementById('anime');
 const play = document.getElementById('play');
 const mute = document.getElementById('mute');
 const loop = document.getElementById('loop');
@@ -82,7 +85,8 @@ function play_music(){
   console.log(music.src+"\n"+titletext[cnt]);
   music.play();
   play.innerHTML = '<i class="fas fa-pause"></i>';
-  title.innerHTML = '<i class="fas fa-music"></i>　'+ titletext[cnt];
+  title.innerHTML = '<i class="fas fa-music"></i>　'+ title[cnt];
+  anime.innerHTML = anime[cnt];
 }
 
 // 再生ボタン
