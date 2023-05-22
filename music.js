@@ -5,7 +5,7 @@ var fname = [""];
 var data = [""];
 var titletext = [""];
 var animetitle = [""];
-var title = [""];
+var musictitle = [""];
 var btext = [".mp3","：","／"];
 var ctext = ["",":","/"];
 var cnt = 0;
@@ -20,6 +20,7 @@ xhr.onreadystatechange = function() {
     let i = 0;
     let j = 0;
     let n = 0;
+    var sig = 0;
     var l = data.length;
     while(true){
       fname[n] += data[i];
@@ -32,6 +33,9 @@ xhr.onreadystatechange = function() {
             titletext[n] = titletext[n].replace(btext[j],ctext[j]);
           }
         }
+        sig = titletext[n].indexOf("(")
+        musictitle[n] = titletext[n].slice(sig,-1)
+        animetitle[n] = titletext[n].slice(0,sig)
         fname[n] = encodeURI(fname[n]);
         n += 1;
       }
@@ -85,7 +89,7 @@ function play_music(){
   console.log(music.src+"\n"+titletext[cnt]);
   music.play();
   play.innerHTML = '<i class="fas fa-pause"></i>';
-  title.innerHTML = '<i class="fas fa-music"></i>　'+ title[cnt];
+  title.innerHTML = '<i class="fas fa-music"></i>　'+ musictitle[cnt];
   anime.innerHTML = anime[cnt];
 }
 
