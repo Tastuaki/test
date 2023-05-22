@@ -34,8 +34,13 @@ xhr.onreadystatechange = function() {
           }
         }
         sig = titletext[n].indexOf("(")
-        musictitle[n] = titletext[n].slice(sig+1,-1)
-        animetitle[n] = titletext[n].slice(0,sig)
+        if(sig != -1){
+          musictitle[n] = titletext[n].slice(sig+1,-1)
+          animetitle[n] = titletext[n].slice(0,sig)
+        }else{
+          musictitle[n] = titletext[n]
+          animetitle[n] = titletext[n]
+        }
         fname[n] = encodeURI(fname[n]);
         n += 1;
       }
