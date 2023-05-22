@@ -16,6 +16,7 @@ xhr.onreadystatechange = function() {
     data = this.responseText;
 
     let i = 0;
+    let j = 0;
     let n = 0;
     var l = data.length;
     while(true){
@@ -23,7 +24,7 @@ xhr.onreadystatechange = function() {
       if(fname[n].includes("\n")){
         fname[n] = fname[n].replace("undefined","");
         fname[n] = fname[n].slice(0,-1);
-        for(let j=0; j < btext.length; j++){
+        for(j=0; j < btext.length; j++){
           titletext[n] = fname[n].replace(btext[j],ctext[i]);
         }
         fname[n] = encodeURI(fname[n]);
