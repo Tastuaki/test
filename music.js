@@ -35,7 +35,7 @@ xhr.onreadystatechange = function() {
         }
         sig = titletext[n].indexOf("(")
         musictitle[n] = titletext[n].slice(sig+1,-1)
-        animetitle[n] = titletext[n].slice(sig)
+        animetitle[n] = titletext[n].slice(0,sig)
         fname[n] = encodeURI(fname[n]);
         n += 1;
       }
