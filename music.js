@@ -21,10 +21,10 @@ xhr.onreadystatechange = function() {
     var l = data.length;
     while(true){
       fname[n] += data[i];
-      if(fname[n].includes("：")){
+      if(fname[n].includes("\n")){
         fname[n] = fname[n].replace("undefined","");
         fname[n] = fname[n].slice(0,-1);
-        if(fname[n].includes("\n")){
+        if(fname[n].includes("：")){
           console.log(fname[n]);
         }
         for(j=0; j < btext.length; j++){
