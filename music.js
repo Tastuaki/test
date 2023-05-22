@@ -25,7 +25,7 @@ xhr.onreadystatechange = function() {
         fname[n] = fname[n].replace("undefined","");
         fname[n] = fname[n].slice(0,-1);
         for(j=0; j < btext.length; j++){
-          titletext[n] = fname[n].replace(btext[j],ctext[i]);
+          titletext[n] = fname[n].replace(btext[j],ctext[j]);
         }
         fname[n] = encodeURI(fname[n]);
         n += 1;
