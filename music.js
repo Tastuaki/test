@@ -29,6 +29,7 @@ xhr.onreadystatechange = function() {
         }
         for(j=0; j < btext.length; j++){
           titletext[n] = fname[n].replace(btext[j],ctext[j]);
+          titletext[n] = fname[n].replace("：",":")
         }
         fname[n] = encodeURI(fname[n]);
         n += 1;
