@@ -90,7 +90,7 @@ function play_music(){
   music.play();
   play.innerHTML = '<i class="fas fa-pause"></i>';
   title.innerHTML = '<i class="fas fa-music"></i>　'+ musictitle[cnt];
-  anime.innerHTML = anime[cnt];
+  anime.innerHTML = animetitle[cnt];
 }
 
 // 再生ボタン
