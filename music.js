@@ -49,7 +49,7 @@ xhr.onreadystatechange = function() {
         const mlist =  document.getElementById('mlist');
         for(i=0;i < titletext.length;i++){
           var li = document.createElement('li');
-          li.innerHTML = '<button id="smusic" value="'+ i + '" onclick="list_select('+ i +')">' + titletext[i] + '</button>';
+          li.innerHTML = '<button id="smusic" value="'+ i + '" onclick="list_select('+ i +')"><label>' + musictitle[i] + '</label><label>' + animetitle[n] + '</label></button>';
           mlist.appendChild(li);
         }
         break;
@@ -233,7 +233,6 @@ after.addEventListener('touchstart',function(){
 // リスト選択
 function list_select(num) {
   console.log(num);
-  title.innerHTML = '<i class="fas fa-music"></i>　'+ titletext[num];
   cnt = num;
   play_music();
 }
