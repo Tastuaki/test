@@ -49,7 +49,7 @@ xhr.onreadystatechange = function() {
         const mlist =  document.getElementById('mlist');
         for(i=0;i < titletext.length;i++){
           var li = document.createElement('li');
-          li.innerHTML = '<button id="smusic" value="'+ i + '" onclick="list_select('+ i +')"><label>' + musictitle[i] + '</label>&bnsp;<label>' + animetitle[i] + '</label></button>';
+          li.innerHTML = '<button id="smusic" value="'+ i + '" onclick="list_select('+ i +')"><label class="tt">' + musictitle[i] + '</label><label class="tt">' + animetitle[i] + '</label></button>';
           mlist.appendChild(li);
         }
         break;
