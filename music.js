@@ -33,7 +33,7 @@ xhr.onreadystatechange = function() {
             titletext[n] = titletext[n].replace(btext[j],ctext[j]);
           }
         }
-        sig = titletext[n].lastindexOf("(")
+        sig = titletext[n].lastIndexOf("(")
         if(sig != -1){
           musictitle[n] = titletext[n].slice(sig+1,-1)
           animetitle[n] = titletext[n].slice(0,sig)
