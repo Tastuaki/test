@@ -37,7 +37,11 @@ xhr.onreadystatechange = function() {
         dsig = titletext[n].lastIndexOf("))")
         sig = titletext[n].lastIndexOf("(")
         if(dsig != -1){
+          dsig = sig
           sig = titletext[n].slice(0,sig).lastIndexOf("(")
+          if(sig != -1){
+            sig = dsig
+          }
         }
 
         if(sig != -1){
