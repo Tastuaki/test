@@ -21,6 +21,7 @@ xhr.onreadystatechange = function() {
     let j = 0;
     let n = 0;
     var sig = 0;
+    var dsig = 0;
     var l = data.length;
     while(true){
       fname[n] += data[i];
@@ -95,6 +96,8 @@ function play_music(){
   // play.innerHTML ='<i class="fas fa-play"></i>';
   if(music.src != src){
     music.src = src;
+    music.loop = false;
+    loop.innerHTML = '<i class="fas fa-sync"></i>';
   }
   console.log(music.src+"\n"+titletext[cnt]);
   music.play();
