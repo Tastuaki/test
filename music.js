@@ -265,7 +265,7 @@ ser_off.addEventListener('click', function(){
   ser.innerHTML = '<button id="search_on" class=""></button>';
 })
 keyword.addEventListener('keyup',function (e) {
-  search(search.value)
+  search(keyword.value)
 })
 function search(key){
   test.innerText = key
