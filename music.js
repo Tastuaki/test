@@ -82,6 +82,7 @@ xhr.onreadystatechange = function() {
 //   }
 // }
 var ls = 0;
+var so = false;
 
 const music = new Audio('https://github.com/Tastuaki/OPED/blob/main/'+fname[cnt]+'?raw=true');
 const title = document.getElementById('title');
@@ -94,6 +95,10 @@ const before = document.getElementById('before');
 const after = document.getElementById('after');
 const volume_index = document.getElementById('volume');
 const volume_text = document.getElementById('volume-text');
+const ser = document.getElementById('search');
+const ser_off = document.getElementById('search_off');
+const ser_on = document.getElementById('search_on');
+const test = document.getElementById('test');
 
 function play_music(){
   var src ='https://github.com/Tastuaki/OPED/blob/main/'+fname[cnt]+'?raw=true';
@@ -247,6 +252,21 @@ function list_select(num) {
   console.log(num);
   cnt = num;
   play_music();
+}
+
+// 曲検索
+ser_on.addEventListener('click', function(){
+  ser.innerHTML = '<input id="keyword" type="search" name="search" placeholder="曲名検索"><br><button id="search_off" class=""></button>';
+  const keyword = document.getElementById('keyword');
+})
+ser_off.addEventListener('click', function(){
+  ser.innerHTML = '<button id="search_on" class=""></button>';
+})
+keyword.addEventListener('keyup',function (e) {
+  search(search.value)
+})
+function search(key){
+  test.innerText = key
 }
 
 //キーボード入力
