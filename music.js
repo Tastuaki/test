@@ -256,10 +256,12 @@ function list_select(num) {
 
 // 曲検索
 ser_on.addEventListener('click', function(){
+  test.innerText = "ser_on"
   ser.innerHTML = '<input id="keyword" type="search" name="search" placeholder="曲名検索"><br><button id="search_off" class=""></button>';
   const keyword = document.getElementById('keyword');
 })
 ser_off.addEventListener('click', function(){
+  test.innerText = "ser_off"
   ser.innerHTML = '<button id="search_on" class=""></button>';
 })
 keyword.addEventListener('keyup',function (e) {
