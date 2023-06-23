@@ -259,15 +259,14 @@ ser_on.addEventListener('click', function(){
     so = false 
     test.innerText = "ser_on"
     ser.innerHTML = '<input id="keyword" type="search" name="search" placeholder="曲名検索"><br><button id="search_on" class=""></button>';
-    const keyword = document.getElementById('keyword');
+    document.getElementById('keyword').addEventListener('keyup',function (e) {
+      search(document.getElementById('keyword').value)
+    })
   }else{
     so = true
     test.innerText = "ser_off"
     ser.innerHTML = '<button id="search_on" class=""></button>';
   }
-})
-keyword.addEventListener('keyup',function (e) {
-  search(keyword.value)
 })
 function search(key){
   test.innerText = key
