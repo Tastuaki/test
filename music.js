@@ -65,9 +65,10 @@ xhr.onreadystatechange = function() {
 }
 
 function make_list(sig){
+  let i = 0;
   if(sig != -1){
     mlist.innerHTML = '';
-    for(i = 0;i < titletext.length;i++){
+    for(;i < titletext.length;i++){
       var li = document.createElement('li');
       li.innerHTML = '<button id="smusic" value="'+ i + '" onclick="list_select('+ i +')"><label class="tt">' + musictitle[i] + '</label><label class="tt">' + animetitle[i] + '</label></button>';
       mlist.appendChild(li);
