@@ -283,7 +283,7 @@ ser_on.addEventListener('click', function(){
 })
 function search(key){
   let k = 0
-  if(key = ""){
+  if(key != ""){
     for(k=0;k < titletext.length;k++){
       sig = titletext[k].IndexOf(key)
       test.innerText = key +":" +sig
