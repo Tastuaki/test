@@ -255,14 +255,16 @@ function list_select(num) {
 
 // 曲検索
 ser_on.addEventListener('click', function(){
-  test.innerText = "ser_on"
-  ser.innerHTML = '<input id="keyword" type="search" name="search" placeholder="曲名検索"><br><button id="search_off" class=""></button>';
-  const keyword = document.getElementById('keyword');
-  const ser_off = document.getElementById('search_off');
-})
-ser_off.addEventListener('click', function(){
-  test.innerText = "ser_off"
-  ser.innerHTML = '<button id="search_on" class=""></button>';
+  if(!so){
+    so = false 
+    test.innerText = "ser_on"
+    ser.innerHTML = '<input id="keyword" type="search" name="search" placeholder="曲名検索"><br><button id="search_on" class=""></button>';
+    const keyword = document.getElementById('keyword');
+  }else{
+    so = true
+    test.innerText = "ser_off"
+    ser.innerHTML = '<button id="search_on" class=""></button>';
+  }
 })
 keyword.addEventListener('keyup',function (e) {
   search(keyword.value)
