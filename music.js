@@ -268,10 +268,13 @@ function list_select(num) {
 // 曲検索
 ser_on.addEventListener('click', function(){
   if(!so){
-    so = true 
     test.innerText = "ser_on"
     ser.innerHTML = '<input id="keyword" type="search" name="search" placeholder="曲名検索"><br><button id="search_on" class=""></button>';
     document.getElementById('keyword').addEventListener('keyup',function (e) {
+      if(!so){
+        mlist.innerHTML = '';
+        so = true
+      }
       search(document.getElementById('keyword').value)
     })
   }else{
@@ -287,7 +290,6 @@ function search(key){
     for(k=0;k < titletext.length;k++){
       sig = titletext[k].IndexOf(key)
       if(sig != -1){
-        mlist.innerHTML = '';
         make_list(k)
       }
     }
