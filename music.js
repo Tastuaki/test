@@ -285,7 +285,7 @@ function search(key){
   let k = 0
   if(key != ""){
     for(k=0;k < titletext.length;k++){
-      sig = titletext[k].IndexOf(key)
+      sig = titletext[k].indexOf(key)
       test.innerText = key +":" +sig
       if(sig != -1){
         make_list(k)
