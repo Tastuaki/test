@@ -17,7 +17,6 @@ xhr.onreadystatechange = function() {
   if( xhr.readyState === 4 && xhr.status === 200) {
     data = this.responseText;
 
-    let i = 0;
     let j = 0;
     let n = 0;
     var sig = 0;
@@ -57,14 +56,26 @@ xhr.onreadystatechange = function() {
       i += 1;
       if(i == l){
         const mlist =  document.getElementById('mlist');
-        for(i=0;i < titletext.length;i++){
-          var li = document.createElement('li');
-          li.innerHTML = '<button id="smusic" value="'+ i + '" onclick="list_select('+ i +')"><label class="tt">' + musictitle[i] + '</label><label class="tt">' + animetitle[i] + '</label></button>';
-          mlist.appendChild(li);
-        }
+        make_list(-1)
         break;
       }
     }
+  }
+}
+
+function make_list(sig){
+  let i=0;
+  if(sig != -1){
+    mlist.innerHTML = '';
+    for(;i < titletext.length;i++){
+      var li = document.createElement('li');
+      li.innerHTML = '<button id="smusic" value="'+ i + '" onclick="list_select('+ i +')"><label class="tt">' + musictitle[i] + '</label><label class="tt">' + animetitle[i] + '</label></button>';
+      mlist.appendChild(li);
+    }
+  }else{
+    var li = document.createElement('li');
+    li.innerHTML = '<button id="smusic" value="'+ i + '" onclick="list_select('+ i +')"><label class="tt">' + musictitle[i] + '</label><label class="tt">' + animetitle[i] + '</label></button>';
+    mlist.appendChild(li);
   }
 }
 
@@ -256,20 +267,32 @@ function list_select(num) {
 // 曲検索
 ser_on.addEventListener('click', function(){
   if(!so){
-    so = false 
+    so = true 
     test.innerText = "ser_on"
     ser.innerHTML = '<input id="keyword" type="search" name="search" placeholder="曲名検索"><br><button id="search_on" class=""></button>';
     document.getElementById('keyword').addEventListener('keyup',function (e) {
       search(document.getElementById('keyword').value)
     })
   }else{
-    so = true
+    so = false
     test.innerText = "ser_off"
     ser.innerHTML = '<button id="search_on" class=""></button>';
   }
 })
 function search(key){
   test.innerText = key
+  let k = 0
+  if(key = ""){
+    for(k=0;k < titletext.length;k++){
+      sig = titletext[k].IndexOf(key)
+      if(sig != -1){
+        mlist.innerHTML = '';
+        make_list(k)
+      }
+    }
+  }else{
+    make_list(-1)
+  }
 }
 
 //キーボード入力
