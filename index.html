@@ -21,7 +21,7 @@
     }
     li {
       list-style-type: none;
-      background-color: blue;
+      background-color: black;
     }
     #smusic{
       width: 100%;
@@ -48,20 +48,22 @@
     <div id = "main">
         <h3 id="title" class = "white_text"><i class="fas fa-music"></i></h3>
         <label id="anime" class = "white_text"></label><br>
-        <!-- 前の曲 -->
-        <button id="before" class="btn btn-secondary"><i class="fas fa-chevron-left"></i></button>
-        <!-- 再生ボタン -->
-        <button id="play" class="btn btn-primary"><i class="fas fa-play"></i></button>
-        <!-- 次の曲 -->
-        <button id="after" class="btn btn-secondary"><i class="fas fa-chevron-right"></i></button>
-        <!-- ループ再生 -->
-        <button id="loop" class="btn btn-warning"><i class="fas fa-sync"></i></button>
-        <!-- 逆順再生 -->
-        <button id="rec" class="btn btn-warning"><i class="fas fa-long-arrow-alt-left"></i></button><br>
-        <label  class = "white_text">ボリューム</label>
-        <input id="volume" type="range" min="0" max="100" step="1" value="20"><label id="volume-text" class = "white_text">20</label>
-        <!-- ミュートボタン -->
-        <button id="mute" class="btn btn-warning"><i class="fas fa-volume-mute"></i></button><br><br>
+        <div class = "noselect">
+          <!-- 前の曲 -->
+          <button id="before" class="btn btn-secondary"><i class="fas fa-chevron-left"></i></button>
+          <!-- 再生ボタン -->
+          <button id="play" class="btn btn-primary"><i class="fas fa-play"></i></button>
+          <!-- 次の曲 -->
+          <button id="after" class="btn btn-secondary"><i class="fas fa-chevron-right"></i></button>
+          <!-- ループ再生 -->
+          <button id="loop" class="btn btn-warning"><i class="fas fa-sync"></i></button>
+          <!-- 逆順再生 -->
+          <button id="rec" class="btn btn-warning"><i class="fas fa-long-arrow-alt-left"></i></button><br>
+          <label  class = "white_text">ボリューム</label>
+          <input id="volume" type="range" min="0" max="100" step="1" value="20"><label id="volume-text" class = "white_text">20</label>
+          <!-- ミュートボタン -->
+          <button id="mute" class="btn btn-warning"><i class="fas fa-volume-mute"></i></button><br><br>
+        </div>
       </div>
   </header>
   <div class="container">
