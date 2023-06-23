@@ -96,7 +96,6 @@ const after = document.getElementById('after');
 const volume_index = document.getElementById('volume');
 const volume_text = document.getElementById('volume-text');
 const ser = document.getElementById('search');
-const ser_off = document.getElementById('search_off');
 const ser_on = document.getElementById('search_on');
 const test = document.getElementById('test');
 
@@ -259,6 +258,7 @@ ser_on.addEventListener('click', function(){
   test.innerText = "ser_on"
   ser.innerHTML = '<input id="keyword" type="search" name="search" placeholder="曲名検索"><br><button id="search_off" class=""></button>';
   const keyword = document.getElementById('keyword');
+  const ser_off = document.getElementById('search_off');
 })
 ser_off.addEventListener('click', function(){
   test.innerText = "ser_off"
