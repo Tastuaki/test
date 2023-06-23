@@ -65,7 +65,7 @@ xhr.onreadystatechange = function() {
 }
 
 function make_list(sig){
-  // let i=0;
+  let i=0;
   if(sig != -1){
     mlist.innerHTML = '';
     for(;i < titletext.length;i++){
