@@ -283,6 +283,7 @@ ser_on.addEventListener('click', function(){
 })
 function search(key){
   let k = 0
+  let sig = -1
   if(key != ""){
     for(k=0;k < titletext.length;k++){
       sig = titletext[k].indexOf(key)
