@@ -270,17 +270,16 @@ document.getElementById('search_on').addEventListener('click', function(){
   if(!so){
     so = true
     ser.innerHTML = '<input id="keyword" type="search" name="search" placeholder="検索したいワードをいれてください" style="width:100%;">';
-    document.getElementById('keyword').addEventListener('keyup',function (e) {
-      search_list(checkValue)
-    })
     for(let target of document.querySelectorAll(`input[type='radio'][name='list_select']`)){
       target.addEventListener('change',function (e) {
         checkValue = Number(target.value)
         test.innerText += checkValue
         search_list(checkValue)
-        break
       })
     }
+    document.getElementById('keyword').addEventListener('keyup',function (e) {
+      search_list(checkValue)
+    })
   }else{
     so = false
     ser.innerHTML = '';
