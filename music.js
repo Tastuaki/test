@@ -269,11 +269,10 @@ document.getElementById('search_on').addEventListener('click', function(){
   let checkValue = 1
   if(!so){
     so = true
-    ser.innerHTML = '<input id="keyword" type="search" name="search" placeholder="検索したいワードをいれてください" style="width:100%;">';
+    ser.innerHTML = '<input id="keyword" type="search" name="search" placeholder="検索したいワードをいれてください" style="width:100%;"><br><label class="white_text"><input type="radio" name="list_select" value="0">全検索</label><label class="white_text"><input type="radio" name="list_select" value="1" checked>作品名検索</label><label class="white_text"><input type="radio" name="list_select" value="2">曲名検索</label>';
     for(let target of document.querySelectorAll(`input[type='radio'][name='list_select']`)){
       target.addEventListener('change',function (e) {
         checkValue = Number(target.value)
-        test.innerText += checkValue
         search_list(checkValue)
       })
     }
