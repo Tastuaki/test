@@ -266,13 +266,12 @@ function list_select(num) {
 
 // 曲検索
 document.getElementById('search_on').addEventListener('click', function(){
-  test.innerText = "so:" +so
   if(!so){
     so = true
     ser.innerHTML = '<input id="keyword" type="search" name="search" placeholder="曲名検索">';
     document.getElementById('keyword').addEventListener('keyup',function (e) {
       mlist.innerHTML = "";
-      search(document.getElementById('keyword').value)
+      search(document.getElementById('keyword').value,titletext)
     })
   }else{
     so = false
@@ -281,18 +280,21 @@ document.getElementById('search_on').addEventListener('click', function(){
   }
 })
 
-function search(key){
+function search(key,list){
+  let fi = false
   let k = 0
   let sig = -1
   if(key != ""){
     for(k=0;k < titletext.length;k++){
-      sig = titletext[k].indexOf(key)
-      test.innerText = key +":" +sig + ":" + titletext[k]
+      sig = list[k].indexOf(key)
       if(sig != -1){
+        test.innerText = key +":" + list[k]
         make_list(k)
-      }// }else{
-      //   mlist.innerHTML = '<h2 class="white_text">NO MUSIC!</h2>'
-      // }
+        fi = True
+      }
+    }
+    if(!fi){
+      mlist.innerHTML = '<h2 class="white_text">NO MUSIC!</h2>'
     }
   }else{
     make_list(-1)
