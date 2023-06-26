@@ -288,12 +288,12 @@ function search(key){
   if(key != ""){
     for(k=0;k < titletext.length;k++){
       sig = titletext[k].indexOf(key)
-      test.innerText = key +":" +sig
+      test.innerText = key +":" +sig + ":" + k
       if(sig != -1){
         make_list(k)
-      }else{
-        mlist.innerHTML = '<h2 class="white_text">NO MUSIC!</h2>'
-      }
+      }// }else{
+      //   mlist.innerHTML = '<h2 class="white_text">NO MUSIC!</h2>'
+      // }
     }
   }else{
     make_list(-1)
