@@ -268,19 +268,15 @@ function list_select(num) {
 document.getElementById('search_on').addEventListener('click', function(){
   test.innerText = "so:" +so
   if(!so){
-    test.innerText += " 1:" +so
     so = true
-    test.innerText += " 2:" +so
-    ser.innerHTML = '<input id="keyword" type="search" name="search" placeholder="曲名検索"><br><button id="search_on" class=""></button>';
+    ser.innerHTML = '<input id="keyword" type="search" name="search" placeholder="曲名検索">';
     document.getElementById('keyword').addEventListener('keyup',function (e) {
       mlist.innerHTML = "";
       search(document.getElementById('keyword').value)
     })
   }else{
-    test.innerText += " 3:" +so
     so = false
-    test.innerText += " 4:" +so
-    ser.innerHTML = '<button id="search_on" class=""></button>';
+    ser.innerHTML = '';
     make_list(-1)
   }
 })
