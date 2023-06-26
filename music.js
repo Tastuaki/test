@@ -272,6 +272,11 @@ document.getElementById('search_on').addEventListener('click', function(){
     document.getElementById('keyword').addEventListener('keyup',function (e) {
       mlist.innerHTML = "";
       search(document.getElementById('keyword').value,titletext)
+      // switch(document.getElementById('').value){
+      //   case 0: search(document.getElementById('keyword').value,titletext) break
+      //   case 1: search(document.getElementById('keyword').value,animetitle) break
+      //   case 2: search(document.getElementById('keyword').value,musictitle) break
+      // }
     })
   }else{
     so = false
@@ -285,12 +290,12 @@ function search(key,list){
   let k = 0
   let sig = -1
   if(key != ""){
-    for(k=0;k < titletext.length;k++){
+    for(k=0;k < list.length;k++){
       sig = list[k].indexOf(key)
       if(sig != -1){
-        test.innerText = key +":" + list[k]
+        test.innerText = key +":" + k
         make_list(k)
-        fi = True
+        fi = true
       }
     }
     if(!fi){
