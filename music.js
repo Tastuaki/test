@@ -75,7 +75,7 @@ function make_list(sig){
     }
   }else{
     var li = document.createElement('li');
-    li.innerHTML = '<button id="smusic" value="'+ i + '" onclick="list_select('+ i +')"><label class="tt">' + musictitle[i] + '</label><label class="tt">' + animetitle[i] + '</label></button>';
+    li.innerHTML = '<button id="smusic" value="'+ sig + '" onclick="list_select('+ sig +')"><label class="tt">' + musictitle[sig] + '</label><label class="tt">' + animetitle[sig] + '</label></button>';
     mlist.appendChild(li);
   }
 }
