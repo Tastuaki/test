@@ -276,10 +276,10 @@ document.getElementById('search_on').addEventListener('click', function(){
       for(;i < document.getElementsByName('list_select').length; i++){
         if (document.getElementsByName('list_select')[i].checked){
           checkValue = i
+          test.innerText = checkValue
           break
         }
       }
-      test.innerText = checkValue
       switch(checkValue){
         case 0: search(document.getElementById('keyword').value,titletext); break
         case 1: search(document.getElementById('keyword').value,animetitle); break
