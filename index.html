@@ -41,6 +41,16 @@
       width:50%;
       text-align: left;
     }
+    #searcher{
+      display: flex;
+      width: 100%;
+    }
+    #search_on{
+      flex-grow:1
+    }
+    #search{
+      flex-grow:2
+    }
   </style>
 </head>
 <body>
@@ -62,10 +72,12 @@
           <label  class = "white_text">ボリューム</label>
           <input id="volume" type="range" min="0" max="100" step="1" value="20"><label id="volume-text" class = "white_text">20</label>
           <!-- ミュートボタン -->
-          <button id="mute" class="btn btn-warning"><i class="fas fa-volume-mute"></i></button><br><br>
+          <button id="mute" class="btn btn-small btn-warning"><i class="fas fa-volume-mute"></i></button><br><br>
         </div>
-        <button id="search_on" class="btn btn-info"><i class="fas fa-search"></i></button>
-        <div id="search"></div>
+        <div id="searcher">
+          <button id="search_on" class="btn btn-small btn-info"><i class="fas fa-search"></i></button>
+          <div id="search"></div>
+        </div>
         <label id="test" class="white_text">test</label>
       </div>
   </header>
