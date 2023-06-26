@@ -271,10 +271,9 @@ ser_on.addEventListener('click', function(){
   if(!so){
     so = true
     ser.innerHTML = '<input id="keyword" type="search" name="search" placeholder="曲名検索"><br><button id="search_on" class=""></button>';
-    key = document.getElementById('keyword')
-    key.addEventListener('keyup',function (e) {
+    document.getElementById('keyword').addEventListener('keyup',function (e) {
       mlist.innerHTML = "";
-      search(key.value)
+      search(document.getElementById('keyword').value)
     })
   }else{
     so = false
@@ -292,6 +291,8 @@ function search(key){
       test.innerText = key +":" +sig
       if(sig != -1){
         make_list(k)
+      }else{
+        mlist.innerHTML = '<h2 class="white_text">NO MUSIC!</h2>'
       }
     }
   }else{
