@@ -267,7 +267,7 @@ function list_select(num) {
 // 曲検索
 document.getElementById('search_on').addEventListener('click', function(){
   let i = 0
-  let 
+  let checkValue = 1
   if(!so){
     so = true
     ser.innerHTML = '<input id="keyword" type="search" name="search" placeholder="検索したいワードをいれてください" style="width:100%;">';
