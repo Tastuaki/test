@@ -266,12 +266,19 @@ function list_select(num) {
 
 // 曲検索
 document.getElementById('search_on').addEventListener('click', function(){
+  let i = 0
+  let 
   if(!so){
     so = true
     ser.innerHTML = '<input id="keyword" type="search" name="search" placeholder="検索したいワードをいれてください" style="width:100%;">';
     document.getElementById('keyword').addEventListener('keyup',function (e) {
       mlist.innerHTML = "";
-      switch(document.getElementsByName('list_select').value){
+      for(;i < document.getElementsByName('list_select').length; i++){
+        if (document.getElementsByName('list_select').item(i).checked){
+          checkValue = document.getElementsByName('list_select').item(i).value;
+        }
+      }
+      switch(checkValue){
         case 0: search(document.getElementById('keyword').value,titletext); break
         case 1: search(document.getElementById('keyword').value,animetitle); break
         case 2: search(document.getElementById('keyword').value,musictitle); break
