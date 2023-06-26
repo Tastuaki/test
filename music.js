@@ -274,15 +274,14 @@ document.getElementById('search_on').addEventListener('click', function(){
     document.getElementById('keyword').addEventListener('keyup',function (e) {
       search_list(checkValue)
     })
-    document.getElementsByClassName('list_select').addEventListener('change',function (e) {
-      for(;i < document.getElementsByClassName('list_select').length; i++){
-        if (document.getElementsByClassName('list_select')[i].checked){
-          checkValue = i
-          search_list(checkValue)
-          break
-        }
-      }
-    })
+    for(;i < document.getElementsByClassName('list_select').length; i++){
+      document.getElementsByClassName('list_select').addEventListener('change',function (e) {
+        checkValue = Number(document.getElementsByClassName('list_select').value)
+        test.innerText += checkValue
+        search_list(checkValue)
+        break
+      })
+    }
   }else{
     so = false
     ser.innerHTML = '';
