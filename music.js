@@ -274,9 +274,9 @@ document.getElementById('search_on').addEventListener('click', function(){
     document.getElementById('keyword').addEventListener('keyup',function (e) {
       search_list(checkValue)
     })
-    document.getElementByName('list_select').addEventListener('change',function (e) {
-      for(;i < document.getElementsByName('list_select').length; i++){
-        if (document.getElementsByName('list_select')[i].checked){
+    document.getElementByClassName('list_select').addEventListener('change',function (e) {
+      for(;i < document.getElementsByClassName('list_select').length; i++){
+        if (document.getElementsByClassName('list_select')[i].checked){
           checkValue = i
           search_list(checkValue)
           break
