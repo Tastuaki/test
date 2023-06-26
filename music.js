@@ -268,15 +268,15 @@ function list_select(num) {
 document.getElementById('search_on').addEventListener('click', function(){
   if(!so){
     so = true
-    ser.innerHTML = '<input id="keyword" type="search" name="search" placeholder="曲名検索">';
+    ser.innerHTML = '<input id="keyword" type="search" name="search" placeholder="検索したいワードをいれてください" style="width:100%;">';
     document.getElementById('keyword').addEventListener('keyup',function (e) {
       mlist.innerHTML = "";
-      search(document.getElementById('keyword').value,titletext)
-      // switch(document.getElementById('').value){
-      //   case 0: search(document.getElementById('keyword').value,titletext) break
-      //   case 1: search(document.getElementById('keyword').value,animetitle) break
-      //   case 2: search(document.getElementById('keyword').value,musictitle) break
-      // }
+      switch(document.getElementsByName('list_select').value){
+        case 0: search(document.getElementById('keyword').value,titletext); break
+        case 1: search(document.getElementById('keyword').value,animetitle); break
+        case 2: search(document.getElementById('keyword').value,musictitle); break
+        default: break
+      }
     })
   }else{
     so = false

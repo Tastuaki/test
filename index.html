@@ -41,15 +41,8 @@
       width:50%;
       text-align: left;
     }
-    #searcher{
-      display: flex;
-      width: 100%;
-    }
-    #search_on{
-      flex-grow:1
-    }
     #search{
-      flex-grow:2
+      width: 100%;
     }
   </style>
 </head>
@@ -69,15 +62,17 @@
           <button id="loop" class="btn btn-warning"><i class="fas fa-sync"></i></button>
           <!-- 逆順再生 -->
           <button id="rec" class="btn btn-warning"><i class="fas fa-long-arrow-alt-left"></i></button><br>
+          <!-- 検索 -->
+          <button id="search_on" class="btn btn-info"><i class="fas fa-search"></i></button>
           <label  class = "white_text">ボリューム</label>
           <input id="volume" type="range" min="0" max="100" step="1" value="20"><label id="volume-text" class = "white_text">20</label>
           <!-- ミュートボタン -->
-          <button id="mute" class="btn btn-small btn-warning"><i class="fas fa-volume-mute"></i></button><br><br>
+          <button id="mute" class="btn-small btn-warning"><i class="fas fa-volume-mute"></i></button><br><br>
         </div>
-        <div id="searcher">
-          <button id="search_on" class="btn btn-small btn-info"><i class="fas fa-search"></i></button>
-          <div id="search"></div>
-        </div>
+        <div id="search"></div>
+        <label><input type="radio" name="list_select" value="0">全検索</label>
+        <label><input type="radio" name="list_select" value="1">作品名検索</label>
+        <label><input type="radio" name="list_select" value="2">曲名検索</label>
         <label id="test" class="white_text">test</label>
       </div>
   </header>
