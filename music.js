@@ -275,7 +275,7 @@ document.getElementById('search_on').addEventListener('click', function(){
       mlist.innerHTML = "";
       for(;i < document.getElementsByName('list_select').length; i++){
         if (document.getElementsByName('list_select').item(i).checked){
-          checkValue = document.getElementsByName('list_select').item(i).value;
+          checkValue = i
         }
       }
       test.innerText = checkValue
