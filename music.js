@@ -273,11 +273,10 @@ ser_on.addEventListener('click', function(){
     so = true
     test.innerText += " 2:" +so
     ser.innerHTML = '<input id="keyword" type="search" name="search" placeholder="曲名検索"><br><button id="search_on" class=""></button>';
-    document.getElementById('keyword').addEventListener('keyup',function (e) {
-      mlist.innerHTML = "";
-      test.innerText += " "+so
-      // search(document.getElementById('keyword').value)
-    })
+    // document.getElementById('keyword').addEventListener('keyup',function (e) {
+    //   mlist.innerHTML = "";
+    //   search(document.getElementById('keyword').value)
+    // })
   }else{
     test.innerText += " 3:" +so
     so = false
