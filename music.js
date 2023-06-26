@@ -266,7 +266,6 @@ function list_select(num) {
 
 // 曲検索
 document.getElementById('search_on').addEventListener('click', function(){
-  let i = 0
   let checkValue = 1
   if(!so){
     so = true
@@ -274,9 +273,9 @@ document.getElementById('search_on').addEventListener('click', function(){
     document.getElementById('keyword').addEventListener('keyup',function (e) {
       search_list(checkValue)
     })
-    for(;i < document.getElementsByClassName('list_select').length; i++){
-      document.getElementsByClassName('list_select').addEventListener('change',function (e) {
-        checkValue = Number(document.getElementsByClassName('list_select').value)
+    for(let target of document.querySelectorAll(`input[type='radio'][name='list_select']`)){
+      target.addEventListener('change',function (e) {
+        checkValue = Number(target.value)
         test.innerText += checkValue
         search_list(checkValue)
         break
