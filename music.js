@@ -274,8 +274,9 @@ document.getElementById('search_on').addEventListener('click', function(){
     document.getElementById('keyword').addEventListener('keyup',function (e) {
       mlist.innerHTML = "";
       for(;i < document.getElementsByName('list_select').length; i++){
-        if (document.getElementsByName('list_select').item(i).checked){
+        if (document.getElementsByName('list_select')[i].checked){
           checkValue = i
+          break
         }
       }
       test.innerText = checkValue
@@ -300,7 +301,6 @@ function search(key,list){
   if(key != ""){
     for(k=0;k < list.length;k++){
       sig = list[k].indexOf(key)
-      test.innerText = key +":" + list[k]
       if(sig != -1){
         make_list(k)
         fi = true
