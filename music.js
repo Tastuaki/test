@@ -276,7 +276,7 @@ document.getElementById('search_on').addEventListener('click', function(){
       for(;i < document.getElementsByName('list_select').length; i++){
         if (document.getElementsByName('list_select')[i].checked){
           checkValue = i
-          test.innerText = checkValue
+          test.innerText += checkValue
           break
         }
       }
