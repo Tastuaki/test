@@ -278,6 +278,7 @@ document.getElementById('search_on').addEventListener('click', function(){
           checkValue = document.getElementsByName('list_select').item(i).value;
         }
       }
+      test.innerText = checkValue
       switch(checkValue){
         case 0: search(document.getElementById('keyword').value,titletext); break
         case 1: search(document.getElementById('keyword').value,animetitle); break
@@ -299,8 +300,8 @@ function search(key,list){
   if(key != ""){
     for(k=0;k < list.length;k++){
       sig = list[k].indexOf(key)
+      test.innerText = key +":" + list[k]
       if(sig != -1){
-        test.innerText = key +":" + k
         make_list(k)
         fi = true
       }
