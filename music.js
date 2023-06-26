@@ -108,7 +108,6 @@ const after = document.getElementById('after');
 const volume_index = document.getElementById('volume');
 const volume_text = document.getElementById('volume-text');
 const ser = document.getElementById('search');
-const ser_on = document.getElementById('search_on');
 const test = document.getElementById('test');
 
 function play_music(){
@@ -266,17 +265,17 @@ function list_select(num) {
 }
 
 // 曲検索
-ser_on.addEventListener('click', function(){
+document.getElementById('search_on').addEventListener('click', function(){
   test.innerText = "so:" +so
   if(!so){
     test.innerText += " 1:" +so
     so = true
     test.innerText += " 2:" +so
     ser.innerHTML = '<input id="keyword" type="search" name="search" placeholder="曲名検索"><br><button id="search_on" class=""></button>';
-    // document.getElementById('keyword').addEventListener('keyup',function (e) {
-    //   mlist.innerHTML = "";
-    //   search(document.getElementById('keyword').value)
-    // })
+    document.getElementById('keyword').addEventListener('keyup',function (e) {
+      mlist.innerHTML = "";
+      search(document.getElementById('keyword').value)
+    })
   }else{
     test.innerText += " 3:" +so
     so = false
