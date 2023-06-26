@@ -67,7 +67,7 @@ xhr.onreadystatechange = function() {
 function make_list(sig){
   let i = 0;
   if(sig == -1){
-    mlist.innerHTML = '';
+    mlist.innerHTML = "";
     for(;i < titletext.length;i++){
       var li = document.createElement('li');
       li.innerHTML = '<button id="smusic" value="'+ i + '" onclick="list_select('+ i +')"><label class="tt">' + musictitle[i] + '</label><label class="tt">' + animetitle[i] + '</label></button>';
@@ -267,20 +267,22 @@ function list_select(num) {
 
 // 曲検索
 ser_on.addEventListener('click', function(){
+  test.innerText = "so:" +so
   if(!so){
+    so = true
     ser.innerHTML = '<input id="keyword" type="search" name="search" placeholder="曲名検索"><br><button id="search_on" class=""></button>';
-    document.getElementById('keyword').addEventListener('keyup',function (e) {
-      if(!so){
-        mlist.innerHTML = '';
-        so = true
-      }
-      search(document.getElementById('keyword').value)
+    key = document.getElementById('keyword')
+    key.addEventListener('keyup',function (e) {
+      mlist.innerHTML = "";
+      search(key.value)
     })
   }else{
     so = false
     ser.innerHTML = '<button id="search_on" class=""></button>';
+    make_list(-1)
   }
 })
+
 function search(key){
   let k = 0
   let sig = -1
