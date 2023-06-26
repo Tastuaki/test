@@ -272,19 +272,15 @@ document.getElementById('search_on').addEventListener('click', function(){
     so = true
     ser.innerHTML = '<input id="keyword" type="search" name="search" placeholder="検索したいワードをいれてください" style="width:100%;">';
     document.getElementById('keyword').addEventListener('keyup',function (e) {
-      mlist.innerHTML = "";
+      search_list(checkValue)
+    })
+    document.getElementById('list_select').addEventListener('change',function (e) {
       for(;i < document.getElementsByName('list_select').length; i++){
         if (document.getElementsByName('list_select')[i].checked){
           checkValue = i
-          test.innerText += checkValue
+          search_list(checkValue)
           break
         }
-      }
-      switch(checkValue){
-        case 0: search(document.getElementById('keyword').value,titletext); break
-        case 1: search(document.getElementById('keyword').value,animetitle); break
-        case 2: search(document.getElementById('keyword').value,musictitle); break
-        default: break
       }
     })
   }else{
@@ -293,6 +289,16 @@ document.getElementById('search_on').addEventListener('click', function(){
     make_list(-1)
   }
 })
+
+function search_list(checkValue){
+  mlist.innerHTML = "";
+  switch(checkValue){
+    case 0: search(document.getElementById('keyword').value,titletext); break
+    case 1: search(document.getElementById('keyword').value,animetitle); break
+    case 2: search(document.getElementById('keyword').value,musictitle); break
+    default: break
+  }
+}
 
 function search(key,list){
   let fi = false
