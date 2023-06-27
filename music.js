@@ -317,8 +317,9 @@ function search(key,list){
     if(!fi){
       mlist.innerHTML = '<h2 class="white_text">NO MUSIC!</h2>'
     }else{
+      test.innerText += sigs
       max = Math.max.apply(null,sigs);
-      test.innerText += max
+      test.innerText += ":" + max
       for(let j = 0;j < max;j++){
         for(let i = 0;i < sigs.length;i++){
           if(sigs[i] == j){
