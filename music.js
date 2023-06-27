@@ -311,20 +311,16 @@ function search(key,list){
       if(sig != -1){
         sigs.push(sig)
         d_titles.push(k)
-        // make_list(k)
         fi = true
       }
     }
     if(!fi){
       mlist.innerHTML = '<h2 class="white_text">NO MUSIC!</h2>'
     }else{
-      // test.innerText += sigs
       max = Math.max.apply(null,sigs);
-      // test.innerText += ":" + max
       for(let j = 0;j <= max;j++){
         for(i = 0;i < sigs.length;i++){
           if(sigs[i] == j){
-            // test.innerText += "\n" + j + ":" + list[d_titles[i]]
             make_list(d_titles[i])
           }
         }
@@ -339,18 +335,20 @@ function search(key,list){
 document.addEventListener('keydown', keydown_ivent);
 
 function keydown_ivent(e) {
-  switch (e.key) {
-    case 'Enter':
-      ply();
-      break;
-    //曲選択
-    case 'ArrowLeft':
-      prev();
-      setTimeout(800);
-      break;
-    case 'ArrowRight':
-      next();
-      setTimeout(800);
-      break;
+  if(!so){
+    switch (e.key) {
+      case 'Enter':
+        ply();
+        break;
+      //曲選択
+      case 'ArrowLeft':
+        prev();
+        setTimeout(800);
+        break;
+      case 'ArrowRight':
+        next();
+        setTimeout(800);
+        break;
+    }
   }
 }
