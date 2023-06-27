@@ -304,7 +304,7 @@ function search(key,list){
   let sig = -1
   var sigs = []
   var d_titles = []
-  test.innerText = ""
+  // test.innerText = ""
   if(key != ""){
     for(k=0;k < list.length;k++){
       sig = list[k].indexOf(key)
@@ -318,13 +318,13 @@ function search(key,list){
     if(!fi){
       mlist.innerHTML = '<h2 class="white_text">NO MUSIC!</h2>'
     }else{
-      test.innerText += sigs
+      // test.innerText += sigs
       max = Math.max.apply(null,sigs);
-      test.innerText += ":" + max
+      // test.innerText += ":" + max
       for(let j = 0;j <= max;j++){
         for(i = 0;i < sigs.length;i++){
           if(sigs[i] == j){
-            test.innerText += "\n" + j + ":" + list[d_titles[i]]
+            // test.innerText += "\n" + j + ":" + list[d_titles[i]]
             make_list(d_titles[i])
           }
         }
