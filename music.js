@@ -299,17 +299,34 @@ function search_list(checkValue){
 function search(key,list){
   let fi = false
   let k = 0
+  let max = 0
   let sig = -1
+  var sigs = []
+  var d_titles = []
+  test.innerText = ""
   if(key != ""){
     for(k=0;k < list.length;k++){
       sig = list[k].indexOf(key)
       if(sig != -1){
-        make_list(k)
+        sigs.push(sig)
+        d_titles.push(k)
+        // make_list(k)
         fi = true
       }
     }
     if(!fi){
       mlist.innerHTML = '<h2 class="white_text">NO MUSIC!</h2>'
+    }else{
+      max = Math.max.apply(null,sigs);
+      test.innerText += max
+      for(let j = 0;j < max;j++){
+        for(let i = 0;i < sigs.length;i++){
+          if(sigs[i] == j){
+            test.innerText += "\n" + j + ":" + list[k]
+            make_list(d_titles[i])
+          }
+        }
+      }
     }
   }else{
     make_list(-1)
