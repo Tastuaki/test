@@ -322,7 +322,7 @@ function search(key,list){
       for(let j = 0;j < max;j++){
         for(let i = 0;i < sigs.length;i++){
           if(sigs[i] == j){
-            test.innerText += "\n" + j + ":" + list[k]
+            test.innerText += "\n" + j + ":" + list[d_titles[i]]
             make_list(d_titles[i])
           }
         }
