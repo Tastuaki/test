@@ -321,7 +321,7 @@ function search(key,list){
       test.innerText += sigs
       max = Math.max.apply(null,sigs);
       test.innerText += ":" + max
-      for(let j = 0;j < max;j++){
+      for(let j = 0;j <= max;j++){
         for(i = 0;i < sigs.length;i++){
           if(sigs[i] == j){
             test.innerText += "\n" + j + ":" + list[d_titles[i]]
