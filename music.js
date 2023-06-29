@@ -320,11 +320,11 @@ function search(key,list){
 
 // 自動スクロール
 function autoscroll(num){
-  test.innerText = num
   let target_id = "smusic_" + num
+  var base = document.getElementsByTagName("header").height
   var target = document.getElementById(target_id);
   var targetPosition = target.getBoundingClientRect().top;
-  window.scrollTo({top: targetPosition,behavior: 'smooth'});
+  window.scrollTo({ base : targetPosition,behavior: 'smooth'});
 }
 
 //キーボード入力
