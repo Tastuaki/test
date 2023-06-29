@@ -320,7 +320,10 @@ function search(key,list){
 
 // 自動スクロール
 function autoscroll(num){
-  let target_id = "smusic_" + (num - 1)
+  if(num != 0){
+    num -= 1
+  }
+  let target_id = "smusic_" + num
   var target = document.getElementById(target_id);
   var targetPosition = target.getBoundingClientRect().top - document.getElementById("control").getBoundingClientRect().bottom;
   window.scrollTo({ top : targetPosition,behavior: 'smooth'});
