@@ -322,8 +322,9 @@ function search(key,list){
 function autoscroll(num){
   let target_id = "smusic_" + num
   var target = document.getElementById(target_id);
+  test.innerText = target.getBoundingClientRect().top + ":" + document.getElementsByTagName("header").height
   var targetPosition = target.getBoundingClientRect().top - document.getElementsByTagName("header").height;
-  test.innerText = targetPosition
+  test.innerText += ":" + targetPosition
   window.scrollTo({ top : targetPosition,behavior: 'smooth'});
 }
 
