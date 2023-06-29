@@ -70,8 +70,7 @@ function make_list(sig){
     mlist.innerHTML = "";
     for(;i < titletext.length;i++){
       var li = document.createElement('li');
-      idtx += i
-      li.innerHTML = '<button id="smusic_'+ idtx +'" value="'+ i + '" onclick="list_select('+ i +')"><label class="tt">' + musictitle[i] + '</label><label class="tt">' + animetitle[i] + '</label></button>';
+      li.innerHTML = '<button id="smusic_'+ i +'" value="'+ i + '" onclick="list_select('+ i +')"><label class="tt">' + musictitle[i] + '</label><label class="tt">' + animetitle[i] + '</label></button>';
       mlist.appendChild(li);
     }
   }else{
