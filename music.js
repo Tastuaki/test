@@ -321,10 +321,9 @@ function search(key,list){
 // 自動スクロール
 function autoscroll(num){
   let target_id = "smusic_" + num
-  var base = document.getElementsByTagName("header").height
   var target = document.getElementById(target_id);
-  var targetPosition = target.getBoundingClientRect().top;
-  window.scrollTo({ base : targetPosition,behavior: 'smooth'});
+  var targetPosition = target.getBoundingClientRect().top + document.getElementsByTagName("header").height;
+  window.scrollTo({ top : targetPosition,behavior: 'smooth'});
 }
 
 //キーボード入力
