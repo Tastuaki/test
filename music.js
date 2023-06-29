@@ -326,11 +326,16 @@ function autoscroll(num){
     num -= 1
   }
   let target_id = "smusic_" + num
+  var targetPosition = 0
   test.innerText += "|"
   var target = document.getElementById(target_id);
-  var targetPosition = target.getBoundingClientRect().top - document.getElementById("control").getBoundingClientRect().bottom;
+  var targetbase = target.getBoundingClientRect().top
+  var hheader = document.getElementById("control").getBoundingClientRect().bottom
+  if(targetbase != hheader){
+    targetPosition = targetbase - hheader;
+    window.scrollTo({ top : targetPosition,behavior: 'smooth'});
+  }
   test.innerText += targetPosition
-  window.scrollTo({ top : targetPosition,behavior: 'smooth'});
 }
 
 //キーボード入力
