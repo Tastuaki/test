@@ -2,7 +2,6 @@
 
 //リスト取得
 var fname = [""];
-var data = [""];
 var titletext = [""];
 var animetitle = [""];
 var musictitle = [""];
@@ -14,6 +13,7 @@ const xhr = new XMLHttpRequest();
 xhr.open('get', 'https://raw.githubusercontent.com/Tastuaki/OPED/main/%2Btitle.txt');
 xhr.send();
 xhr.onreadystatechange = function() {
+  var data = [""];
   if( xhr.readyState === 4 && xhr.status === 200) {
     data = this.responseText;
 
@@ -70,7 +70,8 @@ function make_list(sig){
     mlist.innerHTML = "";
     for(;i < titletext.length;i++){
       var li = document.createElement('li');
-      li.innerHTML = '<button id="smusic" value="'+ i + '" onclick="list_select('+ i +')"><label class="tt">' + musictitle[i] + '</label><label class="tt">' + animetitle[i] + '</label></button>';
+      idtx += i
+      li.innerHTML = '<button id="smusic_'+ idtx +'" value="'+ i + '" onclick="list_select('+ i +')"><label class="tt">' + musictitle[i] + '</label><label class="tt">' + animetitle[i] + '</label></button>';
       mlist.appendChild(li);
     }
   }else{
@@ -80,19 +81,6 @@ function make_list(sig){
   }
 }
 
-// function fname(){
-//   let i = 0;
-//   var l = fname[0].length;
-//   while(true){
-//     fname += data[i];
-//     if(fname.includes("\n")){
-//       fname.replace("\n","");
-//       console.log(fname);
-//       return fname;
-//     }
-//     i += 1;
-//   }
-// }
 var ls = 0;
 var so = false;
 
@@ -106,7 +94,6 @@ const rec = document.getElementById('rec');
 const before = document.getElementById('before');
 const after = document.getElementById('after');
 const volume_index = document.getElementById('volume');
-const volume_text = document.getElementById('volume-text');
 const ser = document.getElementById('search');
 const test = document.getElementById('test');
 
@@ -170,7 +157,7 @@ volume_index.addEventListener('change',function(){
     music.volume = volume_index.value / 100.00;
 })
 volume_index.addEventListener('input',function(){
-    volume_text.innerText = volume_index.value;
+  document.getElementById('volume-text').innerText = volume_index.value;
 })
 window.addEventListener("beforeunload",function(){
     volume_index.value = 20;
@@ -283,6 +270,7 @@ document.getElementById('search_on').addEventListener('click', function(){
     so = false
     ser.innerHTML = '';
     make_list(-1)
+    autoscroll(cnt)
   }
 })
 
@@ -329,6 +317,14 @@ function search(key,list){
   }else{
     make_list(-1)
   }
+}
+
+// 自動スクロール
+function autoscroll(num){
+  let target_id = "smusic_" + num
+  var target = document.getElementById(target_id);
+  var targetPosition = target.getBoundingClientRect().top;
+  window.scrollTo({top: targetPosition,behavior: 'smooth'});
 }
 
 //キーボード入力
