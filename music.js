@@ -263,6 +263,7 @@ document.getElementById('search_on').addEventListener('click', function(){
       })
     }
     document.getElementById('keyword').addEventListener('keyup',function (e) {
+      window.scrollTo({ top : 0,behavior: 'smooth'});
       search_list(checkValue)
     })
   }else{
