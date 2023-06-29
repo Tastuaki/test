@@ -70,12 +70,12 @@ function make_list(sig){
     mlist.innerHTML = "";
     for(;i < titletext.length;i++){
       var li = document.createElement('li');
-      li.innerHTML = '<button id="smusic_'+ i +'" value="'+ i + '" onclick="list_select('+ i +')"><label class="tt">' + musictitle[i] + '</label><label class="tt">' + animetitle[i] + '</label></button>';
+      li.innerHTML = '<button class="smusic" id="smusic_'+ i +'" value="'+ i + '" onclick="list_select('+ i +')"><label class="tt">' + musictitle[i] + '</label><label class="tt">' + animetitle[i] + '</label></button>';
       mlist.appendChild(li);
     }
   }else{
     var li = document.createElement('li');
-    li.innerHTML = '<button id="smusic" value="'+ sig + '" onclick="list_select('+ sig +')"><label class="tt">' + musictitle[sig] + '</label><label class="tt">' + animetitle[sig] + '</label></button>';
+    li.innerHTML = '<button class="smusic" value="'+ sig + '" onclick="list_select('+ sig +')"><label class="tt">' + musictitle[sig] + '</label><label class="tt">' + animetitle[sig] + '</label></button>';
     mlist.appendChild(li);
   }
 }
