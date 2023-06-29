@@ -323,6 +323,7 @@ function autoscroll(num){
   let target_id = "smusic_" + num
   var target = document.getElementById(target_id);
   var targetPosition = target.getBoundingClientRect().top + document.getElementsByTagName("header").height;
+  test.innerText = targetPosition
   window.scrollTo({ top : targetPosition,behavior: 'smooth'});
 }
 
