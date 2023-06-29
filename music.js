@@ -160,6 +160,7 @@ volume_index.addEventListener('input',function(){
 })
 window.addEventListener("beforeunload",function(){
     volume_index.value = 20;
+    window.scrollTo({ top : 0,behavior: 'smooth'});
 })
 
 // ミュートボタン
@@ -325,8 +326,10 @@ function autoscroll(num){
     num -= 1
   }
   let target_id = "smusic_" + num
+  test.innerText += "|"
   var target = document.getElementById(target_id);
   var targetPosition = target.getBoundingClientRect().top - document.getElementById("control").getBoundingClientRect().bottom;
+  test.innerText += targetPosition
   window.scrollTo({ top : targetPosition,behavior: 'smooth'});
 }
 
