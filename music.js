@@ -327,7 +327,6 @@ function autoscroll(num){
   }
   let target_id = "smusic_" + num
   var targetPosition = 0
-  test.innerText += "|"
   var target = document.getElementById(target_id);
   var targetbase = target.getBoundingClientRect().top
   var hheader = document.getElementById("control").getBoundingClientRect().bottom
@@ -335,7 +334,6 @@ function autoscroll(num){
     targetPosition = targetbase - hheader;
     window.scrollTo({ top : targetPosition,behavior: 'smooth'});
   }
-  test.innerText += targetPosition
 }
 
 //キーボード入力
