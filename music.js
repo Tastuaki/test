@@ -111,7 +111,7 @@ function play_music(){
   play.innerHTML = '<i class="fas fa-pause"></i>';
   title.innerHTML = '<i class="fas fa-music"></i>　'+ musictitle[cnt];
   anime.innerHTML = animetitle[cnt];
-  autoscroll(cnt)
+  // autoscroll(cnt)
 }
 
 // 再生ボタン
