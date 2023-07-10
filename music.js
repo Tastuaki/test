@@ -81,6 +81,7 @@ function make_list(sig){
 }
 
 var ls = 0;
+var ra = false;
 var so = false;
 
 const music = new Audio('https://github.com/Tastuaki/OPED/blob/main/'+fname[cnt]+'?raw=true');
@@ -95,6 +96,7 @@ const after = document.getElementById('after');
 const volume_index = document.getElementById('volume');
 const ser = document.getElementById('search');
 const test = document.getElementById('test');
+const ran = document.getElementById('rand');
 
 function play_music(){
   var src ='https://github.com/Tastuaki/OPED/blob/main/'+fname[cnt]+'?raw=true';
@@ -109,6 +111,7 @@ function play_music(){
   play.innerHTML = '<i class="fas fa-pause"></i>';
   title.innerHTML = '<i class="fas fa-music"></i>　'+ musictitle[cnt];
   anime.innerHTML = animetitle[cnt];
+  autoscroll()
 }
 
 // 再生ボタン
@@ -130,7 +133,9 @@ var intervalId = setInterval(check_sound, 1000);
 function check_sound(){
   console.log(music.ended)
   if(music.ended){
-    if(ls == 0){
+    if(ra){
+      cnt = Math.floor( Math.random() * (titletext.length + 1 - 0) ) + 0
+    }else if(ls == 0){
       cnt += 1;
       if(cnt > fname.length){
         cnt = 0;
@@ -335,6 +340,17 @@ function autoscroll(num){
     window.scrollTo({ top : targetPosition,behavior: 'smooth'});
   }
 }
+
+// ランダム
+rand.addEventListener('click', function(){
+  if(!ra){
+    ra = true
+    rand.innerHTML = '<i class="fas fa-long-arrow-alt-right"></i>'
+  }else{
+    ra = false
+    rand.innerHTML = '<i class="fas fa-random"></i>'
+  }
+})
 
 //キーボード入力
 document.addEventListener('keydown', keydown_ivent);
