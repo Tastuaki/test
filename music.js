@@ -124,6 +124,9 @@ function ply(){
   }
 }
 play.addEventListener('click', function(){
+  if(ra){
+    cnt = Math.floor( Math.random() * (titletext.length + 1 - 0) ) + 0
+  }
   ply();
 });
 
