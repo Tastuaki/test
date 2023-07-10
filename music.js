@@ -111,7 +111,7 @@ function play_music(){
   play.innerHTML = '<i class="fas fa-pause"></i>';
   title.innerHTML = '<i class="fas fa-music"></i>　'+ musictitle[cnt];
   anime.innerHTML = animetitle[cnt];
-  autoscroll()
+  autoscroll(cnt)
 }
 
 // 再生ボタン
@@ -346,6 +346,7 @@ rand.addEventListener('click', function(){
   if(!ra){
     ra = true
     rand.innerHTML = '<i class="fas fa-long-arrow-alt-right"></i>'
+    ls = 0
   }else{
     ra = false
     rand.innerHTML = '<i class="fas fa-random"></i>'
