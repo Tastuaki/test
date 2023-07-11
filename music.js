@@ -124,9 +124,6 @@ function ply(){
   }
 }
 play.addEventListener('click', function(){
-  if(ra){
-    cnt = Math.floor( Math.random() * (titletext.length + 1 - 0) ) + 0
-  }
   ply();
 });
 
@@ -137,7 +134,10 @@ function check_sound(){
   console.log(music.ended)
   if(music.ended){
     if(ra){
-      cnt = Math.floor( Math.random() * (titletext.length + 1 - 0) ) + 0
+      var ocnt = cnt
+      while(ocnt == cnt){
+        cnt = Math.floor( Math.random() * (titletext.length + 1 - 0) ) + 0
+      }
     }else if(ls == 0){
       cnt += 1;
       if(cnt > fname.length){
@@ -348,6 +348,10 @@ function autoscroll(num){
 rand.addEventListener('click', function(){
   if(!ra){
     ra = true
+    var ocnt = cnt
+    while(ocnt == cnt){
+      cnt = Math.floor( Math.random() * (titletext.length + 1 - 0) ) + 0
+    }
     rand.innerHTML = '<i class="fas fa-long-arrow-alt-right"></i>'
     ls = 0
   }else{
