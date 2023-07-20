@@ -80,9 +80,10 @@ function make_list(sig){
   }
 }
 
-var ls = 0;
+var ls = false;
 var ra = false;
 var so = false;
+var hheader = document.getElementById("control").getBoundingClientRect().bottom
 
 const music = new Audio('https://github.com/Tastuaki/OPED/blob/main/'+fname[cnt]+'?raw=true');
 const title = document.getElementById('title');
@@ -138,7 +139,7 @@ function check_sound(){
       while(ocnt == cnt){
         cnt = Math.floor( Math.random() * (titletext.length + 1 - 0) ) + 0
       }
-    }else if(ls == 0){
+    }else if(!ls){
       cnt += 1;
       if(cnt > fname.length){
         cnt = 0;
@@ -195,11 +196,11 @@ loop.addEventListener('click', function(){
 
 // 逆順再生
 rec.addEventListener('click', function(){
-  if(ls == 0){
-    ls = 1;
+  if(!ls){
+    ls = true;
     rec.innerHTML = '<i class="fas fa-long-arrow-alt-right"></i>';
   }else{
-    ls = 0;
+    ls = false;
     rec.innerHTML = '<i class="fas fa-long-arrow-alt-left"></i>';
   }
 });
@@ -337,8 +338,8 @@ function autoscroll(num){
   var targetPosition = 0
   var target = document.getElementById(target_id);
   var targetbase = target.getBoundingClientRect().top
-  var hheader = document.getElementById("control").getBoundingClientRect().bottom
   if(targetbase != hheader){
+    window.scrollTo({ top : hheader,behavior: 'smooth'});
     targetPosition = targetbase - hheader;
     window.scrollTo({ top : targetPosition,behavior: 'smooth'});
   }
@@ -353,7 +354,7 @@ rand.addEventListener('click', function(){
       cnt = Math.floor( Math.random() * (titletext.length + 1 - 0) ) + 0
     }
     rand.innerHTML = '<i class="fas fa-long-arrow-alt-right"></i>'
-    ls = 0
+    ls = false
   }else{
     ra = false
     rand.innerHTML = '<i class="fas fa-random"></i>'
