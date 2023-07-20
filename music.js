@@ -339,9 +339,8 @@ function autoscroll(){
   var targetPosition = 0
   var target = document.getElementById(target_id);
   var targetbase = target.getBoundingClientRect().top
-  test.textContent += targetbase + ":"
+  // test.textContent += targetbase + " "
   if(targetbase != hheader){
-    window.scrollTo({ top : hheader,behavior: 'smooth'});
     targetPosition = targetbase - hheader;
     window.scrollTo({ top : targetPosition,behavior: 'smooth'});
   }
