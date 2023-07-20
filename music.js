@@ -106,13 +106,13 @@ function play_music(){
     music.src = src;
     music.loop = false;
     loop.innerHTML = '<i class="fas fa-sync"></i>';
+    autoscroll(cnt)
   }
   console.log(music.src+"\n"+titletext[cnt]);
   music.play();
   play.innerHTML = '<i class="fas fa-pause"></i>';
   title.innerHTML = '<i class="fas fa-music"></i>　'+ musictitle[cnt];
   anime.innerHTML = animetitle[cnt];
-  // autoscroll(cnt)
 }
 
 // 再生ボタン
@@ -280,7 +280,7 @@ document.getElementById('search_on').addEventListener('click', function(){
     so = false
     ser.innerHTML = '';
     make_list(-1)
-    autoscroll(cnt)
+    // autoscroll(cnt)
   }
 })
 
