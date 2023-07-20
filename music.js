@@ -106,7 +106,7 @@ function play_music(){
     music.src = src;
     music.loop = false;
     loop.innerHTML = '<i class="fas fa-sync"></i>';
-    autoscroll()
+    // autoscroll()
   }
   console.log(music.src+"\n"+titletext[cnt]);
   music.play();
@@ -339,6 +339,7 @@ function autoscroll(){
   var targetPosition = 0
   var target = document.getElementById(target_id);
   var targetbase = target.getBoundingClientRect().top
+  test.textContent += targetbase + ":"
   if(targetbase != hheader){
     window.scrollTo({ top : hheader,behavior: 'smooth'});
     targetPosition = targetbase - hheader;
