@@ -331,6 +331,7 @@ function search(key,list){
 
 // 自動スクロール
 function autoscroll(){
+  var num = 0
   if(cnt != 0){
     num = cnt - 1
   }
