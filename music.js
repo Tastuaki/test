@@ -280,7 +280,7 @@ document.getElementById('search_on').addEventListener('click', function(){
     so = false
     ser.innerHTML = '';
     make_list(-1)
-    // autoscroll(cnt)
+    autoscroll(cnt)
   }
 })
 
