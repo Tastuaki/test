@@ -337,7 +337,7 @@ function autoscroll(){
     num = cnt - 1
   }
   var targetbase = document.getElementById("smusic_" + num).getBoundingClientRect().top
-  test.textContent += targetbase + ":"
+  test.textContent += targetbase + ":" + hheader + " "
   if(targetbase != hheader){
     targetPosition = targetbase - hheader;
     window.scrollTo({ top : targetPosition ,behavior: 'smooth'});
