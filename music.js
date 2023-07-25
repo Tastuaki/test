@@ -330,13 +330,13 @@ function search(key,list){
 }
 
 // 自動スクロール
+var targetPosition = 0
 function autoscroll(){
   var num = 0
   if(cnt != 0){
     num = cnt - 1
   }
   let target_id = "smusic_" + num
-  var targetPosition = 0
   var target = document.getElementById(target_id);
   var targetbase = target.getBoundingClientRect().top
   test.textContent += targetbase + " "
