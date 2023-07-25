@@ -339,10 +339,14 @@ function autoscroll(){
   var targetPosition = 0
   var target = document.getElementById(target_id);
   var targetbase = target.getBoundingClientRect().top
-  // test.textContent += targetbase + " "
+  test.textContent += targetbase + " "
   if(targetbase != hheader){
-    targetPosition = targetbase - hheader;
-    window.scrollTo({ top : targetPosition,behavior: 'smooth'});
+    if(targetbase > targetPosition){
+      targetPosition = targetbase - targetPosition;
+    }else if(targetbase != targetPosition){
+      targetPosition = targetbase + targetPosition;
+    }
+    window.scrollTo({ top : targetPosition - hheader,behavior: 'smooth'});
   }
 }
 
