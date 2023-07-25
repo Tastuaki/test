@@ -336,17 +336,11 @@ function autoscroll(){
   if(cnt != 0){
     num = cnt - 1
   }
-  let target_id = "smusic_" + num
-  var target = document.getElementById(target_id);
-  var targetbase = target.getBoundingClientRect().top
-  test.textContent += targetbase + " "
+  var targetbase = document.getElementById("smusic_" + num).getBoundingClientRect().top
+  test.textContent += targetbase + ":"
   if(targetbase != hheader){
-    if(targetbase > targetPosition){
-      targetPosition = targetbase - targetPosition;
-    }else if(targetbase != targetPosition){
-      targetPosition = targetbase + targetPosition;
-    }
-    window.scrollTo({ top : targetPosition - hheader,behavior: 'smooth'});
+    targetPosition = targetbase - hheader;
+    window.scrollTo({ top : targetPosition ,behavior: 'smooth'});
   }
 }
 
