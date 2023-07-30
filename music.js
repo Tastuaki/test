@@ -10,7 +10,7 @@ var ctext = ["",":","/"];
 var cnt = 0;
 var mcnt = 0;
 const xhr = new XMLHttpRequest();
-xhr.open('get', 'https://raw.githubusercontent.com/Tastuaki/OPED/main/%2Btitle.txt');
+xhr.open('get', 'https://raw.githubusercontent.com/Tastuaki/OPED/main/p/title');
 xhr.send();
 xhr.onreadystatechange = function() {
   var data = [""];
