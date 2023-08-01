@@ -11,7 +11,7 @@ var cnt = 0;
 var mcnt = 0;
 var lsig = 0;
 
-function get_list(lsig=0){
+function get_list(){
   let url = ""
   const xhr = new XMLHttpRequest();
   if(lsig == 1){
@@ -355,7 +355,8 @@ list.addEventListener('click', function(){
 function clist(csig){
   if(lsig != csig){
     mlist.innerHTML = "";
-    get_list(lsig)
+    get_list()
+    lsig = csig
   }
 }
 
