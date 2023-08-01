@@ -12,6 +12,7 @@ var mcnt = 0;
 var lsig = 0;
 
 function get_list(lsig=0){
+  let url = ""
   const xhr = new XMLHttpRequest();
   if(lsig == 1){
     url = 'https://raw.githubusercontent.com/Tastuaki/OPED/main/p/new'
