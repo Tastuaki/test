@@ -354,9 +354,9 @@ list.addEventListener('click', function(){
 
 function clist(csig){
   if(lsig != csig){
+    lsig = csig
     mlist.innerHTML = "";
     get_list()
-    lsig = csig
   }
 }
 
