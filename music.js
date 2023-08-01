@@ -32,6 +32,7 @@ function get_list(){
       var sig = 0;
       var dsig = 0;
       var l = data.length;
+      fname = [""]
       while(true){
         fname[n] += data[i];
         if(fname[n].includes("\n")){
