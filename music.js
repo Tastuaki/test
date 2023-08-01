@@ -33,6 +33,7 @@ function get_list(){
       var dsig = 0;
       var l = data.length;
       fname = [""]
+      titletext = [""]
       while(true){
         fname[n] += data[i];
         if(fname[n].includes("\n")){
