@@ -65,7 +65,10 @@
           <!-- ランダム再生 -->
           <button id="rand" class="btn btn-warning"><i class="fas fa-random"></i></button>
           <!-- 検索 -->
-          <button id="search_on" class="btn btn-info"><i class="fas fa-search"></i></button><br>
+          <button id="search_on" class="btn btn-info"><i class="fas fa-search"></i></button>
+          <div id="list">
+            <button id="list_0" value=0 onclick="clist(0)"><i class="fas fa-list"></i></button>
+          </div><br>
           <label  class = "white_text">ボリューム</label>
           <input id="volume" type="range" min="0" max="100" step="1" value="20"><label id="volume-text" class = "white_text">20</label>
           <!-- ミュートボタン -->

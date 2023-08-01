@@ -9,56 +9,65 @@ var btext = [".mp3","：","／"];
 var ctext = ["",":","/"];
 var cnt = 0;
 var mcnt = 0;
-const xhr = new XMLHttpRequest();
-xhr.open('get', 'https://raw.githubusercontent.com/Tastuaki/OPED/main/p/title');
-xhr.send();
-xhr.onreadystatechange = function() {
-  var data = [""];
-  if( xhr.readyState === 4 && xhr.status === 200) {
-    data = this.responseText;
+var lsig = 0;
 
-    let i = 0;
-    let j = 0;
-    let n = 0;
-    var sig = 0;
-    var dsig = 0;
-    var l = data.length;
-    while(true){
-      fname[n] += data[i];
-      if(fname[n].includes("\n")){
-        fname[n] = fname[n].replace("undefined","");
-        fname[n] = fname[n].slice(0,-1);
-        titletext[n] = fname[n]
-        for(j=0; j < btext.length; j++){
-          while (titletext[n].includes(btext[j])){
-            titletext[n] = titletext[n].replace(btext[j],ctext[j]);
-          }
-        }
-        dsig = titletext[n].lastIndexOf("))")
-        sig = titletext[n].lastIndexOf("(")
-        if(dsig != -1){
-          dsig = sig
-          sig = titletext[n].slice(0,sig).lastIndexOf("(")
-          if(sig == -1){
-            sig = dsig
-          }
-        }
+function get_list(lsig=0){
+  const xhr = new XMLHttpRequest();
+  if(lsig == 1){
+    url = 'https://raw.githubusercontent.com/Tastuaki/OPED/main/p/new'
+  }else{
+    url = 'https://raw.githubusercontent.com/Tastuaki/OPED/main/p/title'
+  }
+  xhr.open('get', url);
+  xhr.send();
+  xhr.onreadystatechange = function() {
+    var data = [""];
+    if( xhr.readyState === 4 && xhr.status === 200) {
+      data = this.responseText;
 
-        if(sig != -1){
-          musictitle[n] = titletext[n].slice(sig+1,-1)
-          animetitle[n] = titletext[n].slice(0,sig)
-        }else{
-          musictitle[n] = titletext[n]
-          animetitle[n] = titletext[n]
+      let i = 0;
+      let j = 0;
+      let n = 0;
+      var sig = 0;
+      var dsig = 0;
+      var l = data.length;
+      while(true){
+        fname[n] += data[i];
+        if(fname[n].includes("\n")){
+          fname[n] = fname[n].replace("undefined","");
+          fname[n] = fname[n].slice(0,-1);
+          titletext[n] = fname[n]
+          for(j=0; j < btext.length; j++){
+            while (titletext[n].includes(btext[j])){
+              titletext[n] = titletext[n].replace(btext[j],ctext[j]);
+            }
+          }
+          dsig = titletext[n].lastIndexOf("))")
+          sig = titletext[n].lastIndexOf("(")
+          if(dsig != -1){
+            dsig = sig
+            sig = titletext[n].slice(0,sig).lastIndexOf("(")
+            if(sig == -1){
+              sig = dsig
+            }
+          }
+
+          if(sig != -1){
+            musictitle[n] = titletext[n].slice(sig+1,-1)
+            animetitle[n] = titletext[n].slice(0,sig)
+          }else{
+            musictitle[n] = titletext[n]
+            animetitle[n] = titletext[n]
+          }
+          fname[n] = encodeURI(fname[n]);
+          n += 1;
         }
-        fname[n] = encodeURI(fname[n]);
-        n += 1;
-      }
-      i += 1;
-      if(i == l){
-        const mlist =  document.getElementById('mlist');
-        make_list(-1)
-        break;
+        i += 1;
+        if(i == l){
+          const mlist =  document.getElementById('mlist');
+          make_list(-1)
+          break;
+        }
       }
     }
   }
@@ -80,6 +89,8 @@ function make_list(sig){
   }
 }
 
+
+get_list()
 var ls = false;
 var ra = false;
 var so = false;
@@ -98,6 +109,7 @@ const volume_index = document.getElementById('volume');
 const ser = document.getElementById('search');
 const test = document.getElementById('test');
 const ran = document.getElementById('rand');
+const list = document.getElementById('list');
 
 function play_music(){
   var src ='https://github.com/Tastuaki/OPED/blob/main/'+fname[cnt]+'?raw=true';
@@ -326,6 +338,23 @@ function search(key,list){
     }
   }else{
     make_list(-1)
+  }
+}
+
+list.addEventListener('click', function(){
+  var i = 0
+  if(lsig == 1){
+    i = 0
+  }else{
+    i = 1
+  }
+  list.innerHTML = '<button id="list_'+ i +'" value="'+ i + '" onclick="clist('+ i +')"><i class="fas fa-list"></i></button>';
+});
+
+function clist(csig){
+  if(lsig != csig){
+    mlist.innerHTML = "";
+    get_list(lsig)
   }
 }
 
