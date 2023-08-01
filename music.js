@@ -344,6 +344,7 @@ function search(key,list){
   }
 }
 
+// リスト変更
 list.addEventListener('click', function(){
   var i = 0
   if(lsig == 1){
@@ -358,6 +359,7 @@ function clist(csig){
   if(lsig != csig){
     lsig = csig
     mlist.innerHTML = "";
+    cnt = 0
     get_list()
   }
 }
