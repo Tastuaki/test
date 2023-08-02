@@ -156,14 +156,14 @@ function check_sound(){
       }
     }else if(!ls){
       cnt += 1;
-      if(cnt > fname.length){
+      if(cnt > titletext.length){
         cnt = 0;
       }
     }else{
       cnt -= 1;
       if(cnt < 0){
         mcnt = cnt;
-        cnt = fname.length + cnt;
+        cnt = titletext.length + cnt;
       }else{
         mcnt = 0;
       }
