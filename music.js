@@ -32,8 +32,10 @@ function get_list(){
       var sig = 0;
       var dsig = 0;
       var l = data.length;
-      fname = [""]
-      titletext = [""]
+      fname.length = 0
+      titletext.length = 0
+      animetitle.length = 0
+      musictitle.length = 0
       while(true){
         fname[n] += data[i];
         if(fname[n].includes("\n")){
