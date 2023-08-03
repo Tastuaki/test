@@ -71,6 +71,11 @@ function get_list(){
         if(i == l){
           const mlist =  document.getElementById('mlist');
           make_list(-1)
+          test.innerText += l + " "
+          test.innerText += fname.length + " "
+          test.innerText += titletext.length + " "
+          test.innerText += animetitle.length + " "
+          test.innerText += musictitle.length + " "
           break;
         }
       }
@@ -99,6 +104,7 @@ get_list()
 var ls = false;
 var ra = false;
 var so = false;
+var cl = false;
 var hheader = document.getElementById("control").getBoundingClientRect().bottom
 
 const music = new Audio('https://github.com/Tastuaki/OPED/blob/main/'+fname[cnt]+'?raw=true');
@@ -157,6 +163,9 @@ function check_sound(){
       while(ocnt == cnt){
         cnt = Math.floor( Math.random() * (titletext.length + 1 - 0) ) + 0
       }
+    }else if(cl){
+      cnt = 0
+      cl = false
     }else if(!ls){
       cnt += 1;
       if(cnt > titletext.length){
@@ -362,7 +371,7 @@ function clist(csig){
   if(lsig != csig){
     lsig = csig
     mlist.innerHTML = "";
-    cnt = 0
+    cl = true
     get_list()
   }
 }
