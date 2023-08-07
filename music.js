@@ -71,11 +71,11 @@ function get_list(){
         if(i == l){
           const mlist =  document.getElementById('mlist');
           make_list(-1)
-          test.innerText += l + " "
-          test.innerText += fname.length + " "
-          test.innerText += titletext.length + " "
-          test.innerText += animetitle.length + " "
-          test.innerText += musictitle.length + " "
+          test.innerText += l + " | "
+          test.innerText += fname.length + " | "
+          test.innerText += titletext.length + " | "
+          test.innerText += animetitle.length + " | "
+          test.innerText += musictitle.length + " | "
           break;
         }
       }
