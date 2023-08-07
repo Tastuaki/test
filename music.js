@@ -355,10 +355,11 @@ function search(key,list){
 // リスト変更
 list.addEventListener('click', function(){
   document.getElementById('full').style.zIndex = 2147483647
+  lists = document.getElementById('lists')
   for(let i = 0;i < 2;i++){
     var li = document.createElement('li');
     li.innerHTML = '<button id="list_'+ i +'" value="'+ i + '" onclick="clist('+ i +')"><i class="fas fa-list"></i></button>';
-    mlist.appendChild(li);
+    lists.appendChild(li);
   }
 });
 
