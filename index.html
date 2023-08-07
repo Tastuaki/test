@@ -44,11 +44,37 @@
     #search{
       width: 100%;
     }
+    #full{
+      position: absolute;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(100, 100, 100, .8);
+      z-index: -1;
+      display: flex;
+    }
+    #list_index{
+      left: 0; top: 0;
+      height: 100%;
+      flex-basis: 30%;
+    }
+    #list_cancel{
+      top: 0;
+      height: 100%;
+    }
+    #lists{
+      background-color: #363939;
+    }
   </style>
 </head>
 <body>
   <header id="control">
     <div id = "main">
+        <div id="full">
+          <div id="list_index">
+            <ul id="lists"></ul>
+          </div>
+          <button id="list_cancel"></button>
+        </div>
         <h3 id="title" class = "white_text"><i class="fas fa-music"></i></h3>
         <label id="anime" class = "white_text"></label><br>
         <div class = "noselect">
@@ -67,7 +93,8 @@
           <!-- 検索 -->
           <button id="search_on" class="btn btn-info"><i class="fas fa-search"></i></button>
           <div id="list">
-            <button id="list_1" value=1 onclick="clist(1)"><i class="fas fa-list"></i></button>
+            <!-- <button id="list_1" value=1 onclick="clist(1)"><i class="fas fa-list"></i></button> -->
+            <button id="on_list"><i class="fas fa-list"></i></button>
           </div><br>
           <label  class = "white_text">ボリューム</label>
           <input id="volume" type="range" min="0" max="100" step="1" value="20"><label id="volume-text" class = "white_text">20</label>

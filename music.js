@@ -115,7 +115,8 @@ const volume_index = document.getElementById('volume');
 const ser = document.getElementById('search');
 const test = document.getElementById('test');
 const ran = document.getElementById('rand');
-const list = document.getElementById('list');
+const list = document.getElementById('on_list');
+const xlist = document.getElementById('list_cancel');
 
 function play_music(){
   var src ='https://github.com/Tastuaki/OPED/blob/main/'+fname[cnt]+'?raw=true';
@@ -353,14 +354,17 @@ function search(key,list){
 
 // リスト変更
 list.addEventListener('click', function(){
-  var i = 0
-  if(lsig == 1){
-    i = 0
-  }else{
-    i = 1
+  document.getElementById('full').style.zIndex = 2147483647
+  for(let i = 0;i < 2;i++){
+    var li = document.createElement('li');
+    li.innerHTML = '<button id="list_'+ i +'" value="'+ i + '" onclick="clist('+ i +')"><i class="fas fa-list"></i></button>';
+    mlist.appendChild(li);
   }
-  list.innerHTML = '<button id="list_'+ i +'" value="'+ i + '" onclick="clist('+ i +')"><i class="fas fa-list"></i></button>';
 });
+
+xlist.addEventListener('click', function(){
+  document.getElementById('full').style.zIndex = -1
+})
 
 function clist(csig){
   if(lsig != csig){
