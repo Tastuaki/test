@@ -356,7 +356,7 @@ function search(key,list){
 // リスト変更
 list.addEventListener('click', function(){
   document.getElementById('full').style.display = "flex"
-  document.getElement('body').style.overflow = "visible hidden"
+  document.getElementById('body').style.overflow = "visible hidden"
   for(let i = 0;i < 2;i++){
     var li = document.createElement('li');
     li.innerHTML = '<button class="smusic" id="list_'+ i +'" value="'+ i + '" onclick="clist('+ i +')">list'+ i +'</button>';
