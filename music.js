@@ -356,7 +356,7 @@ function search(key,list){
 // リスト変更
 list.addEventListener('click', function(){
   document.getElementById('full').style.display = "flex"
-  document.getElementById('body').style.overflow = "visible hidden"
+  document.getElementsByTagName('body').style.overflow = "visible hidden"
   for(let i = 0;i < 2;i++){
     var li = document.createElement('li');
     li.innerHTML = '<button class="smusic" id="list_'+ i +'" value="'+ i + '" onclick="clist('+ i +')">list'+ i +'</button>';
@@ -366,7 +366,7 @@ list.addEventListener('click', function(){
 
 xlist.addEventListener('click', function(){
   document.getElementById('full').style.display = "none"
-  document.getElementById('body').style.overflow = "visible visible"
+  document.getElementsByTagName('body').style.overflow = "visible visible"
   lists.innerHTML = ""
 })
 
