@@ -16,10 +16,26 @@ function get_index(){
   var xhr = new XMLHttpRequest();
   xhr.open('get', 'https://raw.githubusercontent.com/Tastuaki/OPED/main/p/list');
   xhr.send();
+  let i = 0;
+  let n = 0;
+  var listtext = [""]
+  var ll = listtext.length
   xhr.onreadystatechange = function() {
     if( xhr.readyState === 4 && xhr.status === 200) {
-      listname = this.responseText;
-      test.textContent = listname[0]
+      listtext = this.responseText;
+      while(true){
+        lname[n] += listtext[i];
+        if(lname[n].includes("\n")){
+          lname[n] = lname[n].replace("undefined","");
+          lname[n] = lname[n].slice(0,-1);
+          listname[n] = lname[n]
+        }
+        if(i == ll){
+          break
+        }
+        i += 1
+        n += 1
+      }
     }
   }
 }
