@@ -45,11 +45,7 @@ function get_list(c){
   let url = ""
   lsig = c
   var xhr = new XMLHttpRequest();
-  // if(lsig == 1){
-    url = 'https://raw.githubusercontent.com/Tastuaki/OPED/main/p/' + lname[c]
-  // }else{
-  //   url = 'https://raw.githubusercontent.com/Tastuaki/OPED/main/p/all'
-  // }
+  url = 'https://raw.githubusercontent.com/Tastuaki/OPED/main/p/' + lname[c]
   xhr.open('get', url);
   xhr.send();
   xhr.onreadystatechange = function() {
@@ -387,9 +383,10 @@ list.addEventListener('click', function(){
   document.getElementById('full').style.display = "flex"
   document.getElementById('full').style.top = window.pageYOffset + "px"
   document.getElementById('body').style.overflow = "visible hidden"
-  for(let i = 0;i < 20;i++){
+  document.getElementById('list_index').style.overflow = "visible visible"
+  for(let i = 0;i < lname.length;i++){
     var li = document.createElement('li');
-    li.innerHTML = '<button class="smusic" id="list_'+ i +'" value="'+ i + '" onclick="clist('+ i +')">list'+ i +'</button>';
+    li.innerHTML = '<button class="smusic" id="list_'+ i +'" value="'+ i + '" onclick="clist('+ i +')">'+ lname[i] +'</button>';
     lists.appendChild(li);
   }
 });
