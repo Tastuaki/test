@@ -17,7 +17,7 @@ function get_list(){
   if(lsig == 1){
     url = 'https://raw.githubusercontent.com/Tastuaki/OPED/main/p/new'
   }else{
-    url = 'https://raw.githubusercontent.com/Tastuaki/OPED/main/p/title'
+    url = 'https://raw.githubusercontent.com/Tastuaki/OPED/main/p/all'
   }
   xhr.open('get', url);
   xhr.send();
@@ -391,8 +391,11 @@ function autoscroll(){
   // test.textContent += targetbase + ":" + hheader + " "
   if(targetbase != hheader){
     var nowp = window.pageYOffset
-    // if(targetbase )
-    targetPosition = targetbase - (hheader + nowp);
+    if(targetbase > nowp){
+      targetPosition = targetbase - (hheader + nowp);
+    }else{
+      targetPosition = targetbase - (hheader - nowp);
+    }
     test.innerText += targetPosition + "=" + nowp + "&" + targetbase + " | "
     window.scrollTo({ top : targetPosition ,behavior: 'smooth'});
   }
