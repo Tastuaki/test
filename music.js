@@ -28,9 +28,12 @@ function get_index(){
         if(lname[n].includes("\n")){
           lname[n] = lname[n].replace("undefined","");
           lname[n] = lname[n].slice(0,-1);
+          lname[n] = encodeURI(lname[n])
+          test.textContent += "|"+lname[n]+"|"
           n += 1
         }
         if(i == ll){
+          get_list(0)
           break
         }
         i += 1
@@ -43,7 +46,6 @@ function get_list(c){
   let url = ""
   lsig = c
   var xhr = new XMLHttpRequest();
-  test.textContent = "|"+lname[c]+"|"
   // if(lsig == 1){
     url = 'https://raw.githubusercontent.com/Tastuaki/OPED/main/p/' + lname[c]
   // }else{
@@ -126,7 +128,6 @@ function make_list(sig){
 
 const test = document.getElementById('test');
 get_index()
-get_list(0)
 var ls = false;
 var ra = false;
 var so = false;
