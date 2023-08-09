@@ -10,7 +10,7 @@ var ctext = ["",":","/"];
 var lname = [""]
 var cnt = 0;
 var mcnt = 0;
-// var lsig = 0;
+var lsig = 0;
 
 function get_index(){
   var xhr = new XMLHttpRequest();
@@ -41,7 +41,9 @@ function get_index(){
 
 function get_list(c){
   let url = ""
+  lsig = c
   var xhr = new XMLHttpRequest();
+  test.textContent = "|"+lname[c]+"|"
   // if(lsig == 1){
     url = 'https://raw.githubusercontent.com/Tastuaki/OPED/main/p/' + lname[c]
   // }else{
