@@ -19,6 +19,7 @@ function get_index(){
   xhr.onreadystatechange = function() {
     if( xhr.readyState === 4 && xhr.status === 200) {
       listname = this.responseText;
+      test.textContent = listname[0]
     }
   }
 }
@@ -26,6 +27,7 @@ function get_index(){
 function get_list(c){
   let url = ""
   var xhr = new XMLHttpRequest();
+  test.textContent += " "+listname[c]
   // if(lsig == 1){
     url = 'https://raw.githubusercontent.com/Tastuaki/OPED/main/p/' + listname[c]
   // }else{
