@@ -356,6 +356,7 @@ function search(key,list){
 // リスト変更
 list.addEventListener('click', function(){
   document.getElementById('full').style.display = "flex"
+  test.innerText += window.pageYOffset + ": "
   document.getElementById('full').style.top = window.pageYOffset
   document.getElementById('body').style.overflow = "visible hidden"
   for(let i = 0;i < 2;i++){
