@@ -390,8 +390,10 @@ function autoscroll(){
   var targetbase = document.getElementById("smusic_" + num).getBoundingClientRect().top
   // test.textContent += targetbase + ":" + hheader + " "
   if(targetbase != hheader){
-    targetPosition = targetbase - (hheader + window.pageYOffset);
-    test.innerText += targetbase + " : " + targetPosition + " "
+    var nowp = window.pageYOffset
+    // if(targetbase )
+    targetPosition = targetbase - (hheader + nowp);
+    test.innerText += targetPosition + "=" + nowp + "&" + targetbase + " | "
     window.scrollTo({ top : targetPosition ,behavior: 'smooth'});
   }
 }
