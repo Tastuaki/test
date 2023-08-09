@@ -28,12 +28,12 @@ function get_index(){
         if(lname[n].includes("\n")){
           lname[n] = lname[n].replace("undefined","");
           lname[n] = lname[n].slice(0,-1);
+          n += 1
         }
         if(i == ll){
           break
         }
         i += 1
-        n += 1
       }
     }
   }
