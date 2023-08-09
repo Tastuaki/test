@@ -27,7 +27,7 @@ function get_index(){
         lname[n] += listtext[i];
         if(lname[n].includes("\n")){
           lname[n] = lname[n].replace("undefined","");
-          lname[n] = lname[n].slice(0,-1);
+          // lname[n] = lname[n].slice(0,-1);
           lname[n] = encodeURI(lname[n])
           test.textContent += "|"+lname[n]+"|"
           n += 1
