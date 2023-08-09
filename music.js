@@ -106,7 +106,7 @@ function make_list(sig){
   }
 }
 
-
+get_index()
 get_list(0)
 var ls = false;
 var ra = false;
@@ -410,7 +410,6 @@ function autoscroll(){
     }else{
       targetPosition = targetbase - (hheader - nowp);
     }
-    test.innerText += targetPosition + "=" + nowp + "&" + targetbase + " | "
     window.scrollTo({ top : targetPosition ,behavior: 'smooth'});
   }
   onum = cnt
