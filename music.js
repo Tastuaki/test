@@ -356,8 +356,9 @@ function search(key,list){
 // リスト変更
 list.addEventListener('click', function(){
   document.getElementById('full').style.display = "flex"
-  test.innerText += window.pageYOffset + ": "
-  document.getElementById('full').style.top = window.pageYOffset
+  var nowp = window.pageYOffset
+  document.getElementById('full').style.top = nowp
+  // document.getElementById('full').style.top = window.pageYOffset
   document.getElementById('body').style.overflow = "visible hidden"
   for(let i = 0;i < 2;i++){
     var li = document.createElement('li');
@@ -391,6 +392,7 @@ function autoscroll(){
   var targetbase = document.getElementById("smusic_" + num).getBoundingClientRect().top
   // test.textContent += targetbase + ":" + hheader + " "
   if(targetbase != hheader){
+    test.innerText += targetbase + " : " + targetPosition + " "
     targetPosition = targetbase - (hheader + window.pageYOffset);
     window.scrollTo({ top : targetPosition ,behavior: 'smooth'});
   }
