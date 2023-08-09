@@ -7,18 +7,30 @@ var animetitle = [""];
 var musictitle = [""];
 var btext = [".mp3","：","／"];
 var ctext = ["",":","/"];
+var listname = [""]
 var cnt = 0;
 var mcnt = 0;
-var lsig = 0;
+// var lsig = 0;
 
-function get_list(){
-  let url = ""
-  const xhr = new XMLHttpRequest();
-  if(lsig == 1){
-    url = 'https://raw.githubusercontent.com/Tastuaki/OPED/main/p/new'
-  }else{
-    url = 'https://raw.githubusercontent.com/Tastuaki/OPED/main/p/all'
+function get_index(){
+  var xhr = new XMLHttpRequest();
+  xhr.open('get', 'https://raw.githubusercontent.com/Tastuaki/OPED/main/p/list');
+  xhr.send();
+  xhr.onreadystatechange = function() {
+    if( xhr.readyState === 4 && xhr.status === 200) {
+      listname = this.responseText;
+    }
   }
+}
+
+function get_list(c){
+  let url = ""
+  var xhr = new XMLHttpRequest();
+  // if(lsig == 1){
+    url = 'https://raw.githubusercontent.com/Tastuaki/OPED/main/p/' + listname[c]
+  // }else{
+  //   url = 'https://raw.githubusercontent.com/Tastuaki/OPED/main/p/all'
+  // }
   xhr.open('get', url);
   xhr.send();
   xhr.onreadystatechange = function() {
@@ -95,7 +107,7 @@ function make_list(sig){
 }
 
 
-get_list()
+get_list(0)
 var ls = false;
 var ra = false;
 var so = false;
@@ -304,7 +316,6 @@ document.getElementById('search_on').addEventListener('click', function(){
     so = false
     ser.innerHTML = '';
     make_list(-1)
-    autoscroll()
   }
 })
 
@@ -376,7 +387,7 @@ function clist(csig){
     lsig = csig
     mlist.innerHTML = "";
     cl = true
-    get_list()
+    get_list(csig)
   }
 }
 
