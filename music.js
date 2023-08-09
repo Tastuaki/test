@@ -7,7 +7,7 @@ var animetitle = [""];
 var musictitle = [""];
 var btext = [".mp3","：","／"];
 var ctext = ["",":","/"];
-var listname = [""]
+var lname = [""]
 var cnt = 0;
 var mcnt = 0;
 // var lsig = 0;
@@ -28,7 +28,6 @@ function get_index(){
         if(lname[n].includes("\n")){
           lname[n] = lname[n].replace("undefined","");
           lname[n] = lname[n].slice(0,-1);
-          listname[n] = lname[n]
         }
         if(i == ll){
           break
@@ -43,9 +42,8 @@ function get_index(){
 function get_list(c){
   let url = ""
   var xhr = new XMLHttpRequest();
-  test.textContent += " "+listname[c]
   // if(lsig == 1){
-    url = 'https://raw.githubusercontent.com/Tastuaki/OPED/main/p/' + listname[c]
+    url = 'https://raw.githubusercontent.com/Tastuaki/OPED/main/p/' + lname[c]
   // }else{
   //   url = 'https://raw.githubusercontent.com/Tastuaki/OPED/main/p/all'
   // }
