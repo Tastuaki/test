@@ -108,6 +108,7 @@ function make_list(sig){
   }
 }
 
+const test = document.getElementById('test');
 get_index()
 get_list(0)
 var ls = false;
@@ -127,7 +128,6 @@ const before = document.getElementById('before');
 const after = document.getElementById('after');
 const volume_index = document.getElementById('volume');
 const ser = document.getElementById('search');
-const test = document.getElementById('test');
 const ran = document.getElementById('rand');
 const list = document.getElementById('on_list');
 const xlist = document.getElementById('list_cancel');
