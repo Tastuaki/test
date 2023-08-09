@@ -126,7 +126,7 @@ function play_music(){
     music.src = src;
     music.loop = false;
     loop.innerHTML = '<i class="fas fa-sync"></i>';
-    // autoscroll()
+    autoscroll()
   }
   console.log(music.src+"\n"+titletext[cnt]);
   music.play();
@@ -382,9 +382,12 @@ function clist(csig){
 
 // 自動スクロール
 var targetPosition = 0
+var onum = -1
 function autoscroll(){
   var num = 0
-  if(cnt != 0){
+  if(onum == cnt){
+    return
+  }else if(cnt != 0){
     num = cnt - 1
   }
   var targetbase = document.getElementById("smusic_" + num).getBoundingClientRect().top
@@ -399,6 +402,7 @@ function autoscroll(){
     test.innerText += targetPosition + "=" + nowp + "&" + targetbase + " | "
     window.scrollTo({ top : targetPosition ,behavior: 'smooth'});
   }
+  onum = cnt
 }
 
 // ランダム
