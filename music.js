@@ -19,17 +19,16 @@ function get_index(){
   let i = 0;
   let n = 0;
   var listtext = [""]
-  var ll = listtext.length
   xhr.onreadystatechange = function() {
     if( xhr.readyState === 4 && xhr.status === 200) {
       listtext = this.responseText;
+      var ll = listtext.length
       while(true){
         lname[n] += listtext[i];
         if(lname[n].includes("\n")){
           lname[n] = lname[n].replace("undefined","");
-          // lname[n] = lname[n].slice(0,-1);
+          lname[n] = lname[n].slice(0,-1);
           lname[n] = encodeURI(lname[n])
-          test.textContent += "|"+lname[n]+"|"
           n += 1
         }
         if(i == ll){
@@ -388,7 +387,7 @@ list.addEventListener('click', function(){
   document.getElementById('full').style.display = "flex"
   document.getElementById('full').style.top = window.pageYOffset + "px"
   document.getElementById('body').style.overflow = "visible hidden"
-  for(let i = 0;i < 2;i++){
+  for(let i = 0;i < 20;i++){
     var li = document.createElement('li');
     li.innerHTML = '<button class="smusic" id="list_'+ i +'" value="'+ i + '" onclick="clist('+ i +')">list'+ i +'</button>';
     lists.appendChild(li);
