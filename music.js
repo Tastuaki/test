@@ -152,7 +152,7 @@ function play_music(){
     music.src = src;
     music.loop = false;
     loop.innerHTML = '<i class="fas fa-sync"></i>';
-    autoscroll()
+    // autoscroll()
   }
   console.log(music.src+"\n"+titletext[cnt]);
   music.play();
@@ -383,7 +383,6 @@ list.addEventListener('click', function(){
   document.getElementById('full').style.display = "flex"
   document.getElementById('full').style.top = window.pageYOffset + "px"
   document.getElementById('body').style.overflow = "visible hidden"
-  document.getElementById('list_index').style.overflow = "visible visible"
   for(let i = 0;i < lname.length;i++){
     var li = document.createElement('li');
     li.innerHTML = '<button class="smusic" id="list_'+ i +'" value="'+ i + '" onclick="clist('+ i +')">'+ lname[i] +'</button>';
