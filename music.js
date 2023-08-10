@@ -28,15 +28,14 @@ function get_index(){
         if(lname[n].includes("\n")){
           lname[n] = lname[n].replace("undefined","");
           lname[n] = lname[n].slice(0,-1);
-          test.textContent += "|" + lname[n] + "|"
           lname[n] = encodeURI(lname[n])
           n += 1
         }
+        i += 1
         if(i == ll){
           get_list(0)
           break
         }
-        i += 1
       }
     }
   }
@@ -46,6 +45,7 @@ function get_list(c){
   let url = ""
   lsig = c
   var xhr = new XMLHttpRequest();
+
   url = 'https://raw.githubusercontent.com/Tastuaki/OPED/main/p/' + lname[c]
   xhr.open('get', url);
   xhr.send();
