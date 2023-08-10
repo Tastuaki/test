@@ -391,11 +391,11 @@ list.addEventListener('click', function(){
   }
 });
 
-xlist.addEventListener('click', function(){
+function xlist(){
   document.getElementById('full').style.display = "none"
   document.getElementById('body').style.overflow = "visible visible"
   lists.innerHTML = ""
-})
+}
 
 function clist(csig){
   if(lsig != csig){
@@ -403,6 +403,7 @@ function clist(csig){
     mlist.innerHTML = "";
     cl = true
     get_list(csig)
+    xlist()
   }
 }
 

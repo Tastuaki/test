@@ -57,6 +57,11 @@
       flex-basis: 30%;
       overflow-y: scroll;
       background-color: #363939;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    #list_index::-webkit-scrollbar{
+      display: none;
     }
     #list_cancel{
       height: 100%;
@@ -70,7 +75,7 @@
     <div id="list_index">
       <ul id="lists"></ul>
     </div>
-    <button id="list_cancel"></button>
+    <button id="list_cancel" onclick="xlist()"></button>
   </div>
   <header id="control">
     <div id = "main">
