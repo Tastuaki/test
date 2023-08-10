@@ -99,7 +99,6 @@ function get_list(c){
         if(i == l){
           const mlist =  document.getElementById('mlist');
           make_list(-1)
-          test.textContent=titletext.length
           break;
         }
       }
