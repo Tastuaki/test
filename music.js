@@ -307,6 +307,7 @@ after.addEventListener('touchstart',function(){
 function list_select(num) {
   console.log(num);
   cnt = num;
+  cl = false
   play_music();
 }
 
@@ -351,7 +352,6 @@ function search(key,list){
   let sig = -1
   var sigs = []
   var d_titles = []
-  // test.innerText = ""
   if(key != ""){
     for(k=0;k < list.length;k++){
       sig = list[k].indexOf(key)
@@ -375,6 +375,7 @@ function search(key,list){
     }
   }else{
     make_list(-1)
+    autoscroll()
   }
 }
 
