@@ -400,7 +400,7 @@ function clist(csig){
     ra = false;
     so = false;
     music.pause();
-    play.innerHTML = '<i class="fas fa-pause"></i>';
+    play.innerHTML ='<i class="fas fa-play"></i>';
     title.innerHTML = '<i class="fas fa-music"></i>';
     anime.innerHTML = '';
     document.title = "PLAYER"
