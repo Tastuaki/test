@@ -396,7 +396,14 @@ function clist(csig){
   if(lsig != csig){
     lsig = csig
     mlist.innerHTML = "";
-
+    ls = false;
+    ra = false;
+    so = false;
+    music.pause();
+    play.innerHTML = '<i class="fas fa-pause"></i>';
+    title.innerHTML = '<i class="fas fa-music"></i>';
+    anime.innerHTML = '';
+    document.title = "PLAYER"
     cnt = 0
     get_list(csig)
     xlist()
