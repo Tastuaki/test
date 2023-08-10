@@ -185,11 +185,11 @@ function check_sound(){
     if(ra){
       var ocnt = cnt
       while(ocnt == cnt){
-        cnt = Math.floor( Math.random() * (titletext.length + 1 - 0) ) + 0
+        cnt = Math.floor( Math.random() * ((titletext.length - 1) + 1 - 0) ) + 0
       }
     }else if(!ls){
       cnt += 1;
-      if(cnt > titletext.length){
+      if(cnt > titletext.length - 1){
         cnt = 0;
       }
     }else{
