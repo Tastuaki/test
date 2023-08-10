@@ -99,6 +99,7 @@ function get_list(c){
         if(i == l){
           const mlist =  document.getElementById('mlist');
           make_list(-1)
+          test.textContent=titletext.length
           break;
         }
       }
@@ -145,6 +146,7 @@ const list = document.getElementById('on_list');
 const lists = document.getElementById('lists')
 
 function play_music(){
+  console.log(cnt)
   var src ='https://github.com/Tastuaki/OPED/blob/main/'+fname[cnt]+'?raw=true';
   // play.innerHTML ='<i class="fas fa-play"></i>';
   if(music.src != src){
@@ -301,7 +303,6 @@ after.addEventListener('touchstart',function(){
 
 // リスト選択
 function list_select(num) {
-  console.log(num);
   cnt = num;
   play_music();
 }
