@@ -143,7 +143,6 @@ const volume_index = document.getElementById('volume');
 const ser = document.getElementById('search');
 const ran = document.getElementById('rand');
 const list = document.getElementById('on_list');
-const xlist = document.getElementById('list_cancel');
 const lists = document.getElementById('lists')
 
 function play_music(){
