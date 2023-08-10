@@ -127,7 +127,6 @@ get_index()
 var ls = false;
 var ra = false;
 var so = false;
-var cl = false;
 var hheader = document.getElementById("control").getBoundingClientRect().bottom
 
 const music = new Audio('https://github.com/Tastuaki/OPED/blob/main/'+fname[cnt]+'?raw=true');
@@ -186,9 +185,6 @@ function check_sound(){
       while(ocnt == cnt){
         cnt = Math.floor( Math.random() * (titletext.length + 1 - 0) ) + 0
       }
-    }else if(cl){
-      cnt = 0
-      cl = false
     }else if(!ls){
       cnt += 1;
       if(cnt > titletext.length){
@@ -307,7 +303,6 @@ after.addEventListener('touchstart',function(){
 function list_select(num) {
   console.log(num);
   cnt = num;
-  cl = false
   play_music();
 }
 
@@ -401,7 +396,8 @@ function clist(csig){
   if(lsig != csig){
     lsig = csig
     mlist.innerHTML = "";
-    cl = true
+
+    cnt = 0
     get_list(csig)
     xlist()
   }
@@ -441,6 +437,7 @@ rand.addEventListener('click', function(){
     }
     rand.innerHTML = '<i class="fas fa-long-arrow-alt-right"></i>'
     ls = false
+    play_music()
   }else{
     ra = false
     rand.innerHTML = '<i class="fas fa-random"></i>'
