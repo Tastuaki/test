@@ -76,7 +76,7 @@ function get_list(c){
             }
           }
           if(c == 2){
-            titletext[n] = titletext[n].replace("v/","");
+            musictitle[n] = titletext[n].replace("v/","");
             animetitle[n] = ""
           }else{
             dsig = titletext[n].lastIndexOf("))")
