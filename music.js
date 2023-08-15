@@ -75,22 +75,27 @@ function get_list(c){
               titletext[n] = titletext[n].replace(btext[j],ctext[j]);
             }
           }
-          dsig = titletext[n].lastIndexOf("))")
-          sig = titletext[n].lastIndexOf("(")
-          if(dsig != -1){
-            dsig = sig
-            sig = titletext[n].slice(0,sig).lastIndexOf("(")
-            if(sig == -1){
-              sig = dsig
-            }
-          }
-
-          if(sig != -1){
-            musictitle[n] = titletext[n].slice(sig+1,-1)
-            animetitle[n] = titletext[n].slice(0,sig)
-          }else{
-            musictitle[n] = titletext[n]
+          if(c == 3){
+            titletext[n] = titletext[n].replace("v/","");
             animetitle[n] = ""
+          }else{
+            dsig = titletext[n].lastIndexOf("))")
+            sig = titletext[n].lastIndexOf("(")
+            if(dsig != -1){
+              dsig = sig
+              sig = titletext[n].slice(0,sig).lastIndexOf("(")
+              if(sig == -1){
+                sig = dsig
+              }
+            }
+
+            if(sig != -1){
+              musictitle[n] = titletext[n].slice(sig+1,-1)
+              animetitle[n] = titletext[n].slice(0,sig)
+            }else{
+              musictitle[n] = titletext[n]
+              animetitle[n] = ""
+            }
           }
           fname[n] = encodeURI(fname[n]);
           n += 1;
@@ -146,7 +151,7 @@ const lists = document.getElementById('lists')
 
 function play_music(){
   console.log(cnt)
-  var src ='https://github.com/Tastuaki/OPED/blob/main/'+fname[cnt]+'?raw=true';
+  var src ='https://github.com/Tastuaki/OPED/raw/main/'+fname[cnt];
   // play.innerHTML ='<i class="fas fa-play"></i>';
   if(music.src != src){
     music.src = src;
@@ -401,7 +406,9 @@ function clist(csig){
     lsig = csig
     mlist.innerHTML = "";
     ls = false;
+    rec.innerHTML = '<i class="fas fa-long-arrow-alt-left"></i>';
     ra = false;
+    rand.innerHTML = '<i class="fas fa-random"></i>'
     so = false;
     music.pause();
     play.innerHTML ='<i class="fas fa-play"></i>';
