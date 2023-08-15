@@ -75,7 +75,7 @@ function get_list(c){
               titletext[n] = titletext[n].replace(btext[j],ctext[j]);
             }
           }
-          if(c == 3){
+          if(c == 2){
             titletext[n] = titletext[n].replace("v/","");
             animetitle[n] = ""
           }else{
