@@ -90,7 +90,7 @@ function get_list(c){
             animetitle[n] = titletext[n].slice(0,sig)
           }else{
             musictitle[n] = titletext[n]
-            animetitle[n] = titletext[n]
+            animetitle[n] = ""
           }
           fname[n] = encodeURI(fname[n]);
           n += 1;
@@ -159,7 +159,11 @@ function play_music(){
   play.innerHTML = '<i class="fas fa-pause"></i>';
   title.innerHTML = '<i class="fas fa-music"></i>　'+ musictitle[cnt];
   anime.innerHTML = animetitle[cnt];
-  document.title = musictitle[cnt] + " - " + animetitle[cnt] + " - PLAYER"
+  if(animetitle[cnt] == ""){
+    document.title = musictitle[cnt] + " - PLAYER"
+  }else{
+    document.title = musictitle[cnt] + " - " + animetitle[cnt] + " - PLAYER"
+  }
 }
 
 // 再生ボタン
