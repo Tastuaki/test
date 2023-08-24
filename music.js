@@ -118,11 +118,11 @@ function make_list(sig){
   let i = 0;
   if(sig == -1){
     mlist.innerHTML = "";
-    var li = document.createElement('li');
     for(;i < titletext.length;i++){
-      li.innerHTML += '<button class="smusic" id="smusic_'+ i +'" value="'+ i + '" onclick="list_select('+ i +')"><label class="tt">' + musictitle[i] + '</label><label class="tt">' + animetitle[i] + '</label></button>';
+      var li = document.createElement('li');
+      li.innerHTML = '<button class="smusic" id="smusic_'+ i +'" value="'+ i + '" onclick="list_select('+ i +')"><label class="tt">' + musictitle[i] + '</label><label class="tt">' + animetitle[i] + '</label></button>';
+      mlist.appendChild(li);
     }
-    mlist.appendChild(li);
   }else{
     var li = document.createElement('li');
     li.innerHTML = '<button class="smusic" value="'+ sig + '" onclick="list_select('+ sig +')"><label class="tt">' + musictitle[sig] + '</label><label class="tt">' + animetitle[sig] + '</label></button>';
