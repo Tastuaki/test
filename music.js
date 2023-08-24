@@ -8,9 +8,12 @@ var musictitle = [""];
 var btext = [".mp3","：","／"];
 var ctext = ["",":","/"];
 var lname = [""]
+var past = [""]
+var p_title = [""]
 var cnt = 0;
 var mcnt = 0;
 var lsig = 0;
+var pp = 0;
 
 function get_index(){
   var xhr = new XMLHttpRequest();
@@ -168,6 +171,23 @@ function play_music(){
     document.title = musictitle[cnt] + " - PLAYER"
   }else{
     document.title = musictitle[cnt] + " - " + animetitle[cnt] + " - PLAYER"
+  }
+  if(past.length >= 101){
+    past[pp] = cnt
+    pp += 1
+  }else{
+    past.push(cnt)
+  }
+}
+
+function past_list(){
+  let max = 0
+  if(past.length != 0){
+    for(i = past.length - 1;i < 0;i--){
+        make_list(past[i])
+    }
+  }else{
+    mlist.innerHTML = '<h2 class="white_text">NO MUSIC!</h2>'
   }
 }
 
@@ -388,6 +408,7 @@ list.addEventListener('click', function(){
   document.getElementById('full').style.display = "flex"
   document.getElementById('full').style.top = window.pageYOffset + "px"
   document.getElementById('body').style.overflow = "visible hidden"
+  li.innerHTML = '<button class="smusic" onclick="past_list()">履歴</button>';
   for(let i = 0;i < lname.length;i++){
     var li = document.createElement('li');
     li.innerHTML = '<button class="smusic" id="list_'+ i +'" value="'+ i + '" onclick="clist('+ i +')">'+ lname[i] +'</button>';
