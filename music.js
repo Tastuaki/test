@@ -118,11 +118,11 @@ function make_list(sig){
   let i = 0;
   if(sig == -1){
     mlist.innerHTML = "";
+    var li = document.createElement('li');
     for(;i < titletext.length;i++){
-      var li = document.createElement('li');
-      li.innerHTML = '<button class="smusic" id="smusic_'+ i +'" value="'+ i + '" onclick="list_select('+ i +')"><label class="tt">' + musictitle[i] + '</label><label class="tt">' + animetitle[i] + '</label></button>';
-      mlist.appendChild(li);
+      li.innerHTML += '<button class="smusic" id="smusic_'+ i +'" value="'+ i + '" onclick="list_select('+ i +')"><label class="tt">' + musictitle[i] + '</label><label class="tt">' + animetitle[i] + '</label></button>';
     }
+    mlist.appendChild(li);
   }else{
     var li = document.createElement('li');
     li.innerHTML = '<button class="smusic" value="'+ sig + '" onclick="list_select('+ sig +')"><label class="tt">' + musictitle[sig] + '</label><label class="tt">' + animetitle[sig] + '</label></button>';
@@ -183,6 +183,8 @@ function play_music(){
 function past_list(){
   let max = 0
   let i = 0
+  base()
+  test.innerText = past.length
   if(past.length != 0){
     for(i = past.length - 1;i < 0;i--){
         make_list(past[i])
@@ -190,6 +192,7 @@ function past_list(){
   }else{
     mlist.innerHTML = '<h2 class="white_text">NO MUSIC!</h2>'
   }
+  xlist()
 }
 
 // 再生ボタン
@@ -426,21 +429,25 @@ function xlist(){
 function clist(csig){
   if(lsig != csig){
     lsig = csig
-    mlist.innerHTML = "";
-    ls = false;
-    rec.innerHTML = '<i class="fas fa-long-arrow-alt-left"></i>';
-    ra = false;
-    rand.innerHTML = '<i class="fas fa-random"></i>'
-    so = false;
-    music.pause();
-    play.innerHTML ='<i class="fas fa-play"></i>';
-    title.innerHTML = '<i class="fas fa-music"></i>';
-    anime.innerHTML = '';
-    document.title = "PLAYER"
-    cnt = 0
+    base()
     get_list(csig)
     xlist()
   }
+}
+
+function base(){
+  mlist.innerHTML = "";
+  ls = false;
+  rec.innerHTML = '<i class="fas fa-long-arrow-alt-left"></i>';
+  ra = false;
+  rand.innerHTML = '<i class="fas fa-random"></i>'
+  so = false;
+  music.pause();
+  play.innerHTML ='<i class="fas fa-play"></i>';
+  title.innerHTML = '<i class="fas fa-music"></i>';
+  anime.innerHTML = '';
+  document.title = "PLAYER"
+  cnt = 0
 }
 
 // 自動スクロール
