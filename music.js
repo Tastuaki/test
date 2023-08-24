@@ -185,7 +185,7 @@ function past_list(){
   let i = 0
   base()
   test.innerText = past.length
-  if(past.length != 0){
+  if(past.length-1 != 0){
     for(i = past.length - 1;i < 0;i--){
         make_list(past[i])
     }
