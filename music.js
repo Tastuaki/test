@@ -408,9 +408,9 @@ list.addEventListener('click', function(){
   document.getElementById('full').style.display = "flex"
   document.getElementById('full').style.top = window.pageYOffset + "px"
   document.getElementById('body').style.overflow = "visible hidden"
+  var li = document.createElement('li');
   li.innerHTML = '<button class="smusic" onclick="past_list()">履歴</button>';
   for(let i = 0;i < lname.length;i++){
-    var li = document.createElement('li');
     li.innerHTML = '<button class="smusic" id="list_'+ i +'" value="'+ i + '" onclick="clist('+ i +')">'+ lname[i] +'</button>';
     lists.appendChild(li);
   }
