@@ -182,6 +182,7 @@ function play_music(){
 
 function past_list(){
   let max = 0
+  let i = 0
   if(past.length != 0){
     for(i = past.length - 1;i < 0;i--){
         make_list(past[i])
