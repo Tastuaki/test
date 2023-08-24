@@ -183,10 +183,11 @@ function play_music(){
 function past_list(){
   let max = 0
   let i = 0
+  lsig = -1
   base()
-  test.innerText = past.length
   if(past.length-1 != 0){
     for(i = past.length - 1;i < 0;i--){
+        test.innerText += past[i]+"|"
         make_list(past[i])
     }
   }else{
