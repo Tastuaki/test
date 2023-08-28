@@ -195,8 +195,8 @@ function past_list(){
   lsig = -1
   base()
   if(pastfname.length-1 != 0){
-    for(i = pastfname.length - 1;i > -1;i--){
-        test.innerText += i + " "
+    test.innerText = pastfname.length
+    for(i = pastfname.length - 1;i > 0;i--){
         var li = document.createElement('li');
         li.innerHTML = '<button class="smusic" value="'+ i + '" onclick="list_select('+ i +')"><label class="tt">' + pastmusic[i] + '</label><label class="tt">' + pastanime[i] + '</label></button>';
         mlist.appendChild(li);
