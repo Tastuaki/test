@@ -503,6 +503,9 @@ rand.addEventListener('click', function(){
     ra = true
     var ocnt = cnt
     while(ocnt == cnt){
+      if(fname.length == 1){
+        break
+      }
       cnt = Math.floor( Math.random() * fname.length )
       test.innerText = cnt
       if(cnt < 0){
