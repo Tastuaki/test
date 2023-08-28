@@ -202,7 +202,7 @@ function past_list(){
   titletext.length = 0
   animetitle.length = 0
   musictitle.length = 0
-  if(pastfname.length-1 != 0){
+  if(pastfname.length != 0){
     test.innerText = pastfname.length
     for(i = pastfname.length - 1;i > -1;i--){
         var li = document.createElement('li');
