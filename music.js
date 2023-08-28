@@ -120,7 +120,7 @@ function make_list(sig){
   let i = 0;
   if(sig == -1){
     mlist.innerHTML = "";
-    for(;i < titletext.length;i++){
+    for(;i < fname.length;i++){
       var li = document.createElement('li');
       li.innerHTML = '<button class="smusic" id="smusic_'+ i +'" value="'+ i + '" onclick="list_select('+ i +')"><label class="tt">' + musictitle[i] + '</label><label class="tt">' + animetitle[i] + '</label></button>';
       mlist.appendChild(li);
@@ -236,18 +236,18 @@ function check_sound(){
     if(ra){
       var ocnt = cnt
       while(ocnt == cnt){
-        cnt = Math.floor( Math.random() * ((titletext.length - 1) + 1 - 0) ) + 0
+        cnt = Math.floor( Math.random() * ((fname.length - 1) + 1 - 0) ) + 0
       }
     }else if(!ls){
       cnt += 1;
-      if(cnt > titletext.length - 1){
+      if(cnt > fname.length - 1){
         cnt = 0;
       }
     }else{
       cnt -= 1;
       if(cnt < 0){
         mcnt = cnt;
-        cnt = titletext.length + cnt;
+        cnt = fname.length + cnt;
       }else{
         mcnt = 0;
       }
@@ -499,7 +499,7 @@ rand.addEventListener('click', function(){
     ra = true
     var ocnt = cnt
     while(ocnt == cnt){
-      cnt = Math.floor( Math.random() * (titletext.length + 1 - 0) ) + 0
+      cnt = Math.floor( Math.random() * (fname.length + 1 - 0) ) + 0
     }
     rand.innerHTML = '<i class="fas fa-long-arrow-alt-right"></i>'
     ls = false
