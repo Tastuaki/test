@@ -182,6 +182,10 @@ function play_music(){
     if(pp >= 100){
       pp = 0
     }
+  }else if(pastfname.length == 1){
+    pastfname[0] = fname[cnt]
+    pastanime[0] = animetitle[cnt]
+    pastmusic[0] = musictitle[cnt]
   }else{
     pastfname.push(fname[cnt])
     pastanime.push(animetitle[cnt])
@@ -200,7 +204,7 @@ function past_list(){
   musictitle.length = 0
   if(pastfname.length-1 != 0){
     test.innerText = pastfname.length
-    for(i = pastfname.length - 1;i > 0;i--){
+    for(i = pastfname.length - 1;i > -1;i--){
         var li = document.createElement('li');
         li.innerHTML = '<button class="smusic" value="'+ i + '" onclick="list_select('+ i +')"><label class="tt">' + pastmusic[i] + '</label><label class="tt">' + pastanime[i] + '</label></button>';
         mlist.appendChild(li);
