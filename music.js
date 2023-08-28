@@ -194,6 +194,10 @@ function past_list(){
   let i = 0
   lsig = -1
   base()
+  fname.length = 0
+  titletext.length = 0
+  animetitle.length = 0
+  musictitle.length = 0
   if(pastfname.length-1 != 0){
     test.innerText = pastfname.length
     for(i = pastfname.length - 1;i > 0;i--){
