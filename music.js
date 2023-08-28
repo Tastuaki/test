@@ -201,6 +201,8 @@ function past_list(){
         li.innerHTML = '<button class="smusic" value="'+ i + '" onclick="list_select('+ i +')"><label class="tt">' + pastmusic[i] + '</label><label class="tt">' + pastanime[i] + '</label></button>';
         mlist.appendChild(li);
         fname[i] = pastfname[i]
+        animetitle[i] = pastanime[i]
+        musictitle[i] = pastmusic[i]
     }
   }else{
     mlist.innerHTML = '<h2 class="white_text">NO MUSIC!</h2>'
