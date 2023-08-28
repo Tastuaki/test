@@ -500,6 +500,7 @@ rand.addEventListener('click', function(){
     var ocnt = cnt
     while(ocnt == cnt){
       cnt = Math.floor( Math.random() * (fname.length + 1 - 0) ) + 0
+      test.innerText = cnt
     }
     rand.innerHTML = '<i class="fas fa-long-arrow-alt-right"></i>'
     ls = false
