@@ -12,6 +12,7 @@ var pastfname = [""]
 var pastanime = [""];
 var pastmusic = [""];
 var p_title = [""]
+pastfname.length = 0
 var cnt = 0;
 var mcnt = 0;
 var lsig = 0;
@@ -182,7 +183,7 @@ function play_music(){
     if(pp >= 100){
       pp = 0
     }
-  }else if(pastfname.length == 1){
+  }else if(pastfname.length == 0){
     pastfname[0] = fname[cnt]
     pastanime[0] = animetitle[cnt]
     pastmusic[0] = musictitle[cnt]
