@@ -194,7 +194,7 @@ function past_list(){
   let i = 0
   lsig = -1
   base()
-  if(past.length-1 != 0){
+  if(pastfname.length-1 != 0){
     for(i = pastfname.length - 1;i < 0;i--){
         var li = document.createElement('li');
         li.innerHTML = '<button class="smusic" value="'+ i + '" onclick="list_select('+ i +')"><label class="tt">' + pastmusic[i] + '</label><label class="tt">' + pastanime[i] + '</label></button>';
