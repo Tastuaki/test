@@ -179,6 +179,9 @@ function play_music(){
     pastanime[pp]=animetitle[cnt]
     pastmusic[pp]=musictitle[cnt]
     pp += 1
+    if(pp >= 100){
+      pp = 0
+    }
   }else{
     pastfname.push(fname[cnt])
     pastanime.push(animetitle[cnt])
