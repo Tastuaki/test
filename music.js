@@ -204,7 +204,6 @@ function past_list(){
   animetitle.length = 0
   musictitle.length = 0
   if(pastfname.length != 0){
-    test.innerText = pastfname.length
     for(i = pastfname.length - 1;i > -1;i--){
         var li = document.createElement('li');
         li.innerHTML = '<button class="smusic" value="'+ i + '" onclick="list_select('+ i +')"><label class="tt">' + pastmusic[i] + '</label><label class="tt">' + pastanime[i] + '</label></button>';
@@ -508,7 +507,6 @@ rand.addEventListener('click', function(){
         break
       }
       cnt = Math.floor( Math.random() * fname.length )
-      test.innerText = cnt
       if(cnt < 0){
         cnt = 0
       }
