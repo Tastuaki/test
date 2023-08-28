@@ -195,6 +195,7 @@ function past_list(){
   lsig = -1
   base()
   if(pastfname.length-1 != 0){
+    test.innerText +=  astfname.length + " "
     for(i = pastfname.length - 1;i < 0;i--){
         test.innerText += i + " "
         var li = document.createElement('li');
