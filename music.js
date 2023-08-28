@@ -8,7 +8,9 @@ var musictitle = [""];
 var btext = [".mp3","：","／"];
 var ctext = ["",":","/"];
 var lname = [""]
-var past = [""]
+var pastfname = [""]
+var pastanime = [""];
+var pastmusic = [""];
 var p_title = [""]
 var cnt = 0;
 var mcnt = 0;
@@ -172,11 +174,15 @@ function play_music(){
   }else{
     document.title = musictitle[cnt] + " - " + animetitle[cnt] + " - PLAYER"
   }
-  if(past.length >= 101){
-    past[pp] = cnt
+  if(pastfname.length >= 101){
+    pastfname[pp]=fname[cnt]
+    pastanime[pp]=animetitle[cnt]
+    pastmusic[pp]=musictitle[cnt]
     pp += 1
   }else{
-    past.push(cnt)
+    pastfname.push(fname[cnt])
+    pastanime.push(animetitle[cnt])
+    pastmusic.push(musictitle[cnt])
   }
 }
 
@@ -186,9 +192,11 @@ function past_list(){
   lsig = -1
   base()
   if(past.length-1 != 0){
-    for(i = past.length - 1;i < 0;i--){
-        test.innerText += past[i]+"|"
-        make_list(past[i])
+    for(i = pastfname.length - 1;i < 0;i--){
+        var li = document.createElement('li');
+        li.innerHTML = '<button class="smusic" value="'+ i + '" onclick="list_select('+ i +')"><label class="tt">' + pastmusic[i] + '</label><label class="tt">' + pastanime[i] + '</label></button>';
+        mlist.appendChild(li);
+        fname[i] = pastfname[i]
     }
   }else{
     mlist.innerHTML = '<h2 class="white_text">NO MUSIC!</h2>'
