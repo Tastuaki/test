@@ -175,12 +175,12 @@ function play_music(){
   }else{
     document.title = musictitle[cnt] + " - " + animetitle[cnt] + " - PLAYER"
   }
-  if(pastfname.length >= 101){
+  if(pastfname.length > 29){
     pastfname[pp]=fname[cnt]
     pastanime[pp]=animetitle[cnt]
     pastmusic[pp]=musictitle[cnt]
     pp += 1
-    if(pp >= 100){
+    if(pp >= 30){
       pp = 0
     }
   }else if(pastfname.length == 0){
