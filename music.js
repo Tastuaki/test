@@ -16,7 +16,7 @@ pastfname.length = 0
 var cnt = 0;
 var mcnt = 0;
 var lsig = 0;
-var pp = 0;
+var pl = 0;
 
 function get_index(){
   var xhr = new XMLHttpRequest();
@@ -167,14 +167,8 @@ function slide_list(b,list,data){
   return list
 }
 
-var testlist = [1,2,3,4,5]
-test.innerText = slide_list(2,testlist,8) + "|"
-testlist = [2]
-test.innerText += slide_list(7,testlist,8) + "|"
-testlist = [1,2,3,4,5]
-test.innerText += slide_list(0,testlist,8) + "|"
-
 function play_music(){
+  let same = false
   console.log(cnt)
   var src ='https://github.com/Tastuaki/OPED/raw/main/'+fname[cnt];
   // play.innerHTML ='<i class="fas fa-play"></i>';
@@ -194,22 +188,32 @@ function play_music(){
   }else{
     document.title = musictitle[cnt] + " - " + animetitle[cnt] + " - PLAYER"
   }
-  if(pastfname.length > 29){
-    pastfname[pp]=fname[cnt]
-    pastanime[pp]=animetitle[cnt]
-    pastmusic[pp]=musictitle[cnt]
-    pp += 1
-    if(pp >= 30){
-      pp = 0
+  
+  pl = pastfname.length
+  let i = 0
+  for(;i < pl;i++){
+    if(pastfname[i] == fname[cnt]){
+      same = true
+      slide_list(i,pastfname,fname[cnt])
+      slide_list(i,pastanime,animetitle[cnt])
+      slide_list(i,pastmusic,musictitle[cnt])
     }
-  }else if(pastfname.length == 0){
-    pastfname[0] = fname[cnt]
-    pastanime[0] = animetitle[cnt]
-    pastmusic[0] = musictitle[cnt]
-  }else{
-    pastfname.push(fname[cnt])
-    pastanime.push(animetitle[cnt])
-    pastmusic.push(musictitle[cnt])
+    break
+  }
+  if(!same){
+    if(pl > 29){
+      slide_list(0,pastfname,fname[cnt])
+      slide_list(0,pastanime,animetitle[cnt])
+      slide_list(0,pastmusic,musictitle[cnt])
+    }else if(pastfname.length == 0){
+      pastfname[0] = fname[cnt]
+      pastanime[0] = animetitle[cnt]
+      pastmusic[0] = musictitle[cnt]
+    }else{
+      pastfname.push(fname[cnt])
+      pastanime.push(animetitle[cnt])
+      pastmusic.push(musictitle[cnt])
+    }
   }
 }
 
