@@ -194,9 +194,9 @@ function play_music(){
   for(;i < pl;i++){
     if(pastfname[i] == fname[cnt]){
       same = true
-      slide_list(i,pastfname,fname[cnt])
-      slide_list(i,pastanime,animetitle[cnt])
-      slide_list(i,pastmusic,musictitle[cnt])
+      slide_list(i-1,pastfname,fname[cnt])
+      slide_list(i-1,pastanime,animetitle[cnt])
+      slide_list(i-1,pastmusic,musictitle[cnt])
     }
     break
   }
