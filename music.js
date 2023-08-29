@@ -155,8 +155,11 @@ const ran = document.getElementById('rand');
 const list = document.getElementById('on_list');
 const lists = document.getElementById('lists')
 
-function slide_list(list,data){
+function slide_list(b,list,data){
   let i = 0
+  if(b > 0){
+    i = b
+  }
   for(;i < list.length-1;i++){
     list[i] = list[i+1]
   }
@@ -164,8 +167,12 @@ function slide_list(list,data){
   return list
 }
 
-const testlist = [1]
-test.innerText = slide_list(testlist,8)
+const testlist = [1,2,3,4,5]
+test.innerText = slide_list(2,testlist,8) + "|"
+testlist = [2]
+test.innerText += slide_list(7,testlist,8) + "|"
+testlist = [1,2,3,4,5]
+test.innerText += slide_list(0,testlist,8) + "|"
 
 function play_music(){
   console.log(cnt)
