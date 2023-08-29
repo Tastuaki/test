@@ -532,7 +532,7 @@ rand.addEventListener('click', function(){
         if(cnt < 0){
           cnt = 0
         }
-        if(pl != 1){
+        if(pl != 0){
           for(;i < pl;i++){
             if(pastfname[i] == fname[cnt]){
               bm = false
