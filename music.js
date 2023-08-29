@@ -156,8 +156,8 @@ const list = document.getElementById('on_list');
 const lists = document.getElementById('lists')
 
 function slide_list(list,data){
-  var i
-  for(i = 0;i < list.length-2;i++){
+  let i = 0
+  for(;i < list.length-2;i++){
     list[i] = list[i+1]
   }
   list[list.length-1] = data
