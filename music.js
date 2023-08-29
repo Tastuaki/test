@@ -157,7 +157,7 @@ const lists = document.getElementById('lists')
 
 function slide_list(list,data){
   let i = 0
-  for(;i < list.length-2;i++){
+  for(;i < list.length-1;i++){
     list[i] = list[i+1]
   }
   list[list.length-1] = data
