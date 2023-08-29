@@ -164,7 +164,7 @@ function slide_list(list,data){
   return list
 }
 
-const testlist = [1,2,3,4,5]
+const testlist = [1]
 test.innerText = slide_list(testlist,8)
 
 function play_music(){
