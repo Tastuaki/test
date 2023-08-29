@@ -197,8 +197,8 @@ function play_music(){
       slide_list(i-1,pastfname,fname[cnt])
       slide_list(i-1,pastanime,animetitle[cnt])
       slide_list(i-1,pastmusic,musictitle[cnt])
+      break
     }
-    break
   }
   if(!same){
     if(pl > 29){
@@ -525,6 +525,7 @@ rand.addEventListener('click', function(){
   if(!ra){
     ra = true
     let bm = false
+    let i = 0
     if(fname.length != 1){
       while(!bm){
         cnt = Math.floor( Math.random() * fname.length )
