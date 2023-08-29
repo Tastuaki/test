@@ -155,6 +155,17 @@ const ran = document.getElementById('rand');
 const list = document.getElementById('on_list');
 const lists = document.getElementById('lists')
 
+function slide_list(list,data){
+  for(i = 0;i < list.length-2;i++){
+    list[i] = list[i+1]
+  }
+  list[list.length-1] = data
+  return list
+}
+
+const testlist = [1,2,3,4,5]
+test.innerText = slide_list(testlist,8)
+
 function play_music(){
   console.log(cnt)
   var src ='https://github.com/Tastuaki/OPED/raw/main/'+fname[cnt];
