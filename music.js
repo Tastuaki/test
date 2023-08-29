@@ -524,14 +524,21 @@ function autoscroll(){
 rand.addEventListener('click', function(){
   if(!ra){
     ra = true
-    var ocnt = cnt
-    while(ocnt == cnt){
-      if(fname.length == 1){
-        break
-      }
-      cnt = Math.floor( Math.random() * fname.length )
-      if(cnt < 0){
-        cnt = 0
+    let bm = false
+    if(fname.length != 1){
+      while(!bm){
+        cnt = Math.floor( Math.random() * fname.length )
+        if(cnt < 0){
+          cnt = 0
+        }
+        for(;i < pl;i++){
+          if(pastfname[i] == fname[cnt]){
+            bm = false
+            break
+          }else{
+            bm = true
+          }
+        }
       }
     }
     rand.innerHTML = '<i class="fas fa-long-arrow-alt-right"></i>'
