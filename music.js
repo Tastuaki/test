@@ -167,7 +167,7 @@ function slide_list(b,list,data){
   return list
 }
 
-const testlist = [1,2,3,4,5]
+var testlist = [1,2,3,4,5]
 test.innerText = slide_list(2,testlist,8) + "|"
 testlist = [2]
 test.innerText += slide_list(7,testlist,8) + "|"
