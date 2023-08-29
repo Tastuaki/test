@@ -154,6 +154,7 @@ const ser = document.getElementById('search');
 const ran = document.getElementById('rand');
 const list = document.getElementById('on_list');
 const lists = document.getElementById('lists')
+const but = document.getElementById('buttons')
 
 function slide_list(b,list,data){
   let i = 0
@@ -222,6 +223,7 @@ function past_list(){
   let i = 0
   lsig = -1
   base()
+  but.style.display = "none"
   fname.length = 0
   titletext.length = 0
   animetitle.length = 0
@@ -475,6 +477,7 @@ function xlist(){
 function clist(csig){
   if(lsig != csig){
     lsig = csig
+    but.style.display = "block"
     base()
     get_list(csig)
     xlist()
