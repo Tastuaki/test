@@ -81,27 +81,25 @@ function get_list(c){
               titletext[n] = titletext[n].replace(btext[j],ctext[j]);
             }
           }
-          if(c == 2){
-            musictitle[n] = titletext[n].replace("v/","");
-            animetitle[n] = ""
-          }else{
-            dsig = titletext[n].lastIndexOf("))")
-            sig = titletext[n].lastIndexOf("(")
-            if(dsig != -1){
-              dsig = sig
-              sig = titletext[n].slice(0,sig).lastIndexOf("(")
-              if(sig == -1){
-                sig = dsig
-              }
+          dsig = titletext[n].lastIndexOf("))")
+          sig = titletext[n].lastIndexOf("(")
+          if(dsig != -1){
+            dsig = sig
+            sig = titletext[n].slice(0,sig).lastIndexOf("(")
+            if(sig == -1){
+              sig = dsig
             }
+          }
 
-            if(sig != -1){
-              musictitle[n] = titletext[n].slice(sig+1,-1)
-              animetitle[n] = titletext[n].slice(0,sig)
-            }else{
-              musictitle[n] = titletext[n]
-              animetitle[n] = ""
-            }
+          if(sig != -1){
+            musictitle[n] = titletext[n].slice(sig+1,-1)
+            animetitle[n] = titletext[n].slice(0,sig)
+          }else{
+            musictitle[n] = titletext[n]
+            animetitle[n] = ""
+          }
+          if(c == 2){
+            musictitle[n] = musictitle[n].replace("v/","");
           }
           fname[n] = encodeURI(fname[n]);
           n += 1;
