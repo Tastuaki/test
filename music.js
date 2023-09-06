@@ -91,15 +91,16 @@ function get_list(c){
             }
           }
 
-          if(sig != -1){
+          if(c == 2){
+            animetitle[n] = titletext[n].slice(sig+1,-1)
+            musictitle[n] = titletext[n].slice(0,sig)
+            musictitle[n] = musictitle[n].replace("v/","");
+          }else if(sig != -1){
             musictitle[n] = titletext[n].slice(sig+1,-1)
             animetitle[n] = titletext[n].slice(0,sig)
           }else{
             musictitle[n] = titletext[n]
             animetitle[n] = ""
-          }
-          if(c == 2){
-            musictitle[n] = musictitle[n].replace("v/","");
           }
           fname[n] = encodeURI(fname[n]);
           n += 1;
