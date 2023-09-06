@@ -260,7 +260,7 @@ var intervalId = setInterval(check_sound, 1000);
 
 function check_sound(){
   console.log(music.ended)
-  if(music.ended && lsig != 2){
+  if(music.ended && lsig != -1){
     if(ra){
       var ocnt = cnt
       while(ocnt == cnt){
