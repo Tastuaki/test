@@ -523,7 +523,9 @@ function autoscroll(){
 }
 
 // ランダム
-rand.addEventListener('click', function(){
+rand.addEventListener('click', rand_play())
+
+function rand_play(){
   if(!ra){
     ra = true
     let bm = false
@@ -555,7 +557,7 @@ rand.addEventListener('click', function(){
     ra = false
     rand.innerHTML = '<i class="fas fa-random"></i>'
   }
-})
+}
 
 //キーボード入力
 document.addEventListener('keydown', keydown_ivent);
@@ -574,6 +576,11 @@ function keydown_ivent(e) {
       case 'ArrowRight':
         next();
         setTimeout(800);
+        break;
+      case "r":
+        if(e.ctrlKey){
+          rand_play();
+        }
         break;
     }
   }
