@@ -244,7 +244,6 @@ function past_list(){
 
 // 再生ボタン
 function ply(){
-  console.log("play")
   if(!music.paused){
     play.innerHTML ='<i class="fas fa-play"></i>';
     music.pause();
@@ -383,7 +382,6 @@ after.addEventListener('touchstart',function(){
 
 // リスト選択
 function list_select(num) {
-  console.log("list")
   cnt = num;
   play_music();
 }
@@ -525,10 +523,11 @@ function autoscroll(){
 }
 
 // ランダム
-rand.addEventListener('click', rand_play())
+rand.addEventListener('click', () => {console.log("aaaaaa");
+  rand_play()
+})
 
 function rand_play(){
-  print("rand")
   if(!ra){
     ra = true
     let bm = false
