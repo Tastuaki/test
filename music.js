@@ -523,9 +523,7 @@ function autoscroll(){
 }
 
 // ランダム
-rand.addEventListener('click', () => {console.log("aaaaaa");
-  rand_play()
-})
+rand.addEventListener('click', () => rand_play())
 
 function rand_play(){
   if(!ra){
@@ -579,11 +577,11 @@ function keydown_ivent(e) {
         next();
         setTimeout(800);
         break;
-      // case "r":
-      //   if(e.ctrlKey){
-      //     rand_play();
-      //   }
-      //   break;
+      case "r":
+        if(e.ctrlKey){
+          rand_play();
+        }
+        break;
     }
   }
 }
