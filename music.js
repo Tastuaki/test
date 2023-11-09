@@ -312,6 +312,10 @@ mute.addEventListener('click', function(){
 
 //ループ再生
 loop.addEventListener('click', function(){
+  loop_play()
+});
+
+function loop_play(){
   if(music.loop){
     music.loop = false;
     loop.innerHTML = '<i class="fas fa-sync"></i>';
@@ -319,7 +323,7 @@ loop.addEventListener('click', function(){
     music.loop = true;
     loop.innerHTML = '<i class="fas fa-stop"></i>';
   }
-});
+}
 
 // 逆順再生
 rec.addEventListener('click', function(){
@@ -578,8 +582,13 @@ function keydown_ivent(e) {
         setTimeout(800);
         break;
       case "r":
-        if(e.ctrlKey){
+        if(e.shiftKey){
           rand_play();
+        }
+        break;
+      case "l":
+        if(e.shiftKey){
+          loop_play();
         }
         break;
     }
