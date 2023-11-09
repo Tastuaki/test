@@ -582,14 +582,12 @@ function keydown_ivent(e) {
         setTimeout(800);
         break;
       case "r":
-        console.log("r")
-        if(e.shiftKey){
+        if(e.altKey){
           rand_play();
         }
         break;
       case "l":
-        console.log("l")
-        if(e.shiftKey){
+        if(e.altKey){
           loop_play();
         }
         break;
