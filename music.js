@@ -577,11 +577,11 @@ function keydown_ivent(e) {
         next();
         setTimeout(800);
         break;
-      case "r":
-        if(e.ctrlKey){
-          rand_play();
-        }
-        break;
+      // case "r":
+      //   if(e.ctrlKey){
+      //     rand_play();
+      //   }
+      //   break;
     }
   }
 }
