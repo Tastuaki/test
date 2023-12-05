@@ -189,32 +189,34 @@ function play_music(){
     document.title = musictitle[cnt] + " - " + animetitle[cnt] + " - PLAYER"
   }
   
-  pl = pastfname.length
   let i = 0
-  for(;i < pl;i++){
-    if(pastfname[i] == fname[cnt]){
-      same = true
-      slide_list(i,pastfname,fname[cnt])
-      slide_list(i,pastanime,animetitle[cnt])
-      slide_list(i,pastmusic,musictitle[cnt])
-      break
+  if(pl != 0){
+    for(;i < pl;i++){
+      if(pastfname[i] == fname[cnt]){
+        same = true
+        slide_list(i,pastfname,fname[cnt])
+        slide_list(i,pastanime,animetitle[cnt])
+        slide_list(i,pastmusic,musictitle[cnt])
+        break
+      }
     }
-  }
-  if(!same){
-    if(pl > 29){
-      slide_list(0,pastfname,fname[cnt])
-      slide_list(0,pastanime,animetitle[cnt])
-      slide_list(0,pastmusic,musictitle[cnt])
-    }else if(pastfname.length == 0){
-      pastfname[0] = fname[cnt]
-      pastanime[0] = animetitle[cnt]
-      pastmusic[0] = musictitle[cnt]
-    }else{
-      pastfname.push(fname[cnt])
-      pastanime.push(animetitle[cnt])
-      pastmusic.push(musictitle[cnt])
+    if(!same){
+      if(pl > 29){
+        slide_list(0,pastfname,fname[cnt])
+        slide_list(0,pastanime,animetitle[cnt])
+        slide_list(0,pastmusic,musictitle[cnt])
+      }else{
+        pastfname.push(fname[cnt])
+        pastanime.push(animetitle[cnt])
+        pastmusic.push(musictitle[cnt])
+      }
     }
+  }else{
+    pastfname[0] = fname[cnt]
+    pastanime[0] = animetitle[cnt]
+    pastmusic[0] = musictitle[cnt]
   }
+  pl = pastfname.length
 }
 
 function past_list(){
@@ -227,8 +229,8 @@ function past_list(){
   titletext.length = 0
   animetitle.length = 0
   musictitle.length = 0
-  if(pastfname.length != 0){
-    for(i = pastfname.length - 1;i > -1;i--){
+  if(pl != 0){
+    for(i = pl- 1;i > -1;i--){
         var li = document.createElement('li');
         li.innerHTML = '<button class="smusic" value="'+ i + '" onclick="list_select('+ i +')"><label class="tt">' + pastmusic[i] + '</label><label class="tt">' + pastanime[i] + '</label></button>';
         mlist.appendChild(li);
@@ -544,9 +546,11 @@ function rand_play(){
           for(;i < pl;i++){
             if(pastfname[i] == fname[cnt]){
               bm = false
+              console.log("re")
               break
             }else{
               bm = true
+              console.log("away")
             }
           }
         }else{
