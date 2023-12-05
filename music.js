@@ -264,9 +264,23 @@ function check_sound(){
   console.log(music.ended)
   if(music.ended && lsig != -1){
     if(ra){
-      var ocnt = cnt
-      while(ocnt == cnt){
-        cnt = Math.floor( Math.random() * ((fname.length - 1) + 1 - 0) ) + 0
+      let i = 0
+      let bm = false
+      while(!bm){
+        cnt = Math.floor( Math.random() * fname.length )
+        if(pl != 0){
+          for(i=0;i < pl;i++){
+            if(pastfname[i] == fname[cnt]){
+              bm = false
+              console.log("re")
+              console.log(cnt)
+              break
+            }else{
+              bm = true
+              console.log("away")
+            }
+          }
+        }
       }
     }else if(!ls){
       cnt += 1;
@@ -545,12 +559,9 @@ function rand_play(){
           for(i=0;i < pl;i++){
             if(pastfname[i] == fname[cnt]){
               bm = false
-              console.log("re")
-              console.log(cnt)
               break
             }else{
               bm = true
-              console.log("away")
             }
           }
         }else{
