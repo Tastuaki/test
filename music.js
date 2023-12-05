@@ -535,7 +535,6 @@ function rand_play(){
   if(!ra){
     ra = true
     let bm = false
-    let i = 0
     if(fname.length != 1){
       while(!bm){
         cnt = Math.floor( Math.random() * fname.length )
@@ -543,10 +542,11 @@ function rand_play(){
           cnt = 0
         }
         if(pl != 0){
-          for(;i < pl;i++){
+          for(i=0;i < pl;i++){
             if(pastfname[i] == fname[cnt]){
               bm = false
               console.log("re")
+              console.log(cnt)
               break
             }else{
               bm = true
