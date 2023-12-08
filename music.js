@@ -556,7 +556,7 @@ function rand_play(){
           cnt = 0
         }
         if(pl != 0){
-          for(i=0;i < pl;i++){
+          for(let i=0;i < pl;i++){
             if(pastfname[i] == fname[cnt]){
               bm = false
               break
