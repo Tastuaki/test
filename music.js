@@ -91,7 +91,7 @@ function get_list(c){
             }
           }
 
-          if(c == 2){
+          if(c == 3){
             animetitle[n] = titletext[n].slice(sig+1,-1)
             musictitle[n] = titletext[n].slice(0,sig)
             musictitle[n] = musictitle[n].replace("v/","");
