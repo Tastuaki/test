@@ -137,6 +137,7 @@ get_index()
 var ls = false;
 var ra = false;
 var so = false;
+var lff = false
 var mdm = 0;
 var mds = '00'.slice(-2)
 var hheader = document.getElementById("control").getBoundingClientRect().bottom
@@ -177,6 +178,7 @@ function play_music(){
   var src ='https://github.com/Tastuaki/OPED/raw/main/'+fname[cnt];
   // play.innerHTML ='<i class="fas fa-play"></i>';
   if(music.src != src){
+    lff = false
     music.src = src;
     music.loop = false;
     loop.innerHTML = '<i class="fas fa-sync"></i>';
@@ -184,8 +186,9 @@ function play_music(){
     music.load()
   }
   console.log(music.src+"\n"+titletext[cnt]+"("+mdm+":"+mds+")");
-  music.play();
   music.volume = volume_index.value / 100.00;
+  ptime.value = 0
+  music.play();
   play.innerHTML = '<i class="fas fa-pause"></i>';
   title.innerHTML = '<i class="fas fa-music"></i>　'+ musictitle[cnt];
   anime.innerHTML = animetitle[cnt];
@@ -306,12 +309,9 @@ function check_sound(){
     if(mcnt < 0){
       cnt = mcnt;
     }
-  }else{
-    if(music.src != ""){
-      ptt.innerHTML = Math.floor(music.currentTime/60)+":"+('00'+Math.floor(music.currentTime%60)).slice(-2)+" / "+mdm+":"+mds
-      ptime.value = music.currentTime / (music.duration / 100)
-    }
-  }
+  }else if(lff){
+    ptt.innerHTML = Math.floor(music.currentTime/60)+":"+('00'+Math.floor(music.currentTime%60)).slice(-2)+" / "+mdm+":"+mds
+    ptime.value = music.currentTime / (music.duration / 100)
 }
 
 // 再生時間
@@ -319,7 +319,7 @@ music.addEventListener('loadedmetadata',function(e) {
   mdm = Math.floor(music.duration/60)
   mds = ('00'+Math.floor(music.duration%60)).slice(-2)
   ptt.innerHTML = Math.floor(music.currentTime/60)+":"+('00'+Math.floor(music.currentTime%60)).slice(-2)+" / "+mdm+":"+mds
-  ptime.value = 0
+  lff = true
 });
 
 ptime.addEventListener('change',function(){
@@ -545,6 +545,8 @@ function base(){
   mdm = 0
   mds = '00'.slice(-2)
   ptt.innerHTML = "0:00 / "+mdm+":"+mds
+  music.currentTime = 0
+  music.src = ""
 }
 
 // 自動スクロール
