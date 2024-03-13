@@ -312,7 +312,7 @@ function check_sound(){
 }
 
 // 再生時間
-audio.addEventListener('loadedmetadata',function(e) {
+music.addEventListener('loadedmetadata',function(e) {
   mdm = Math.floor(music.duration/60)
   mds = ('00'+Math.floor(music.duration%60)).slice(-2)
   ptt.innerHTML = Math.floor(music.currentTime/60)+":"+('00'+Math.floor(music.currentTime%60)).slice(-2)+" / "+mdm+":"+mds
