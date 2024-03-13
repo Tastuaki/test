@@ -138,7 +138,7 @@ var ls = false;
 var ra = false;
 var so = false;
 var mdm = 0;
-var mds = '00'.slice(-2);
+var mds = '00'.slice(-2)
 var hheader = document.getElementById("control").getBoundingClientRect().bottom
 
 const music = new Audio();
@@ -336,6 +336,7 @@ volume_index.addEventListener('input',function(){
 })
 window.addEventListener("beforeunload",function(){
     volume_index.value = 20;
+    ptime.value = 0;
     window.scrollTo({ top : 0,behavior: 'smooth'});
 })
 
@@ -540,6 +541,10 @@ function base(){
   anime.innerHTML = '';
   document.title = "PLAYER"
   cnt = 0
+  ptime.value = 0
+  mdm = 0
+  mds = '00'.slice(-2)
+  ptt.innerHTML = "0:00 / "+mdm+":"+mds
 }
 
 // 自動スクロール
