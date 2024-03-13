@@ -181,10 +181,11 @@ function play_music(){
     music.loop = false;
     loop.innerHTML = '<i class="fas fa-sync"></i>';
     // autoscroll()
+    music.load()
   }
-  music.load()
   console.log(music.src+"\n"+titletext[cnt]+"("+mdm+":"+mds+")");
   music.play();
+  music.volume = volume_index.value / 100.00;
   play.innerHTML = '<i class="fas fa-pause"></i>';
   title.innerHTML = '<i class="fas fa-music"></i>　'+ musictitle[cnt];
   anime.innerHTML = animetitle[cnt];
@@ -306,7 +307,7 @@ function check_sound(){
       cnt = mcnt;
     }
   }else{
-    // ptt.innerHTML = Math.floor(music.currentTime/60)+":"+('00'+Math.floor(music.currentTime%60)).slice(-2)+" / "+mdm+":"+mds
+    ptt.innerHTML = Math.floor(music.currentTime/60)+":"+('00'+Math.floor(music.currentTime%60)).slice(-2)+" / "+mdm+":"+mds
     ptime.value = music.currentTime / (music.duration / 100)
   }
 }
