@@ -183,10 +183,6 @@ function play_music(){
     // autoscroll()
   }
   music.play();
-  mdm = Math.floor(music.duration/60)
-  mds = Math.floor(music.duration%60)
-  console.log(music.src+"\n"+titletext[cnt]+"("+mdm+":"+mds+")");
-  ptt.innerHTML = Math.floor(music.currentTime/60)+":"+Math.floor(music.currentTime%60)+" / "+mdm+":"+mds
   play.innerHTML = '<i class="fas fa-pause"></i>';
   title.innerHTML = '<i class="fas fa-music"></i>　'+ musictitle[cnt];
   anime.innerHTML = animetitle[cnt];
@@ -195,6 +191,10 @@ function play_music(){
   }else{
     document.title = musictitle[cnt] + " - " + animetitle[cnt] + " - PLAYER"
   }
+  mdm = Math.floor(music.duration/60)
+  mds = Math.floor(music.duration%60)
+  console.log(music.src+"\n"+titletext[cnt]+"("+mdm+":"+mds+")");
+  ptt.innerHTML = Math.floor(music.currentTime/60)+":"+Math.floor(music.currentTime%60)+" / "+mdm+":"+mds
   
   let i = 0
   if(pl != 0){
