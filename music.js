@@ -319,6 +319,7 @@ music.addEventListener('loadedmetadata',function(e) {
   mdm = Math.floor(music.duration/60)
   mds = ('00'+Math.floor(music.duration%60)).slice(-2)
   ptt.innerHTML = Math.floor(music.currentTime/60)+":"+('00'+Math.floor(music.currentTime%60)).slice(-2)+" / "+mdm+":"+mds
+  ptime.value = 0
 });
 
 ptime.addEventListener('change',function(){
