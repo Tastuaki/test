@@ -149,6 +149,8 @@ const rec = document.getElementById('rec');
 const before = document.getElementById('before');
 const after = document.getElementById('after');
 const volume_index = document.getElementById('volume');
+const ptime = document.getElementById('play_time');
+const ptt = document.getElementById('ptime-text');
 const ser = document.getElementById('search');
 const ran = document.getElementById('rand');
 const list = document.getElementById('on_list');
@@ -179,6 +181,7 @@ function play_music(){
     // autoscroll()
   }
   console.log(music.src+"\n"+titletext[cnt]);
+  ptt.text = music.currentTime +" / "+music.duration
   music.play();
   play.innerHTML = '<i class="fas fa-pause"></i>';
   title.innerHTML = '<i class="fas fa-music"></i>　'+ musictitle[cnt];
@@ -300,8 +303,15 @@ function check_sound(){
     if(mcnt < 0){
       cnt = mcnt;
     }
+  }else{
+    ptt.text = music.currentTime+" / "+music.duration
   }
 }
+
+// 再生時間
+ptime.addEventListener('change',function(){
+  music.currentTime = (music.duration / 100) * ptime.value
+})
 
 //音量
 volume_index.addEventListener('change',function(){
