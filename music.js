@@ -312,6 +312,7 @@ function check_sound(){
   }else if(lff){
     ptt.innerHTML = Math.floor(music.currentTime/60)+":"+('00'+Math.floor(music.currentTime%60)).slice(-2)+" / "+mdm+":"+mds
     ptime.value = music.currentTime / (music.duration / 100)
+  }
 }
 
 // 再生時間
