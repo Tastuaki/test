@@ -182,6 +182,11 @@ function play_music(){
     loop.innerHTML = '<i class="fas fa-sync"></i>';
     // autoscroll()
   }
+  music.load()
+  mdm = Math.floor(music.duration/60)
+  mds = ('00'+Math.floor(music.duration%60)).slice(-2)
+  console.log(music.src+"\n"+titletext[cnt]+"("+mdm+":"+mds+")");
+  ptt.innerHTML = Math.floor(music.currentTime/60)+":"+('00'+Math.floor(music.currentTime%60)).slice(-2)+" / "+mdm+":"+mds
   music.play();
   play.innerHTML = '<i class="fas fa-pause"></i>';
   title.innerHTML = '<i class="fas fa-music"></i>　'+ musictitle[cnt];
@@ -191,10 +196,6 @@ function play_music(){
   }else{
     document.title = musictitle[cnt] + " - " + animetitle[cnt] + " - PLAYER"
   }
-  mdm = Math.floor(music.duration/60)
-  mds = Math.floor(music.duration%60)
-  console.log(music.src+"\n"+titletext[cnt]+"("+mdm+":"+mds+")");
-  ptt.innerHTML = Math.floor(music.currentTime/60)+":"+Math.floor(music.currentTime%60)+" / "+mdm+":"+mds
   
   let i = 0
   if(pl != 0){
@@ -308,7 +309,7 @@ function check_sound(){
       cnt = mcnt;
     }
   }else{
-    ptt.innerHTML = Math.floor(music.currentTime/60)+":"+Math.floor(music.currentTime%60)+" / "+mdm+":"+mds
+    // ptt.innerHTML = Math.floor(music.currentTime/60)+":"+('00'+Math.floor(music.currentTime%60)).slice(-2)+" / "+mdm+":"+mds
     ptime.value = music.currentTime / (music.duration / 100)
   }
 }
@@ -316,7 +317,7 @@ function check_sound(){
 // 再生時間
 ptime.addEventListener('change',function(){
   music.currentTime = (music.duration / 100) * ptime.value
-  ptt.innerHTML = Math.floor(music.currentTime/60)+":"+Math.floor(music.currentTime%60)+" / "+mdm+":"+mds
+  ptt.innerHTML = Math.floor(music.currentTime/60)+":"+('00'+Math.floor(music.currentTime%60)).slice(-2)+" / "+mdm+":"+mds
 })
 
 //音量
