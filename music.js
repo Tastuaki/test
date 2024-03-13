@@ -139,7 +139,7 @@ var ra = false;
 var so = false;
 var hheader = document.getElementById("control").getBoundingClientRect().bottom
 
-const music = new Audio('https://github.com/Tastuaki/OPED/blob/main/'+fname[cnt]+'?raw=true');
+const music = new Audio();
 const title = document.getElementById('title');
 const anime = document.getElementById('anime');
 const play = document.getElementById('play');
@@ -304,13 +304,14 @@ function check_sound(){
       cnt = mcnt;
     }
   }else{
-    ptt.text = music.currentTime+" / "+music.duration
+    ptt.innerHTML = music.currentTime+" / "+music.duration
   }
 }
 
 // 再生時間
 ptime.addEventListener('change',function(){
   music.currentTime = (music.duration / 100) * ptime.value
+  ptt.innerHTML = music.currentTime+" / "+music.duration
 })
 
 //音量
