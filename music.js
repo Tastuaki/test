@@ -309,6 +309,7 @@ function check_sound(){
     }
   }else{
     ptt.innerHTML = Math.floor(music.currentTime/60)+":"+Math.floor(music.currentTime%60)+" / "+mdm+":"+mds
+    ptime.value = music.currentTime / (music.duration / 100)
   }
 }
 
