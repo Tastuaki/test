@@ -181,7 +181,7 @@ function play_music(){
     // autoscroll()
   }
   console.log(music.src+"\n"+titletext[cnt]);
-  ptt.text = music.currentTime +" / "+music.duration
+  ptt.innerHTML = music.currentTime +" / "+music.duration
   music.play();
   play.innerHTML = '<i class="fas fa-pause"></i>';
   title.innerHTML = '<i class="fas fa-music"></i>　'+ musictitle[cnt];
