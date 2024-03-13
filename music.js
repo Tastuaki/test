@@ -182,11 +182,11 @@ function play_music(){
     loop.innerHTML = '<i class="fas fa-sync"></i>';
     // autoscroll()
   }
-  console.log(music.src+"\n"+titletext[cnt]);
+  music.play();
   mdm = Math.floor(music.duration/60)
   mds = Math.floor(music.duration%60)
+  console.log(music.src+"\n"+titletext[cnt]+"("+mdm+":"+mds+")");
   ptt.innerHTML = Math.floor(music.currentTime/60)+":"+Math.floor(music.currentTime%60)+" / "+mdm+":"+mds
-  music.play();
   play.innerHTML = '<i class="fas fa-pause"></i>';
   title.innerHTML = '<i class="fas fa-music"></i>　'+ musictitle[cnt];
   anime.innerHTML = animetitle[cnt];
