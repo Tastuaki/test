@@ -137,6 +137,8 @@ get_index()
 var ls = false;
 var ra = false;
 var so = false;
+var mdm = 0;
+var mds = 0;
 var hheader = document.getElementById("control").getBoundingClientRect().bottom
 
 const music = new Audio();
@@ -306,14 +308,14 @@ function check_sound(){
       cnt = mcnt;
     }
   }else{
-    ptt.innerHTML = music.currentTime+" / "+music.duration
+    ptt.innerHTML = Math.floor(music.currentTime/60)+":"+Math.floor(music.currentTime%60)+" / "+mdm+":"+mds
   }
 }
 
 // 再生時間
 ptime.addEventListener('change',function(){
   music.currentTime = (music.duration / 100) * ptime.value
-  ptt.innerHTML = music.currentTime+" / "+music.duration
+  ptt.innerHTML = Math.floor(music.currentTime/60)+":"+Math.floor(music.currentTime%60)+" / "+mdm+":"+mds
 })
 
 //音量
