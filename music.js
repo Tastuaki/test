@@ -138,7 +138,7 @@ var ls = false;
 var ra = false;
 var so = false;
 var mdm = 0;
-var mds = 0;
+var mds = '00'.slice(-2);
 var hheader = document.getElementById("control").getBoundingClientRect().bottom
 
 const music = new Audio();
@@ -307,8 +307,10 @@ function check_sound(){
       cnt = mcnt;
     }
   }else{
-    ptt.innerHTML = Math.floor(music.currentTime/60)+":"+('00'+Math.floor(music.currentTime%60)).slice(-2)+" / "+mdm+":"+mds
-    ptime.value = music.currentTime / (music.duration / 100)
+    if(title.innerHTML != ""){
+      ptt.innerHTML = Math.floor(music.currentTime/60)+":"+('00'+Math.floor(music.currentTime%60)).slice(-2)+" / "+mdm+":"+mds
+      ptime.value = music.currentTime / (music.duration / 100)
+    }
   }
 }
 
