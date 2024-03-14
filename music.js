@@ -548,6 +548,7 @@ function base(){
   ptt.innerHTML = "0:00 / "+mdm+":"+mds
   music.currentTime = 0
   music.src = ""
+  lff = false
 }
 
 // 自動スクロール
