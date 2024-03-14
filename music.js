@@ -226,6 +226,7 @@ function play_music(){
     pastmusic[0] = musictitle[cnt]
   }
   pl = pastfname.length
+  lff = true
 }
 
 function past_list(){
@@ -320,7 +321,6 @@ music.addEventListener('loadedmetadata',function(e) {
   mdm = Math.floor(music.duration/60)
   mds = ('00'+Math.floor(music.duration%60)).slice(-2)
   ptt.innerHTML = Math.floor(music.currentTime/60)+":"+('00'+Math.floor(music.currentTime%60)).slice(-2)+" / "+mdm+":"+mds
-  lff = true
 });
 
 ptime.addEventListener('change',function(){
