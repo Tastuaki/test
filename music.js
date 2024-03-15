@@ -335,6 +335,8 @@ volume_index.addEventListener('change',function(){
 volume_index.addEventListener('input',function(){
   document.getElementById('volume-text').innerText = volume_index.value;
 })
+
+// 画面更新前動作
 window.addEventListener("beforeunload",function(){
     volume_index.value = 20;
     ptime.value = 0;
@@ -530,6 +532,7 @@ function clist(csig){
 }
 
 function base(){
+  lff = false
   mlist.innerHTML = "";
   ls = false;
   rec.innerHTML = '<i class="fas fa-long-arrow-alt-left"></i>';
@@ -548,7 +551,6 @@ function base(){
   ptt.innerHTML = "0:00 / "+mdm+":"+mds
   music.currentTime = 0
   music.src = ""
-  lff = false
 }
 
 // 自動スクロール
