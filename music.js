@@ -226,7 +226,6 @@ function play_music(){
     pastmusic[0] = musictitle[cnt]
   }
   pl = pastfname.length
-  lff = true
 }
 
 function past_list(){
@@ -322,7 +321,9 @@ music.addEventListener('loadedmetadata',function(e) {
   mds = ('00'+Math.floor(music.duration%60)).slice(-2)
   ptt.innerHTML = Math.floor(music.currentTime/60)+":"+('00'+Math.floor(music.currentTime%60)).slice(-2)+" / "+mdm+":"+mds
 });
-
+music.addEventListener('canplaythrough', function(e) {
+  lff = true
+})
 ptime.addEventListener('change',function(){
   music.currentTime = (music.duration / 100) * ptime.value
   ptt.innerHTML = Math.floor(music.currentTime/60)+":"+('00'+Math.floor(music.currentTime%60)).slice(-2)+" / "+mdm+":"+mds
