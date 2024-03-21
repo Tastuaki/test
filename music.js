@@ -179,6 +179,7 @@ function play_music(){
   // play.innerHTML ='<i class="fas fa-play"></i>';
   if(music.src != src){
     lff = false
+    ptime.value = 0
     music.src = src;
     music.loop = false;
     loop.innerHTML = '<i class="fas fa-sync"></i>';
@@ -187,7 +188,6 @@ function play_music(){
   }
   console.log(music.src+"\n"+titletext[cnt]+"("+mdm+":"+mds+")");
   music.volume = volume_index.value / 100.00;
-  ptime.value = 0
   music.play();
   play.innerHTML = '<i class="fas fa-pause"></i>';
   title.innerHTML = '<i class="fas fa-music"></i>　'+ musictitle[cnt];
