@@ -5,6 +5,9 @@ var fname = [""];
 var titletext = [""];
 var animetitle = [""];
 var musictitle = [""];
+var bfname = [""];
+var banimetitle = [""];
+var bmusictitle = [""];
 var btext = [".mp3","：","／"];
 var ctext = ["",":","/"];
 var lname = [""]
@@ -25,7 +28,8 @@ function get_index(){
   let i = 0;
   let n = 0;
   var listtext = [""]
-  xhr.onreadystatechange = function() {
+  xhr.onreadysta
+  techange = function() {
     if( xhr.readyState === 4 && xhr.status === 200) {
       listtext = this.responseText;
       var ll = listtext.length
@@ -112,6 +116,9 @@ function get_list(c){
           break;
         }
       }
+      bfname = fname.concat();
+      bmusictitle = musictitle.concat();
+      banimetitle = animetitle.concat();
     }
   }
 }
@@ -272,26 +279,27 @@ var intervalId = setInterval(check_sound, 1000);
 function check_sound(){
   console.log(music.ended)
   if(music.ended && lsig != -1){
-    if(ra){
-      let i = 0
-      let bm = false
-      while(!bm){
-        cnt = Math.floor( Math.random() * fname.length )
-        if(pl != 0){
-          for(i=0;i < pl;i++){
-            if(pastfname[i] == fname[cnt]){
-              bm = false
-              console.log("re")
-              console.log(cnt)
-              break
-            }else{
-              bm = true
-              console.log("away")
-            }
-          }
-        }
-      }
-    }else if(!ls){
+    // if(ra){
+    //   let i = 0
+    //   let bm = false
+    //   while(!bm){
+    //     cnt = Math.floor( Math.random() * fname.length )
+    //     if(pl != 0){
+    //       for(i=0;i < pl;i++){
+    //         if(pastfname[i] == fname[cnt]){
+    //           bm = false
+    //           console.log("re")
+    //           console.log(cnt)
+    //           break
+    //         }else{
+    //           bm = true
+    //           console.log("away")
+    //         }
+    //       }
+    //     }
+    //   }
+    // }else 
+    if(!ls){
       cnt += 1;
       if(cnt > fname.length - 1){
         cnt = 0;
@@ -585,30 +593,47 @@ function rand_play(){
   if(!ra){
     ra = true
     let bm = false
+    let rcnt = 0
+    let tmp = ""
     if(fname.length != 1){
-      while(!bm){
-        cnt = Math.floor( Math.random() * fname.length )
-        if(cnt < 0){
-          cnt = 0
-        }
-        if(pl != 0){
-          for(let i=0;i < pl;i++){
-            if(pastfname[i] == fname[cnt]){
-              bm = false
-              break
-            }else{
-              bm = true
-            }
-          }
-        }else{
-          bm = true
-        }
+      // while(!bm){
+      //   cnt = Math.floor( Math.random() * fname.length )
+      //   if(cnt < 0){
+      //     cnt = 0
+      //   }
+      //   if(pl != 0){
+      //     for(let i=0;i < pl;i++){
+      //       if(pastfname[i] == fname[cnt]){
+      //         bm = false
+      //         break
+      //       }else{
+      //         bm = true
+      //       }
+      //     }
+      //   }else{
+      //     bm = true
+      //   }
+      // }
+      for(let i = (fname.length - 1); 0 < i; i--){
+        rcnt = Math.floor(Math.random() * (i + 1));
+        tmp = fname[i];
+        fname[i] = fname[rcnt];
+        fname[rcnt] = tmp;
+        tmp = musictitle[i];
+        musictitle[i] = musictitle[rcnt];
+        musictitle[rcnt] = tmp;
+        tmp = animetitle[i];
+        animetitle[i] = animetitle[rcnt];
+        animetitle[rcnt] = tmp;
       }
     }
     rand.innerHTML = '<i class="fas fa-long-arrow-alt-right"></i>'
     ls = false
     play_music()
   }else{
+    fname = bfname.concat();
+    musictitle = bmusictitle.concat();
+    animetitle = banimetitle.concat();
     ra = false
     rand.innerHTML = '<i class="fas fa-random"></i>'
   }
