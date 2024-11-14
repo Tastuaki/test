@@ -29,7 +29,7 @@ function get_index(){
   let n = 0;
   var listtext = [""]
   xhr.onreadysta
-  techange = function() {
+  xhr.onreadystatechange = function() {
     if( xhr.readyState === 4 && xhr.status === 200) {
       listtext = this.responseText;
       var ll = listtext.length
