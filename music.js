@@ -627,6 +627,7 @@ function rand_play(){
         animetitle[rcnt] = tmp;
       }
     }
+    make_list(-1)
     rand.innerHTML = '<i class="fas fa-long-arrow-alt-right"></i>'
     ls = false
     play_music()
@@ -634,6 +635,7 @@ function rand_play(){
     fname = bfname.concat();
     musictitle = bmusictitle.concat();
     animetitle = banimetitle.concat();
+    make_list(-1)
     ra = false
     rand.innerHTML = '<i class="fas fa-random"></i>'
   }
