@@ -633,11 +633,12 @@ function rand_play(){
     cnt = 0
     play_music()
   }else{
+    let nm = fname[cnt]
+    cnt = bfname.indexOf(nm)
     fname = bfname.concat();
     musictitle = bmusictitle.concat();
     animetitle = banimetitle.concat();
     make_list(-1)
-    cnt = 0
     ra = false
     rand.innerHTML = '<i class="fas fa-random"></i>'
   }
