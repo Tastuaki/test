@@ -630,12 +630,14 @@ function rand_play(){
     make_list(-1)
     rand.innerHTML = '<i class="fas fa-long-arrow-alt-right"></i>'
     ls = false
+    cnt = 0
     play_music()
   }else{
     fname = bfname.concat();
     musictitle = bmusictitle.concat();
     animetitle = banimetitle.concat();
     make_list(-1)
+    cnt = 0
     ra = false
     rand.innerHTML = '<i class="fas fa-random"></i>'
   }
