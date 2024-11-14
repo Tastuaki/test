@@ -193,7 +193,7 @@ function play_music(){
     // autoscroll()
     music.load()
   }
-  console.log(music.src+"\n"+titletext[cnt]+"("+mdm+":"+mds+")");
+  console.log(music.src+"\n"+musictitle[cnt] + " - " + animetitle[cnt]+"("+mdm+":"+mds+")");
   music.volume = volume_index.value / 100.00;
   music.play();
   play.innerHTML = '<i class="fas fa-pause"></i>';
