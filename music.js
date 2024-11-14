@@ -279,26 +279,6 @@ var intervalId = setInterval(check_sound, 1000);
 function check_sound(){
   console.log(music.ended)
   if(music.ended && lsig != -1){
-    // if(ra){
-    //   let i = 0
-    //   let bm = false
-    //   while(!bm){
-    //     cnt = Math.floor( Math.random() * fname.length )
-    //     if(pl != 0){
-    //       for(i=0;i < pl;i++){
-    //         if(pastfname[i] == fname[cnt]){
-    //           bm = false
-    //           console.log("re")
-    //           console.log(cnt)
-    //           break
-    //         }else{
-    //           bm = true
-    //           console.log("away")
-    //         }
-    //       }
-    //     }
-    //   }
-    // }else 
     if(!ls){
       cnt += 1;
       if(cnt > fname.length - 1){
@@ -596,24 +576,6 @@ function rand_play(){
     let rcnt = 0
     let tmp = ""
     if(fname.length != 1){
-      // while(!bm){
-      //   cnt = Math.floor( Math.random() * fname.length )
-      //   if(cnt < 0){
-      //     cnt = 0
-      //   }
-      //   if(pl != 0){
-      //     for(let i=0;i < pl;i++){
-      //       if(pastfname[i] == fname[cnt]){
-      //         bm = false
-      //         break
-      //       }else{
-      //         bm = true
-      //       }
-      //     }
-      //   }else{
-      //     bm = true
-      //   }
-      // }
       for(let i = (fname.length - 1); 0 < i; i--){
         rcnt = Math.floor(Math.random() * (i + 1));
         tmp = fname[i];
