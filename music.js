@@ -596,6 +596,7 @@ function rand_play(){
     play_music()
   }else{
     let nm = fname[cnt]
+    console.log(nm)
     cnt = bfname.indexOf(nm)
     fname = bfname.concat();
     musictitle = bmusictitle.concat();
