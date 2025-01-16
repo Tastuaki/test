@@ -6,6 +6,7 @@ var titletext = [""];
 var animetitle = [""];
 var musictitle = [""];
 var bfname = [""];
+var btitletext = [""];
 var banimetitle = [""];
 var bmusictitle = [""];
 var btext = [".mp3","：","／"];
@@ -117,6 +118,7 @@ function get_list(c){
         }
       }
       bfname = fname.concat();
+      btitletext = titletext.concat();
       bmusictitle = musictitle.concat();
       banimetitle = animetitle.concat();
     }
@@ -466,7 +468,7 @@ function search(key,list){
   var d_titles = []
   if(key != ""){
     for(k=0;k < list.length;k++){
-      sig = list[k].indexOf(key)
+      sig = list[k].toLowerCase().indexOf(key)
       if(sig != -1){
         sigs.push(sig)
         d_titles.push(k)
@@ -581,6 +583,9 @@ function rand_play(){
         tmp = fname[i];
         fname[i] = fname[rcnt];
         fname[rcnt] = tmp;
+        tmp = titletext[i];
+        titletext[i] = titletext[rcnt];
+        titletext[rcnt] = tmp;
         tmp = musictitle[i];
         musictitle[i] = musictitle[rcnt];
         musictitle[rcnt] = tmp;
@@ -599,6 +604,7 @@ function rand_play(){
     console.log(nm)
     cnt = bfname.indexOf(nm)
     fname = bfname.concat();
+    titletext = btitletext.concat();
     musictitle = bmusictitle.concat();
     animetitle = banimetitle.concat();
     make_list(-1)
