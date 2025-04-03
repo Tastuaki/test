@@ -192,7 +192,7 @@ function play_music(){
     music.src = src;
     music.loop = false;
     loop.innerHTML = '<i class="fas fa-sync"></i>';
-    // autoscroll()
+    autoscroll()
     music.load()
   }
   console.log(music.src+"\n"+musictitle[cnt] + " - " + animetitle[cnt]+"("+mdm+":"+mds+")");
@@ -427,7 +427,7 @@ function list_select(num) {
 
 // 曲検索
 document.getElementById('search_on').addEventListener('click', function(){
-  let checkValue = 1
+  let checkValue = 2
   if(!so){
     so = true
     ser.innerHTML = '<input id="keyword" type="search" name="search" placeholder="検索したいワードをいれてください" style="width:100%;"><br><label class="white_text"><input type="radio" name="list_select" value="0">全検索</label><label class="white_text"><input type="radio" name="list_select" value="1" checked>作品名検索</label><label class="white_text"><input type="radio" name="list_select" value="2">曲名検索</label>';
@@ -558,11 +558,14 @@ function autoscroll(){
   // test.textContent += targetbase + ":" + hheader + " "
   if(targetbase != hheader){
     var nowp = window.pageYOffset
-    if(targetbase > nowp){
+    if(targetbase == nowp){
+      onum = cnt
+    }else if(targetbase > nowp){
       targetPosition = targetbase - (hheader + nowp);
     }else{
       targetPosition = targetbase - (hheader - nowp);
     }
+    console.log("header:"+hheader+" before:"+nowp+" after:"+targetPosition+" target:"+targetbase);
     window.scrollTo({ top : targetPosition ,behavior: 'smooth'});
   }
   onum = cnt
