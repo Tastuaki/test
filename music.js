@@ -561,10 +561,15 @@ function autoscroll(){
   if(targetbase != hheader){
     nowp = window.pageYOffset
     console.log("header:"+hheader+" before:"+nowp+" after:"+targetPosition+" target:"+targetbase);
-    if(targetbase < 0){
-      window.scrollBy({ top : targetbase ,behavior: 'smooth'})
+    if(targetbase > nowp){
+      targetPosition = targetbase - nowp
     }else{
-      window.scroll({ top : targetbase ,behavior: 'smooth'})
+      targetPosition = targetbase + nowp
+    }
+    if(targetPosition <= 0){
+      window.scrollBy({ top : targetPosition ,behavior: 'smooth'})
+    }else{
+      window.scroll({ top : targetPosition ,behavior: 'smooth'})
     }
     nowp = window.pageYOffset
     if(nowp > hheader){
