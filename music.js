@@ -556,6 +556,9 @@ function autoscroll(){
     return
   }else if(cnt != 0){
     num = cnt - 1
+    if(num < 0){
+      num = 0
+    }
   }
   var targetbase = document.getElementById("smusic_" + num).getBoundingClientRect().top;
   if(targetbase != hheader){
@@ -569,7 +572,9 @@ function autoscroll(){
     if(targetPosition <= 0){
       window.scrollBy({ top : targetPosition ,behavior: 'smooth'})
     }else if(targetPosition > hheader){
-      window.scroll({ top : targetPosition ,behavior: 'smooth'})
+      window.scroll({ top : targetPosition - hheader ,behavior: 'smooth'})
+    }else{
+      window.scroll({ top : targetPosition,behavior: 'smooth'})
     }
   }
   onum = cnt
