@@ -331,7 +331,7 @@ volume_index.addEventListener('input',function(){
 window.addEventListener("beforeunload",function(){
     volume_index.value = 20;
     ptime.value = 0;
-    window.scrollTo({ top : 0,behavior: 'smooth'});
+    window.scroll({ top : 0,behavior: 'smooth'});
 })
 
 // ミュートボタン
@@ -433,7 +433,7 @@ document.getElementById('search_on').addEventListener('click', function(){
     ser.innerHTML = '<input id="keyword" type="search" name="search" placeholder="検索したいワードをいれてください" style="width:100%;"><br><label class="white_text"><input type="radio" name="list_select" value="0" checked>全検索</label><label class="white_text"><input type="radio" name="list_select" value="1">作品名検索</label><label class="white_text"><input type="radio" name="list_select" value="2">曲名検索</label>';
     var hser = ser.getBoundingClientRect().bottom
     var nowp = window.pageYOffset
-    window.scrollTo({ top : nowp+hser ,behavior: 'smooth'});
+    window.scroll({ top : nowp+hser ,behavior: 'smooth'});
     for(let target of document.querySelectorAll(`input[type='radio'][name='list_select']`)){
       target.addEventListener('change',function (e) {
         checkValue = Number(target.value)
@@ -441,7 +441,7 @@ document.getElementById('search_on').addEventListener('click', function(){
       })
     }
     document.getElementById('keyword').addEventListener('keyup',function (e) {
-      window.scrollTo({ top : 0,behavior: 'smooth'});
+      window.scroll({ top : 0,behavior: 'smooth'});
       search_list(checkValue)
     })
   }else{
@@ -570,7 +570,7 @@ function autoscroll(){
       targetPosition = targetbase - (hheader - nowp);
     }
     console.log("header:"+hheader+" before:"+nowp+" after:"+targetPosition+" target:"+targetbase);
-    window.scrollTo({ top : targetPosition ,behavior: 'smooth'});
+    window.scroll({ top : targetPosition ,behavior: 'smooth'});
   }
   onum = cnt
 }
