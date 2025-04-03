@@ -556,13 +556,12 @@ function autoscroll(){
     return
   }else if(cnt != 0){
     num = cnt - 1
-    if(num <= 0){
-      num = 1
-    }
+  }else{
+    return
   }
   var targetbase = document.getElementById("smusic_" + num).getBoundingClientRect().top;
   if(targetbase != hheader){
-    nowp = window.pageYOffset
+    nowp = window.scrollY
     if(targetbase > nowp){
       targetPosition = (targetbase - nowp) - hheader
     }else{
