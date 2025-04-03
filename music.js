@@ -570,7 +570,9 @@ function autoscroll(){
     }
     console.log("header:"+hheader+" before:"+nowp+" after:"+targetPosition+" target:"+targetbase);
     window.scroll({ top : targetPosition ,behavior: 'smooth'});
-    window.scrollBy({ top : -hheader ,behavior: 'smooth'});
+    if(targetPosition > hheader){
+      window.scrollBy({ top : -hheader ,behavior: 'smooth'});
+    }
   }
   onum = cnt
 }
