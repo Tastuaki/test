@@ -564,7 +564,7 @@ function autoscroll(){
   if(targetbase != hheader){
     nowp = window.pageYOffset
     if(targetbase > nowp){
-      targetPosition = (targetbase - nowp)
+      targetPosition = (targetbase - nowp) - hheader
     }else{
       targetPosition = (targetbase + nowp) - hheader
     }
@@ -572,9 +572,7 @@ function autoscroll(){
     if(targetPosition <= 0){
       window.scrollBy({ top : targetPosition ,behavior: 'smooth'})
     }else if(targetPosition > hheader){
-      window.scroll({ top : targetPosition - hheader ,behavior: 'smooth'})
-    }else{
-      window.scroll({ top : targetPosition,behavior: 'smooth'})
+      window.scroll({ top : targetPosition ,behavior: 'smooth'})
     }
   }
   onum = cnt
