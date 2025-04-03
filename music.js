@@ -548,6 +548,7 @@ function base(){
 
 // 自動スクロール
 var targetPosition = 0
+var nowp = 0
 var onum = -1
 function autoscroll(){
   var num = 0
@@ -559,7 +560,7 @@ function autoscroll(){
   var targetbase = document.getElementById("smusic_" + num).getBoundingClientRect().top
   // test.textContent += targetbase + ":" + hheader + " "
   if(targetbase != hheader){
-    var nowp = window.pageYOffset
+    nowp = window.pageYOffset
     if(targetbase == nowp){
       onum = cnt
       return
@@ -570,7 +571,8 @@ function autoscroll(){
     }
     console.log("header:"+hheader+" before:"+nowp+" after:"+targetPosition+" target:"+targetbase);
     window.scroll({ top : targetPosition ,behavior: 'smooth'});
-    if(targetPosition > hheader){
+    nowp = window.pageYOffset
+    if(nowp > hheader){
       window.scrollBy({ top : -hheader ,behavior: 'smooth'});
     }
   }
