@@ -569,10 +569,12 @@ function autoscroll(){
       targetPosition = (targetbase + nowp) - hheader
     }
     console.log("header:"+hheader+" before:"+nowp+" after:"+targetPosition+" target:"+targetbase);
-    if(targetPosition <= 0){
-      window.scrollBy({ top : targetPosition ,behavior: 'smooth'})
-    }else if(targetPosition > hheader){
-      window.scroll({ top : targetPosition ,behavior: 'smooth'})
+    if(Math.abs(targetPosition) > hheader){
+      if(targetPosition <= 0){
+        window.scrollBy({ top : targetPosition ,behavior: 'smooth'})
+      }else{
+        window.scroll({ top : targetPosition ,behavior: 'smooth'})
+      }
     }
   }
   onum = cnt
