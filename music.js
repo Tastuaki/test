@@ -557,20 +557,11 @@ function autoscroll(){
   }else if(cnt != 0){
     num = cnt - 1
   }
-  var targetbase = document.getElementById("smusic_" + num).getBoundingClientRect().top
-  // test.textContent += targetbase + ":" + hheader + " "
+  var targetbase = document.getElementById("smusic_" + num).getBoundingClientRect().top;
   if(targetbase != hheader){
     nowp = window.pageYOffset
-    if(targetbase == nowp){
-      onum = cnt
-      return
-    }else if(targetbase > nowp){
-      targetPosition = targetbase - nowp;
-    }else{
-      targetPosition = targetbase + nowp;
-    }
     console.log("header:"+hheader+" before:"+nowp+" after:"+targetPosition+" target:"+targetbase);
-    window.scroll({ top : targetPosition ,behavior: 'smooth'});
+    window.scrollBy({ top : targetbase ,behavior: 'smooth'})
     nowp = window.pageYOffset
     if(nowp > hheader){
       window.scrollBy({ top : -hheader ,behavior: 'smooth'});
