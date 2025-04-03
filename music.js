@@ -560,20 +560,16 @@ function autoscroll(){
   var targetbase = document.getElementById("smusic_" + num).getBoundingClientRect().top;
   if(targetbase != hheader){
     nowp = window.pageYOffset
-    console.log("header:"+hheader+" before:"+nowp+" after:"+targetPosition+" target:"+targetbase);
     if(targetbase > nowp){
-      targetPosition = targetbase - nowp
+      targetPosition = (targetbase - nowp) - hheader
     }else{
-      targetPosition = targetbase + nowp
+      targetPosition = (targetbase + nowp) - hheader
     }
+    console.log("header:"+hheader+" before:"+nowp+" after:"+targetPosition+" target:"+targetbase);
     if(targetPosition <= 0){
       window.scrollBy({ top : targetPosition ,behavior: 'smooth'})
     }else{
       window.scroll({ top : targetPosition ,behavior: 'smooth'})
-    }
-    nowp = window.pageYOffset
-    if(nowp > hheader){
-      window.scrollBy({ top : -hheader ,behavior: 'smooth'});
     }
   }
   onum = cnt
