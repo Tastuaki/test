@@ -432,8 +432,7 @@ document.getElementById('search_on').addEventListener('click', function(){
     so = true
     ser.innerHTML = '<input id="keyword" type="search" name="search" placeholder="検索したいワードをいれてください" style="width:100%;"><br><label class="white_text"><input type="radio" name="list_select" value="0" checked>全検索</label><label class="white_text"><input type="radio" name="list_select" value="1">作品名検索</label><label class="white_text"><input type="radio" name="list_select" value="2">曲名検索</label>';
     var hser = ser.getBoundingClientRect().bottom
-    var nowp = window.pageYOffset
-    window.scroll({ top : -hser ,behavior: 'smooth'});
+    window.scrollBy({ top : -hser ,behavior: 'smooth'});
     for(let target of document.querySelectorAll(`input[type='radio'][name='list_select']`)){
       target.addEventListener('change',function (e) {
         checkValue = Number(target.value)
@@ -565,13 +564,13 @@ function autoscroll(){
       onum = cnt
       return
     }else if(targetbase > nowp){
-      targetPosition = (targetbase - nowp);
+      targetPosition = targetbase - nowp;
     }else{
-      targetPosition = (targetbase + nowp);
+      targetPosition = targetbase + nowp;
     }
     console.log("header:"+hheader+" before:"+nowp+" after:"+targetPosition+" target:"+targetbase);
     window.scroll({ top : targetPosition ,behavior: 'smooth'});
-    window.scroll({ top : -hheader ,behavior: 'smooth'});
+    window.scrollBy({ top : -hheader ,behavior: 'smooth'});
   }
   onum = cnt
 }
