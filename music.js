@@ -560,6 +560,7 @@ function autoscroll(){
     var nowp = window.pageYOffset
     if(targetbase == nowp){
       onum = cnt
+      return
     }else if(targetbase > nowp){
       targetPosition = targetbase - (hheader + nowp);
     }else{
