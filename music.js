@@ -561,7 +561,11 @@ function autoscroll(){
   if(targetbase != hheader){
     nowp = window.pageYOffset
     console.log("header:"+hheader+" before:"+nowp+" after:"+targetPosition+" target:"+targetbase);
-    window.scrollBy({ top : targetbase ,behavior: 'smooth'})
+    if(targetbase < 0){
+      window.scrollBy({ top : targetbase ,behavior: 'smooth'})
+    }else{
+      window.scroll({ top : targetbase ,behavior: 'smooth'})
+    }
     nowp = window.pageYOffset
     if(nowp > hheader){
       window.scrollBy({ top : -hheader ,behavior: 'smooth'});
