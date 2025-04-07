@@ -337,9 +337,7 @@ window.addEventListener("beforeunload",function(){
 
 // タブ切り替え時動作
 document.addEventListener("visibilitychange", () => {
-  console.log("a")
   if(document.visibilityState == 'visible'){
-    console.log("b")
     autoscroll()
   }
 })
@@ -561,8 +559,10 @@ function base(){
 var targetPosition = 0
 var nowp = 0
 var ocnt = -1
+var targetbase = 0
+var num = 0
 function autoscroll(){
-  var num = 0
+  num = 0
   if(ocnt == cnt){
     console.log("c")
     return
@@ -573,14 +573,16 @@ function autoscroll(){
   }else{
     return
   }
-  var targetbase = document.getElementById("smusic_" + num).getBoundingClientRect().top;
+  nowp = window.scrollY
+  targetbase = document.getElementById("smusic_" + num).getBoundingClientRect().top;
   if(targetbase != hheader){
-    nowp = window.scrollY
     targetPosition = targetbase - hheader
     console.log("num:"+num+" before:"+nowp+" after:"+targetPosition+" target:"+targetbase);
     window.scrollBy({ top : targetPosition ,behavior: 'smooth'})
   }
-  ocnt = cnt
+  if(nowp != window.scrollY){
+    ocnt = cnt
+  }
 }
 
 // ランダム
