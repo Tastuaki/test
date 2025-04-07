@@ -568,11 +568,11 @@ function autoscroll(){
       targetPosition = (targetbase + nowp) - hheader
     }
     console.log("num:"+num+" before:"+nowp+" after:"+targetPosition+" target:"+targetbase);
-    if(targetPosition <= 0){
+    // if(targetPosition <= 0){
       window.scrollBy({ top : targetPosition ,behavior: 'smooth'})
-    }else{
-      window.scroll({ top : targetPosition ,behavior: 'smooth'})
-    }
+    // }else{
+    //   window.scroll({ top : targetPosition ,behavior: 'smooth'})
+    // }
   }
   onum = cnt
 }
