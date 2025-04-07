@@ -29,7 +29,6 @@ function get_index(){
   let i = 0;
   let n = 0;
   var listtext = [""]
-  xhr.onreadysta
   xhr.onreadystatechange = function() {
     if( xhr.readyState === 4 && xhr.status === 200) {
       listtext = this.responseText;
@@ -338,7 +337,7 @@ window.addEventListener("beforeunload",function(){
 // タブ切り替え時動作
 document.addEventListener("visibilitychange", () => {
   if(document.visibilityState == 'visible'){
-    autoscroll()
+    setTimeout(autoscroll(),100);
   }
 })
 
