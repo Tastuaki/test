@@ -565,10 +565,10 @@ function autoscroll(){
     nowp = window.scrollY
     if(targetbase > nowp){
       targetPosition = (targetbase - nowp) - hheader
-      targetPosition = targetbase
+      targetPosition = targetbase - hheader
     }else{
       targetPosition = (targetbase + nowp) - hheader
-      targetPosition = targetbase
+      targetPosition = targetbase - hheader
     }
     console.log("num:"+num+" before:"+nowp+" after:"+targetPosition+" target:"+targetbase);
     // if(targetPosition <= 0){
