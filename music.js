@@ -280,7 +280,7 @@ var intervalId = setInterval(check_sound, 1000);
 
 function check_sound(){
   console.log(music.ended)
-  console.log(window.scrollY)
+  // console.log(window.scrollY)
   if(music.ended && lsig != -1){
     if(!ls){
       cnt += 1;
@@ -545,6 +545,7 @@ function base(){
   ptt.innerHTML = "0:00 / "+mdm+":"+mds
   music.currentTime = 0
   music.src = ""
+  window.scroll({ top : 0,behavior: 'smooth'});
 }
 
 // 自動スクロール
@@ -552,7 +553,7 @@ var targetPosition = 0
 var nowp = 0
 function autoscroll(){
   var num = 0
-  if(cnt != 0){
+  if(cnt > 0){
     num = cnt - 1
   }else{
     return
