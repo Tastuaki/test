@@ -337,7 +337,8 @@ window.addEventListener("beforeunload",function(){
 // タブ切り替え時動作
 document.addEventListener("visibilitychange", () => {
   if(document.visibilityState == 'visible'){
-    setTimeout(autoscroll(),100);
+    autoscroll()
+    autoscroll()
   }
 })
 
