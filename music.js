@@ -280,6 +280,7 @@ var intervalId = setInterval(check_sound, 1000);
 
 function check_sound(){
   console.log(music.ended)
+  console.log(window.scrollY)
   if(music.ended && lsig != -1){
     if(!ls){
       cnt += 1;
