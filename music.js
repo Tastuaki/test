@@ -550,12 +550,9 @@ function base(){
 // 自動スクロール
 var targetPosition = 0
 var nowp = 0
-var onum = -1
 function autoscroll(){
   var num = 0
-  if(onum == cnt){
-    return
-  }else if(cnt != 0){
+  if(cnt != 0){
     num = cnt - 1
   }else{
     return
@@ -563,21 +560,10 @@ function autoscroll(){
   var targetbase = document.getElementById("smusic_" + num).getBoundingClientRect().top;
   if(targetbase != hheader){
     nowp = window.scrollY
-    if(targetbase > nowp){
-      targetPosition = (targetbase - nowp) - hheader
-      targetPosition = targetbase - hheader
-    }else{
-      targetPosition = (targetbase + nowp) - hheader
-      targetPosition = targetbase - hheader
-    }
+    targetPosition = targetbase - hheader
     console.log("num:"+num+" before:"+nowp+" after:"+targetPosition+" target:"+targetbase);
-    // if(targetPosition <= 0){
-      window.scrollBy({ top : targetPosition ,behavior: 'smooth'})
-    // }else{
-    //   window.scroll({ top : targetPosition ,behavior: 'smooth'})
-    // }
+    window.scrollBy({ top : targetPosition ,behavior: 'smooth'})
   }
-  onum = cnt
 }
 
 // ランダム
