@@ -332,12 +332,14 @@ volume_index.addEventListener('input',function(){
 window.addEventListener("beforeunload",function(){
     volume_index.value = 20;
     ptime.value = 0;
-    window.scroll({ top : 0,behavior: 'smooth'});
+    window.scroll({ top : 0,behavior: 'instant'});
 })
 
 // タブ切り替え時動作
 document.addEventListener("visibilitychange", () => {
+  console.log("a")
   if(document.visibilityState == 'visible'){
+    console.log("b")
     autoscroll()
   }
 })
@@ -562,6 +564,7 @@ var ocnt = -1
 function autoscroll(){
   var num = 0
   if(ocnt == cnt){
+    console.log("c")
     return
   }else if(cnt > 0){
     num = cnt - 1
