@@ -563,25 +563,19 @@ var targetbase = 0
 var num = 0
 function autoscroll(){
   num = 0
-  if(ocnt == cnt){
-    console.log("c")
-    return
-  }else if(cnt > 0){
+  if(cnt > 0){
     num = cnt - 1
   }else if(cnt == 0){
     num = 0
   }else{
     return
   }
-  nowp = window.scrollY
   targetbase = document.getElementById("smusic_" + num).getBoundingClientRect().top;
   if(targetbase != hheader){
+    nowp = window.scrollY
     targetPosition = targetbase - hheader
     console.log("num:"+num+" before:"+nowp+" after:"+targetPosition+" target:"+targetbase);
     window.scrollBy({ top : targetPosition ,behavior: 'smooth'})
-  }
-  if(nowp != window.scrollY){
-    ocnt = cnt
   }
 }
 
