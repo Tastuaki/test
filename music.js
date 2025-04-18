@@ -38,7 +38,7 @@ function get_index(){
         if(lname[n].includes("\n")){
           lname[n] = lname[n].replace("undefined","");
           lname[n] = lname[n].slice(0,-1);
-          lname[n] = encodeURI(lname[n])
+          lname[n] = encodeURIComponent(lname[n])
           n += 1
         }
         i += 1
