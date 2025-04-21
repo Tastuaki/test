@@ -106,7 +106,7 @@ function get_list(c){
             musictitle[n] = titletext[n]
             animetitle[n] = ""
           }
-          fname[n] = encodeURI(fname[n]);
+          fname[n] = encodeURIComponent(fname[n]);
           n += 1;
         }
         i += 1;
