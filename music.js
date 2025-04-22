@@ -197,6 +197,11 @@ function play_music(){
   console.log(music.src+"\n"+musictitle[cnt] + " - " + animetitle[cnt]+"("+mdm+":"+mds+")");
   music.volume = volume_index.value / 100.00;
   music.play();
+  while(music.error != null){
+    music.load()
+    music.play()
+    console.log("try reload")
+  }
   play.innerHTML = '<i class="fas fa-pause"></i>';
   title.innerHTML = '<i class="fas fa-music"></i>　'+ musictitle[cnt];
   anime.innerHTML = animetitle[cnt];
