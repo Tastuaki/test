@@ -343,7 +343,6 @@ window.addEventListener("beforeunload",function(){
 document.addEventListener("visibilitychange", () => {
   if(document.visibilityState == 'visible'){
     autoscroll()
-    autoscroll()
   }
 })
 
@@ -440,7 +439,7 @@ function list_select(num) {
 
 // 曲検索
 document.getElementById('search_on').addEventListener('click', function(){
-  let checkValue = 1
+  let checkValue = 0
   if(!so){
     so = true
     ser.innerHTML = '<input id="keyword" type="search" name="search" placeholder="検索したいワードをいれてください" style="width:100%;"><br><label class="white_text"><input type="radio" name="list_select" value="0" checked>全検索</label><label class="white_text"><input type="radio" name="list_select" value="1">作品名検索</label><label class="white_text"><input type="radio" name="list_select" value="2">曲名検索</label>';
@@ -569,6 +568,9 @@ var num = 0
 function autoscroll(){
   num = 0
   if(cnt > 0){
+    if(mlist.childElementCount < cnt){
+      num = mlist.childElementCount - 1
+    }
     num = cnt - 1
   }else if(cnt == 0){
     num = 0
