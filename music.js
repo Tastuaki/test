@@ -287,7 +287,7 @@ function check_sound(){
   // console.log(window.scrollY)
   if(music.ended && lsig != -1){
     if(so){
-      return
+      search_in()
     }
     if(!ls){
       cnt += 1;
@@ -441,7 +441,9 @@ function list_select(num) {
 }
 
 // 曲検索
-document.getElementById('search_on').addEventListener('click', function(){
+document.getElementById('search_on').addEventListener('click', () => search_in())
+
+function search_in(){
   let checkValue = 0
   if(!so){
     so = true
@@ -464,7 +466,7 @@ document.getElementById('search_on').addEventListener('click', function(){
     make_list(-1)
     autoscroll()
   }
-})
+}
 
 function search_list(checkValue){
   mlist.innerHTML = "";
@@ -569,6 +571,9 @@ var ocnt = -1
 var targetbase = 0
 var num = 0
 function autoscroll(){
+  if(so){
+    return
+  }
   num = 0
   if(cnt > 0){
     if(mlist.childElementCount < cnt){
