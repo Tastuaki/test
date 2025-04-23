@@ -286,6 +286,9 @@ function check_sound(){
   console.log(music.ended)
   // console.log(window.scrollY)
   if(music.ended && lsig != -1){
+    if(so){
+      return
+    }
     if(!ls){
       cnt += 1;
       if(cnt > fname.length - 1){
@@ -570,8 +573,9 @@ function autoscroll(){
   if(cnt > 0){
     if(mlist.childElementCount < cnt){
       num = mlist.childElementCount - 1
+    }else{
+      num = cnt - 1
     }
-    num = cnt - 1
   }else if(cnt == 0){
     num = 0
   }else{
