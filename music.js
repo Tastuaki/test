@@ -94,17 +94,21 @@ function get_list(c){
               sig = dsig
             }
           }
-
-          if(c == 4){
-            animetitle[n] = titletext[n].slice(sig+1,-1)
-            musictitle[n] = titletext[n].slice(0,sig)
-            musictitle[n] = musictitle[n].replace("v/","");
-          }else if(sig != -1){
+          if(sig != -1){
             musictitle[n] = titletext[n].slice(sig+1,-1)
             animetitle[n] = titletext[n].slice(0,sig)
           }else{
             musictitle[n] = titletext[n]
             animetitle[n] = ""
+          }
+          switch(c){
+            case 2:
+            case 4:
+              musictitle[n] = musictitle[n].replace("v/","");
+            case 5:
+              musictitle[n] = musictitle[n].replace("g/","");
+            default:
+              break;
           }
           fname[n] = encodeURIComponent(fname[n]);
           n += 1;
