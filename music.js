@@ -209,11 +209,6 @@ function play_music(){
   console.log(music.src+"\n"+musictitle[cnt] + " - " + animetitle[cnt]+"("+mdm+":"+mds+")");
   music.volume = volume_index.value / 100.00;
   music.play();
-  while(music.error != null){
-    music.load()
-    music.play()
-    console.log("try reload")
-  }
   play.innerHTML = '<i class="fas fa-pause"></i>';
   title.innerHTML = '<i class="fas fa-music"></i>　'+ musictitle[cnt];
   anime.innerHTML = animetitle[cnt];
@@ -295,6 +290,7 @@ play.addEventListener('click', function(){
 var intervalId = setInterval(check_sound, 1000);
 
 function check_sound(){
+  let mcf = false
   console.log(music.ended)
   // console.log(window.scrollY)
   if(music.ended && lsig != -1){
@@ -316,12 +312,20 @@ function check_sound(){
       }
     }
     play_music();
+    mcf = true
     if(mcnt < 0){
       cnt = mcnt;
     }
   }else if(lff){
     ptt.innerHTML = Math.floor(music.currentTime/60)+":"+('00'+Math.floor(music.currentTime%60)).slice(-2)+" / "+mdm+":"+mds
     ptime.value = music.currentTime / (music.duration / 100)
+  }else if(mcf){
+    while(music.error != null){
+      music.load()
+      music.play()
+      console.log("try reload")
+    }
+    mcf = false
   }
 }
 
