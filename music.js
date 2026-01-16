@@ -98,6 +98,7 @@ function get_list(c){
             case 2:
             case 4:
             case 5:
+            case 6:
               if(sig == -1){
                 musictitle[n] = titletext[n]
                 animetitle[n] = ""
